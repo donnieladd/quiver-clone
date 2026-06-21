@@ -1,0 +1,3651 @@
+{
+  "info": {
+    "contact": {
+      "email": "support@quiver.ai",
+      "name": "QuiverAI API Support",
+      "url": "https://quiver.ai/support"
+    },
+    "description": "QuiverAI-compatible API clone for local development and self-hosting.",
+    "title": "Quiver Clone API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.0",
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development"
+    }
+  ],
+  "tags": [
+    {
+      "description": "Operations for listing and retrieving available models.",
+      "name": "Models"
+    },
+    {
+      "description": "Generate SVG graphics from text prompts and reference images.",
+      "name": "Create SVGs"
+    },
+    {
+      "description": "Convert raster image inputs into SVG outputs.",
+      "name": "Vectorize SVG"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "description": "Authentication via Bearer token API key",
+        "scheme": "bearer",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "ListModelsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Model"
+            }
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "list"
+            ]
+          }
+        },
+        "required": [
+          "data",
+          "object"
+        ]
+      },
+      "Model": {
+        "type": "object",
+        "properties": {
+          "context_length": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "created": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_modalities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "image",
+                "svg"
+              ]
+            }
+          },
+          "max_output_length": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "name": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "model"
+            ]
+          },
+          "output_modalities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "image",
+                "svg"
+              ]
+            }
+          },
+          "owned_by": {
+            "type": "string"
+          },
+          "pricing": {
+            "type": "object",
+            "properties": {
+              "svg_generate": {
+                "type": "string",
+                "minLength": 1,
+                "deprecated": true,
+                "description": "Deprecated \u2014 use `pricing_credits`. Legacy USD price string per SVG generation request.",
+                "example": "0.30"
+              },
+              "svg_vectorize": {
+                "type": "string",
+                "minLength": 1,
+                "deprecated": true,
+                "description": "Deprecated \u2014 use `pricing_credits`. Legacy USD price string per SVG vectorization request.",
+                "example": "0.30"
+              }
+            },
+            "required": [
+              "svg_generate",
+              "svg_vectorize"
+            ],
+            "deprecated": true,
+            "description": "Deprecated. Prefer `pricing_credits` for per-request credit debits. USD strings are legacy placeholders."
+          },
+          "pricing_credits": {
+            "type": "object",
+            "properties": {
+              "svg_generate": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "description": "Credits debited from the organization balance per SVG generation request for this model.",
+                "example": 30
+              },
+              "svg_vectorize": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "description": "Credits debited from the organization balance per SVG vectorization request for this model.",
+                "example": 30
+              }
+            },
+            "required": [
+              "svg_generate",
+              "svg_vectorize"
+            ]
+          },
+          "supported_operations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "svg_generate",
+                "svg_edit",
+                "svg_vectorize"
+              ]
+            }
+          },
+          "supported_sampling_parameters": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "temperature",
+                "top_p",
+                "top_k",
+                "repetition_penalty",
+                "presence_penalty",
+                "stop"
+              ]
+            }
+          }
+        },
+        "required": [
+          "created",
+          "id",
+          "object",
+          "owned_by"
+        ]
+      },
+      "PublicErrorEnvelope": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "invalid_request",
+              "invalid_api_key",
+              "unauthorized",
+              "insufficient_credits",
+              "account_frozen",
+              "content_policy_violation",
+              "model_not_found",
+              "payload_too_large",
+              "request_timeout",
+              "rate_limit_exceeded",
+              "weekly_limit_exceeded",
+              "server_error",
+              "model_error",
+              "model_unavailable"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "SvgResponse": {
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 1704067200
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Credit cost for this request. Use this for billing instead of `usage` tokens.",
+            "example": 1
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SvgDocument"
+            },
+            "minItems": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "example": "resp_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/SvgUsage"
+          }
+        },
+        "required": [
+          "created",
+          "data",
+          "id"
+        ]
+      },
+      "SvgDocument": {
+        "type": "object",
+        "properties": {
+          "mime_type": {
+            "type": "string",
+            "enum": [
+              "image/svg+xml"
+            ]
+          },
+          "svg": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Raw SVG markup.",
+            "example": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 2l8 20H4z\"/></svg>"
+          }
+        },
+        "required": [
+          "mime_type",
+          "svg"
+        ]
+      },
+      "SvgUsage": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "minimum": 0,
+            "deprecated": true,
+            "description": "Deprecated. Token counts are retained for compatibility and may be zeroed.",
+            "example": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "minimum": 0,
+            "deprecated": true,
+            "description": "Deprecated. Token counts are retained for compatibility and may be zeroed.",
+            "example": 0
+          },
+          "total_tokens": {
+            "type": "integer",
+            "minimum": 0,
+            "deprecated": true,
+            "description": "Deprecated. Token counts are retained for compatibility and may be zeroed.",
+            "example": 0
+          }
+        },
+        "required": [
+          "input_tokens",
+          "output_tokens",
+          "total_tokens"
+        ],
+        "deprecated": true,
+        "description": "Deprecated. Use `credits` for billing values."
+      },
+      "SvgStreamEvent": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/PublicErrorSseEventData"
+              },
+              "event": {
+                "type": "string",
+                "enum": [
+                  "error"
+                ],
+                "description": "The SSE event name (sent via the `event:` line)."
+              },
+              "id": {
+                "type": "string",
+                "description": "Optional SSE event id (sent via the `id:` line)."
+              },
+              "retry": {
+                "type": "integer",
+                "description": "Optional SSE retry value in milliseconds (sent via the `retry:` line)."
+              }
+            },
+            "required": [
+              "data",
+              "event"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/SvgStreamEventData"
+              },
+              "event": {
+                "type": "string",
+                "enum": [
+                  "generating"
+                ],
+                "description": "The SSE event name (sent via the `event:` line)."
+              },
+              "id": {
+                "type": "string",
+                "description": "Optional SSE event id (sent via the `id:` line)."
+              },
+              "retry": {
+                "type": "integer",
+                "description": "Optional SSE retry value in milliseconds (sent via the `retry:` line)."
+              }
+            },
+            "required": [
+              "data",
+              "event"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/SvgStreamEventData"
+              },
+              "event": {
+                "type": "string",
+                "enum": [
+                  "reasoning"
+                ],
+                "description": "The SSE event name (sent via the `event:` line)."
+              },
+              "id": {
+                "type": "string",
+                "description": "Optional SSE event id (sent via the `id:` line)."
+              },
+              "retry": {
+                "type": "integer",
+                "description": "Optional SSE retry value in milliseconds (sent via the `retry:` line)."
+              }
+            },
+            "required": [
+              "data",
+              "event"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/SvgStreamEventData"
+              },
+              "event": {
+                "type": "string",
+                "enum": [
+                  "draft"
+                ],
+                "description": "The SSE event name (sent via the `event:` line)."
+              },
+              "id": {
+                "type": "string",
+                "description": "Optional SSE event id (sent via the `id:` line)."
+              },
+              "retry": {
+                "type": "integer",
+                "description": "Optional SSE retry value in milliseconds (sent via the `retry:` line)."
+              }
+            },
+            "required": [
+              "data",
+              "event"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/SvgStreamEventData"
+              },
+              "event": {
+                "type": "string",
+                "enum": [
+                  "content"
+                ],
+                "description": "The SSE event name (sent via the `event:` line)."
+              },
+              "id": {
+                "type": "string",
+                "description": "Optional SSE event id (sent via the `id:` line)."
+              },
+              "retry": {
+                "type": "integer",
+                "description": "Optional SSE retry value in milliseconds (sent via the `retry:` line)."
+              }
+            },
+            "required": [
+              "data",
+              "event"
+            ]
+          }
+        ],
+        "description": "Server-sent event (SSE) envelope for SVG streaming operations. Each SSE message uses the `event:` line for the phase discriminator and the `data:` line for a JSON payload. For `n > 1`, events are interleaved: use `data.index` for output position and `data.id` as the stable per-output identifier. Terminal failures emit `event: error` with public error data. The stream terminates with `data: [DONE]`."
+      },
+      "PublicErrorSseEventData": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "invalid_request",
+              "invalid_api_key",
+              "unauthorized",
+              "insufficient_credits",
+              "account_frozen",
+              "content_policy_violation",
+              "model_not_found",
+              "payload_too_large",
+              "request_timeout",
+              "rate_limit_exceeded",
+              "weekly_limit_exceeded",
+              "server_error",
+              "model_error",
+              "model_unavailable"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "error"
+            ]
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id",
+          "status",
+          "type"
+        ],
+        "additionalProperties": false
+      },
+      "SvgStreamEventData": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PublicErrorSseEventData"
+          },
+          {
+            "$ref": "#/components/schemas/SvgGeneratingEventData"
+          },
+          {
+            "$ref": "#/components/schemas/SvgReasoningEventData"
+          },
+          {
+            "$ref": "#/components/schemas/SvgDraftEventData"
+          },
+          {
+            "$ref": "#/components/schemas/SvgContentEventData"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "error": "#/components/schemas/PublicErrorSseEventData",
+            "generating": "#/components/schemas/SvgGeneratingEventData",
+            "reasoning": "#/components/schemas/SvgReasoningEventData",
+            "draft": "#/components/schemas/SvgDraftEventData",
+            "content": "#/components/schemas/SvgContentEventData"
+          }
+        },
+        "description": "The event payload. Shape depends on the `type` phase discriminator."
+      },
+      "SvgGeneratingEventData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A unique identifier for the SVG output when available. Stable per output across streamed events."
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Zero-based output index for this event. Present for multi-output streams (`n > 1`).",
+            "example": 0
+          },
+          "svg": {
+            "type": "string",
+            "description": "Optional SVG payload for forward compatibility."
+          },
+          "text": {
+            "type": "string",
+            "description": "Optional generation status or reasoning text."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "generating"
+            ]
+          },
+          "usage": {
+            "$ref": "#/components/schemas/SvgUsage"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "additionalProperties": {}
+      },
+      "SvgReasoningEventData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A unique identifier for the SVG output when available. Stable per output across streamed events."
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Zero-based output index for this event. Present for multi-output streams (`n > 1`).",
+            "example": 0
+          },
+          "svg": {
+            "type": "string",
+            "description": "Optional SVG payload for forward compatibility."
+          },
+          "text": {
+            "type": "string",
+            "description": "Optional reasoning text (present on reasoning events for some operations)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "reasoning"
+            ]
+          },
+          "usage": {
+            "$ref": "#/components/schemas/SvgUsage"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "additionalProperties": {}
+      },
+      "SvgDraftEventData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A unique identifier for the SVG output. For streaming multi-output requests (`n > 1`), each output has a distinct `id` and all events for that output reuse that same `id`."
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Zero-based output index for this event. Present for multi-output streams (`n > 1`).",
+            "example": 0
+          },
+          "svg": {
+            "type": "string",
+            "description": "The SVG markup (partial during draft, complete during content)."
+          },
+          "text": {
+            "type": "string",
+            "description": "Optional reasoning text (present on reasoning events for some operations)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "draft"
+            ]
+          },
+          "usage": {
+            "$ref": "#/components/schemas/SvgUsage"
+          }
+        },
+        "required": [
+          "id",
+          "svg",
+          "type"
+        ],
+        "additionalProperties": {}
+      },
+      "SvgContentEventData": {
+        "type": "object",
+        "properties": {
+          "credits": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Credit cost for this completed SVG output. Emitted on `content` events.",
+            "example": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A unique identifier for the SVG output. For streaming multi-output requests (`n > 1`), each output has a distinct `id` and all events for that output reuse that same `id`."
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Zero-based output index for this event. Present for multi-output streams (`n > 1`).",
+            "example": 0
+          },
+          "svg": {
+            "type": "string",
+            "description": "The SVG markup (partial during draft, complete during content)."
+          },
+          "text": {
+            "type": "string",
+            "description": "Optional reasoning text (present on reasoning events for some operations)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "content"
+            ]
+          },
+          "usage": {
+            "$ref": "#/components/schemas/SvgUsage"
+          }
+        },
+        "required": [
+          "id",
+          "svg",
+          "type"
+        ],
+        "additionalProperties": {}
+      },
+      "VectorizeSVGRequest": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "$ref": "#/components/schemas/SvgAttributes"
+          },
+          "max_output_tokens": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65536,
+            "description": "Upper bound for output token count.",
+            "example": 4096
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Model identifier to use for generation or vectorization.",
+            "example": "arrow-1.1"
+          },
+          "presence_penalty": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": -2,
+            "maximum": 2,
+            "default": 0,
+            "description": "Penalty for tokens already present in prior output.",
+            "example": 0.2
+          },
+          "stream": {
+            "type": "boolean",
+            "default": false,
+            "description": "When true, emits a Server-Sent Events stream.",
+            "example": false
+          },
+          "temperature": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2,
+            "default": 1,
+            "description": "Sampling temperature.",
+            "example": 0.4
+          },
+          "top_p": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 1,
+            "description": "Nucleus sampling probability.",
+            "example": 0.95
+          },
+          "auto_crop": {
+            "type": "boolean",
+            "default": false,
+            "description": "Auto-crop image to the dominant subject before vectorization.",
+            "example": true
+          },
+          "image": {
+            "$ref": "#/components/schemas/ImageInputReference"
+          },
+          "target_size": {
+            "type": "integer",
+            "minimum": 128,
+            "maximum": 4096,
+            "description": "Square resize target in pixels.",
+            "example": 1024
+          }
+        },
+        "required": [
+          "model",
+          "image"
+        ]
+      },
+      "SvgAttributes": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "viewBox": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "description": "Height of the SVG viewBox. Must be greater than zero.",
+                "example": 512
+              },
+              "minX": {
+                "type": "number",
+                "description": "Minimum x coordinate of the SVG viewBox.",
+                "example": 0
+              },
+              "minY": {
+                "type": "number",
+                "description": "Minimum y coordinate of the SVG viewBox.",
+                "example": 0
+              },
+              "width": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "description": "Width of the SVG viewBox. Must be greater than zero.",
+                "example": 512
+              }
+            },
+            "required": [
+              "height",
+              "minX",
+              "minY",
+              "width"
+            ],
+            "additionalProperties": false,
+            "description": "SVG root viewBox attribute controls."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Optional SVG root attributes requested by the caller."
+      },
+      "ImageInputReference": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ImageInputReferenceUrl"
+          },
+          {
+            "$ref": "#/components/schemas/ImageInputReferenceBase64"
+          }
+        ],
+        "description": "Image input reference. Accepts a network image URL or a base64-encoded image payload. Decoded images must be no larger than 12582912 bytes, 4096x4096 pixels, or 16777216 total pixels. Accepted direct media types: image/png, image/jpeg, image/webp, image/gif, image/svg+xml."
+      },
+      "ImageInputReferenceUrl": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Network image URL. Only http/https URLs are allowed. The API fetches the URL, follows up to 3 redirects, blocks private or reserved network targets, requires an image response content type, and applies the same decoded image limits as base64 inputs.",
+            "example": "https://example.com/uploads/reference1.png"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      },
+      "ImageInputReferenceBase64": {
+        "type": "object",
+        "properties": {
+          "base64": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16777216,
+            "description": "Base64-encoded image payload. Decoded images must be no larger than 12582912 bytes, 4096x4096 pixels, or 16777216 total pixels. Accepted direct media types: image/png, image/jpeg, image/webp, image/gif, image/svg+xml.",
+            "example": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+          }
+        },
+        "required": [
+          "base64"
+        ],
+        "additionalProperties": false
+      },
+      "GenerateSVGRequest": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "$ref": "#/components/schemas/SvgAttributes"
+          },
+          "max_output_tokens": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65536,
+            "description": "Upper bound for output token count.",
+            "example": 4096
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Model identifier to use for generation or vectorization.",
+            "example": "arrow-1.1"
+          },
+          "presence_penalty": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": -2,
+            "maximum": 2,
+            "default": 0,
+            "description": "Penalty for tokens already present in prior output.",
+            "example": 0.2
+          },
+          "stream": {
+            "type": "boolean",
+            "default": false,
+            "description": "When true, emits a Server-Sent Events stream.",
+            "example": false
+          },
+          "temperature": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2,
+            "default": 1,
+            "description": "Sampling temperature.",
+            "example": 0.4
+          },
+          "top_p": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 1,
+            "description": "Nucleus sampling probability.",
+            "example": 0.95
+          },
+          "instructions": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Additional style or formatting guidance.",
+            "example": "Use a flat monochrome style with clean geometry."
+          },
+          "n": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 16,
+            "default": 1,
+            "description": "Number of outputs to generate.",
+            "example": 1
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Primary text prompt that describes the desired SVG.",
+            "example": "Generate an icon of a unicorn"
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageInputReferenceInput"
+            },
+            "maxItems": 16,
+            "description": "Optional reference images to guide style/composition. Accepts `{ url }`, `{ base64 }`, or URL string shorthand. Runtime limits are model-specific: 4 for Arrow 1.1/Arrow 1.x aliases, 16 for Arrow 1.1 Max."
+          }
+        },
+        "required": [
+          "model",
+          "prompt"
+        ]
+      },
+      "ImageInputReferenceInput": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ImageInputReferenceUrl"
+          },
+          {
+            "$ref": "#/components/schemas/ImageInputReferenceBase64"
+          },
+          {
+            "type": "string",
+            "format": "uri",
+            "description": "String shorthand for a network image URL. Equivalent to `{ \"url\": \"...\" }`. The same URL safety and decoded image limits apply.",
+            "example": "https://example.com/uploads/reference1.png"
+          }
+        ]
+      }
+    },
+    "parameters": {}
+  },
+  "paths": {
+    "/v1/models": {
+      "get": {
+        "description": "Returns all models available to the authenticated organization.",
+        "operationId": "listModels",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "List Models",
+        "tags": [
+          "Models"
+        ],
+        "responses": {
+          "200": {
+            "description": "List available models",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListModelsResponse"
+                },
+                "examples": {
+                  "default": {
+                    "summary": "List response",
+                    "value": {
+                      "data": [
+                        {
+                          "context_length": 131072,
+                          "created": 1704067200,
+                          "description": "First-gen vector-native model for editable logos, icons, and illustrations.",
+                          "id": "arrow-1",
+                          "input_modalities": [
+                            "text",
+                            "image"
+                          ],
+                          "max_output_length": 65536,
+                          "name": "Arrow 1.0",
+                          "object": "model",
+                          "output_modalities": [
+                            "svg"
+                          ],
+                          "owned_by": "quiverai",
+                          "pricing": {
+                            "svg_generate": "0.30",
+                            "svg_vectorize": "0.30"
+                          },
+                          "pricing_credits": {
+                            "svg_generate": 30,
+                            "svg_vectorize": 30
+                          },
+                          "supported_operations": [
+                            "svg_generate",
+                            "svg_vectorize"
+                          ],
+                          "supported_sampling_parameters": [
+                            "temperature",
+                            "top_p",
+                            "presence_penalty"
+                          ]
+                        },
+                        {
+                          "context_length": 131072,
+                          "created": 1704067200,
+                          "description": "Best default for speed and quality, with strong prompt following and precise SVG.",
+                          "id": "arrow-1.1",
+                          "input_modalities": [
+                            "text",
+                            "image"
+                          ],
+                          "max_output_length": 65536,
+                          "name": "Arrow 1.1",
+                          "object": "model",
+                          "output_modalities": [
+                            "svg"
+                          ],
+                          "owned_by": "quiverai",
+                          "pricing": {
+                            "svg_generate": "0.20",
+                            "svg_vectorize": "0.15"
+                          },
+                          "pricing_credits": {
+                            "svg_generate": 20,
+                            "svg_vectorize": 15
+                          },
+                          "supported_operations": [
+                            "svg_generate",
+                            "svg_vectorize"
+                          ],
+                          "supported_sampling_parameters": [
+                            "temperature",
+                            "top_p",
+                            "presence_penalty"
+                          ]
+                        },
+                        {
+                          "context_length": 131072,
+                          "created": 1704067200,
+                          "description": "Higher-fidelity model for detailed diagrams and illustrations.",
+                          "id": "arrow-1.1-max",
+                          "input_modalities": [
+                            "text",
+                            "image"
+                          ],
+                          "max_output_length": 65536,
+                          "name": "Arrow 1.1 Max",
+                          "object": "model",
+                          "output_modalities": [
+                            "svg"
+                          ],
+                          "owned_by": "quiverai",
+                          "pricing": {
+                            "svg_generate": "0.25",
+                            "svg_vectorize": "0.20"
+                          },
+                          "pricing_credits": {
+                            "svg_generate": 25,
+                            "svg_vectorize": 20
+                          },
+                          "supported_operations": [
+                            "svg_generate",
+                            "svg_vectorize"
+                          ],
+                          "supported_sampling_parameters": [
+                            "temperature",
+                            "top_p",
+                            "presence_penalty"
+                          ]
+                        }
+                      ],
+                      "object": "list"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request \u2013 malformed body, missing required fields, or invalid parameter values.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "invalid_request",
+                  "message": "Invalid request parameters",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 400
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized \u2013 missing, malformed, revoked, otherwise invalid API credentials, or an organization that could not be resolved for billing.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "unauthorized",
+                  "message": "Unauthorized",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 401
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment required \u2013 the organization has insufficient credits.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "insufficient_credits",
+                  "message": "Insufficient credits",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 402
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden \u2013 the account is frozen, the request is not allowed, or content policy rejected the request.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "account_frozen",
+                  "message": "Account is frozen",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 403
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request timeout \u2013 the request exceeded an allowed client-facing deadline.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "Request timed out",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 408
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large \u2013 the submitted prompt, image, or SVG input is too large.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "payload_too_large",
+                  "message": "Payload too large",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 413
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded \u2013 too many requests. Retry after the period indicated in the `Retry-After` header.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "rate_limit_exceeded",
+                  "message": "Rate limit exceeded. Please try again later.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 429
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The request could not be completed. Please retry.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "server_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 500
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway \u2013 model execution returned an invalid or failed response.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 502
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable \u2013 model execution is temporarily unavailable.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_unavailable",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 503
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout \u2013 model execution exceeded the server deadline.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 504
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/models/{model}": {
+      "get": {
+        "description": "Returns metadata for a single model.",
+        "operationId": "getModel",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get Model",
+        "tags": [
+          "Models"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Model identifier",
+              "example": "arrow-1.1"
+            },
+            "required": true,
+            "description": "Model identifier",
+            "name": "model",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Model details",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Model"
+                },
+                "examples": {
+                  "default": {
+                    "summary": "Model metadata",
+                    "value": {
+                      "context_length": 131072,
+                      "created": 1704067200,
+                      "description": "Best default for speed and quality, with strong prompt following and precise SVG.",
+                      "id": "arrow-1.1",
+                      "input_modalities": [
+                        "text",
+                        "image"
+                      ],
+                      "max_output_length": 65536,
+                      "name": "Arrow 1.1",
+                      "object": "model",
+                      "output_modalities": [
+                        "svg"
+                      ],
+                      "owned_by": "quiverai",
+                      "pricing": {
+                        "svg_generate": "0.20",
+                        "svg_vectorize": "0.15"
+                      },
+                      "pricing_credits": {
+                        "svg_generate": 20,
+                        "svg_vectorize": 15
+                      },
+                      "supported_operations": [
+                        "svg_generate",
+                        "svg_vectorize"
+                      ],
+                      "supported_sampling_parameters": [
+                        "temperature",
+                        "top_p",
+                        "presence_penalty"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request \u2013 malformed body, missing required fields, or invalid parameter values.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "invalid_request",
+                  "message": "Invalid request parameters",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 400
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized \u2013 missing, malformed, revoked, otherwise invalid API credentials, or an organization that could not be resolved for billing.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "unauthorized",
+                  "message": "Unauthorized",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 401
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment required \u2013 the organization has insufficient credits.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "insufficient_credits",
+                  "message": "Insufficient credits",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 402
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden \u2013 the account is frozen, the request is not allowed, or content policy rejected the request.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "account_frozen",
+                  "message": "Account is frozen",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found \u2013 the requested model does not exist.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_not_found",
+                  "message": "Model 'unknown-model' does not exist",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 404
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request timeout \u2013 the request exceeded an allowed client-facing deadline.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "Request timed out",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 408
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large \u2013 the submitted prompt, image, or SVG input is too large.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "payload_too_large",
+                  "message": "Payload too large",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 413
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded \u2013 too many requests. Retry after the period indicated in the `Retry-After` header.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "rate_limit_exceeded",
+                  "message": "Rate limit exceeded. Please try again later.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 429
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The request could not be completed. Please retry.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "server_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 500
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway \u2013 model execution returned an invalid or failed response.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 502
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable \u2013 model execution is temporarily unavailable.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_unavailable",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 503
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout \u2013 model execution exceeded the server deadline.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 504
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/svgs/vectorizations": {
+      "post": {
+        "description": "Converts an image input into an SVG output.",
+        "operationId": "vectorizeSVG",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Image to SVG",
+        "tags": [
+          "Vectorize SVG"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Optional client-supplied trace identifier. The API echoes this value in `X-Trace-ID` and includes it in request logs for client-side correlation.",
+              "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N"
+            },
+            "required": false,
+            "description": "Optional client-supplied trace identifier. The API echoes this value in `X-Trace-ID` and includes it in request logs for client-side correlation.",
+            "name": "x-trace-id",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VectorizeSVGRequest"
+              },
+              "examples": {
+                "basic": {
+                  "summary": "Basic vectorization",
+                  "value": {
+                    "image": {
+                      "url": "https://example.com/uploads/logo.png"
+                    },
+                    "model": "arrow-1.1",
+                    "stream": false
+                  }
+                },
+                "stream": {
+                  "summary": "Streaming vectorization",
+                  "value": {
+                    "auto_crop": true,
+                    "image": {
+                      "url": "https://example.com/uploads/logo.png"
+                    },
+                    "model": "arrow-1.1",
+                    "stream": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "When `stream` is false, returns `application/json` with the full SVG response. When `stream` is true, returns `text/event-stream` with Server-Sent Events. Each SSE message contains an `event:` line (`generating`, `reasoning`, `draft`, or `content`) and a `data:` line with a JSON payload. `usage` token fields are deprecated and set to `0`; use `credits` for billing values. For streaming, `credits` is emitted on completed `content` events. The stream terminates with `data: [DONE]`.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SvgResponse"
+                }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/SvgStreamEvent"
+                },
+                "examples": {
+                  "contentEvent": {
+                    "summary": "Final content event",
+                    "value": {
+                      "data": {
+                        "credits": 15,
+                        "id": "svg_0A1B2C3D4E5F",
+                        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M5 5h14v14H5z\"/></svg>",
+                        "type": "content",
+                        "usage": {
+                          "input_tokens": 0,
+                          "output_tokens": 0,
+                          "total_tokens": 0
+                        }
+                      },
+                      "event": "content"
+                    }
+                  },
+                  "draftEvent": {
+                    "summary": "Draft event",
+                    "value": {
+                      "data": {
+                        "id": "svg_0A1B2C3D4E5F",
+                        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2 2\"/></svg>",
+                        "type": "draft"
+                      },
+                      "event": "draft"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request \u2013 malformed body, missing required fields, or invalid parameter values.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "invalid_request",
+                  "message": "Invalid request parameters",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 400
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized \u2013 missing, malformed, revoked, otherwise invalid API credentials, or an organization that could not be resolved for billing.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "unauthorized",
+                  "message": "Unauthorized",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 401
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment required \u2013 the organization has insufficient credits.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "insufficient_credits",
+                  "message": "Insufficient credits",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 402
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden \u2013 the account is frozen, the request is not allowed, or content policy rejected the request.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "account_frozen",
+                  "message": "Account is frozen",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found \u2013 the requested model does not exist.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_not_found",
+                  "message": "Model 'unknown-model' does not exist",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 404
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request timeout \u2013 the request exceeded an allowed client-facing deadline.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "Request timed out",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 408
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large \u2013 the submitted prompt, image, or SVG input is too large.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "payload_too_large",
+                  "message": "Payload too large",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 413
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded \u2013 too many requests. Retry after the period indicated in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying after a rate-limit response.",
+                "example": 60,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "rate_limit_exceeded",
+                  "message": "Rate limit exceeded. Please try again later.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 429
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The request could not be completed. Please retry.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "server_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 500
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway \u2013 model execution returned an invalid or failed response.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 502
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable \u2013 model execution is temporarily unavailable.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_unavailable",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 503
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout \u2013 model execution exceeded the server deadline.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 504
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/svgs/generations": {
+      "post": {
+        "description": "Generates one or more SVGs from a prompt and optional references.",
+        "operationId": "generateSVG",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Text to SVG",
+        "tags": [
+          "Create SVGs"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Optional client-supplied trace identifier. The API echoes this value in `X-Trace-ID` and includes it in request logs for client-side correlation.",
+              "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N"
+            },
+            "required": false,
+            "description": "Optional client-supplied trace identifier. The API echoes this value in `X-Trace-ID` and includes it in request logs for client-side correlation.",
+            "name": "x-trace-id",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateSVGRequest"
+              },
+              "examples": {
+                "allParams": {
+                  "summary": "Generation with optional parameters",
+                  "value": {
+                    "instructions": "Use a flat monochrome style with rounded corners and clean geometry.",
+                    "max_output_tokens": 4096,
+                    "model": "arrow-1.1",
+                    "n": 2,
+                    "presence_penalty": 0.2,
+                    "prompt": "Generate a minimalist unicorn icon for a SaaS dashboard",
+                    "stream": false,
+                    "temperature": 0.4,
+                    "top_p": 0.95
+                  }
+                },
+                "basic": {
+                  "summary": "Basic SVG generation",
+                  "value": {
+                    "model": "arrow-1.1",
+                    "prompt": "Generate an icon of a unicorn",
+                    "stream": false
+                  }
+                },
+                "streamN2": {
+                  "summary": "Streaming generation with two interleaved outputs",
+                  "value": {
+                    "instructions": "Use flat monochrome geometry and keep them visually distinct.",
+                    "model": "arrow-1.1",
+                    "n": 2,
+                    "prompt": "Generate two minimalist unicorn badge variants",
+                    "stream": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "When `stream` is false, returns `application/json` with the full SVG response. When `stream` is true, returns `text/event-stream` with Server-Sent Events. Each SSE message contains an `event:` line (`generating`, `reasoning`, `draft`, or `content`) and a `data:` line with a JSON payload. For `n > 1`, events are interleaved across outputs, each output keeps a stable `data.id`, and `data.index` indicates the output position. `usage` token fields are deprecated and set to `0`; use `credits` for billing values. For streaming, `credits` is emitted on completed `content` events. The stream terminates with `data: [DONE]`.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SvgResponse"
+                }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/SvgStreamEvent"
+                },
+                "examples": {
+                  "n2ContentEvent": {
+                    "summary": "Final content event for output index 1 (same output id)",
+                    "value": {
+                      "data": {
+                        "credits": 20,
+                        "id": "svg_out_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                        "index": 1,
+                        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 2l8 20H4z\"/></svg>",
+                        "type": "content",
+                        "usage": {
+                          "input_tokens": 0,
+                          "output_tokens": 0,
+                          "total_tokens": 0
+                        }
+                      },
+                      "event": "content"
+                    }
+                  },
+                  "n2DraftEvent": {
+                    "summary": "Interleaved draft event for output index 1 (n=2)",
+                    "value": {
+                      "data": {
+                        "id": "svg_out_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                        "index": 1,
+                        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M12 2\"/></svg>",
+                        "type": "draft"
+                      },
+                      "event": "draft"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request \u2013 malformed body, missing required fields, or invalid parameter values.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "invalid_request",
+                  "message": "Invalid request parameters",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 400
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized \u2013 missing, malformed, revoked, otherwise invalid API credentials, or an organization that could not be resolved for billing.",
+            "headers": {
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "unauthorized",
+                  "message": "Unauthorized",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 401
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment required \u2013 the organization has insufficient credits.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "insufficient_credits",
+                  "message": "Insufficient credits",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 402
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden \u2013 the account is frozen, the request is not allowed, or content policy rejected the request.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "account_frozen",
+                  "message": "Account is frozen",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 403
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found \u2013 the requested model does not exist.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_not_found",
+                  "message": "Model 'unknown-model' does not exist",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 404
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request timeout \u2013 the request exceeded an allowed client-facing deadline.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "Request timed out",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 408
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large \u2013 the submitted prompt, image, or SVG input is too large.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "payload_too_large",
+                  "message": "Payload too large",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 413
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded \u2013 too many requests. Retry after the period indicated in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying after a rate-limit response.",
+                "example": 60,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "rate_limit_exceeded",
+                  "message": "Rate limit exceeded. Please try again later.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 429
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The request could not be completed. Please retry.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "server_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 500
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway \u2013 model execution returned an invalid or failed response.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_error",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 502
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable \u2013 model execution is temporarily unavailable.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "model_unavailable",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 503
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout \u2013 model execution exceeded the server deadline.",
+            "headers": {
+              "X-RateLimit-Limit": {
+                "description": "Maximum number of requests allowed in the current rate-limit window.",
+                "example": 20,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "Remaining requests in the current rate-limit window.",
+                "example": 19,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp in milliseconds when the current rate-limit window resets.",
+                "example": 1767225600000,
+                "schema": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "X-Trace-ID": {
+                "description": "Client-supplied trace identifier echoed when the request includes `x-trace-id`.",
+                "example": "trace_01J9AZ3XJ7D5S9ZV2Q5Z8E1A4N",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier for tracing and support.",
+                "example": "550e8400-e29b-41d4-a716-446655440000",
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicErrorEnvelope"
+                },
+                "example": {
+                  "code": "request_timeout",
+                  "message": "The request could not be completed. Please retry.",
+                  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+                  "status": 504
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "webhooks": {}
+}
