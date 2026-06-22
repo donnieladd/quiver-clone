@@ -1,8 +1,20 @@
 # Modern Church Media OS — Vision
 
-**Author context:** Donnie Ladd · Visual lens: future-forward, iconic, premium (Apple / Pharrell / Site Inspire — not template builders)  
-**Product shell:** WorkbyForm — unified creative + ministry workspace  
-**Engine:** Skills + workflows + API-first media (Quiver SVG, image/video APIs, context integrations)
+**Author context:** Donnie Ladd · Visual lens: future-forward, iconic, premium  
+**Product destination:** [**Brand Studio**](https://github.com/donnieladd) — unified brand system + creative workspace  
+**This repo:** Skills packs + Quiver SVG API (integrating into Brand Studio)
+
+---
+
+## Architecture (target)
+
+```
+Brand Studio (app)
+├── brand-system/     tokens, logos, lint, export
+├── church/           first vertical — profiles, story, workflows
+├── platform/         runtime — projects, skill chains, QA
+└── Quiver /v1        vector generation primitive
+```
 
 ---
 

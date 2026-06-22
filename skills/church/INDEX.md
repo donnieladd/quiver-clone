@@ -68,7 +68,8 @@ What are you making?
 | Web | `web/` | 16 | Hero, series page, giving, events |
 | Content | `content/` | 22 | Transcript → quotes, clips, calendar |
 | **Story** | `story/` | 24 | Community narrative, testimony, pastor/face balance |
-| Environments | `env/` | 12 | Signage, wayfinding, stage backdrop |
+| **Web premium** | `web-premium/` | 8 | Site Inspire–tier web craft |
+| Environments | `env/` | 13 | Signage, wayfinding, stage backdrop |
 | Ops | `ops/` | 18 | Intake, DAM, volunteer training |
 | QA | `qa/` | 16 | Legibility, brand, projection, a11y |
 

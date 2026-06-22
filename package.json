@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "skills:church": "node skills/church/scripts/generate-skills.mjs",
-    "skills:update-registry": "node skills/church/scripts/update-registry.mjs",
+    "skills:update-registry": "node skills/scripts/update-registry.mjs",
     "skills:validate-profiles": "node skills/church/scripts/validate-profiles.mjs"
   },
   "dependencies": {

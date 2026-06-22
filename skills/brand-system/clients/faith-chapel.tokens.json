@@ -1,0 +1,120 @@
+{
+  "id": "brand.faith-chapel",
+  "name": "Faith Chapel",
+  "version": "1.0.0",
+  "client_slug": "faith-chapel",
+  "vertical": "church",
+  "strategy": {
+    "mission": "Transforming lives through the Word of God.",
+    "vision": "We're more than a church — we're a movement.",
+    "values": ["Word-centered", "Family", "Excellence", "Community", "Movement"],
+    "positioning": "Institutional premium — Birmingham movement with campus community hub (The Bridge).",
+    "audiences": [
+      { "id": "member", "name": "Member", "description": "Active congregation and volunteers" },
+      { "id": "seeker", "name": "Seeker", "description": "Exploring faith, first-time visitors" },
+      { "id": "leader", "name": "Leader", "description": "Staff and ministry leads using brand hub" }
+    ]
+  },
+  "logos": {
+    "variants": [
+      { "id": "primary", "path": "assets/logos/faith-chapel-primary.svg", "min_width_px": 120, "clear_space_ratio": 0.25, "backgrounds": ["light"] },
+      { "id": "reversed", "path": "assets/logos/faith-chapel-reversed.svg", "min_width_px": 120, "clear_space_ratio": 0.25, "backgrounds": ["dark", "photo"] },
+      { "id": "submark", "path": "assets/logos/faith-chapel-submark.svg", "min_width_px": 32, "clear_space_ratio": 0.2, "backgrounds": ["light", "dark"] }
+    ],
+    "forbidden": ["stretch", "rotate", "drop-shadow-on-logo", "clipart-lockup"]
+  },
+  "sub_brands": [
+    {
+      "id": "the-bridge",
+      "name": "The Bridge",
+      "extends": "parent",
+      "token_overrides": {
+        "color.brand.primary": { "value": "#2D5A3D", "description": "Bridge community green accent" }
+      }
+    }
+  ],
+  "tokens": {
+    "color": {
+      "brand.primary": { "value": "#1B3A5C", "description": "Primary brand blue" },
+      "brand.secondary": { "value": "#C4A962", "description": "Gold accent" },
+      "text.primary": { "value": "#1A1A1A", "description": "Body on light" },
+      "text.inverse": { "value": "#FFFFFF", "description": "Body on dark" },
+      "surface.default": { "value": "#FFFFFF", "description": "Card and slide background" },
+      "surface.muted": { "value": "#F5F5F0", "description": "Bulletin, secondary panels" },
+      "border.subtle": { "value": "#E5E5E0", "description": "Dividers" },
+      "semantic.success": { "value": "#2D6A4F", "description": "Giving, confirmation" },
+      "semantic.warning": { "value": "#B8860B", "description": "Alerts sparingly" }
+    },
+    "typography": {
+      "fontFamily": {
+        "sans": { "value": "Brand Primary Sans", "description": "UI, social, slides" },
+        "display": { "value": "Brand Display", "description": "Series titles only" }
+      },
+      "fontSize": {
+        "xs": { "value": "12px" },
+        "sm": { "value": "14px" },
+        "base": { "value": "16px" },
+        "lg": { "value": "20px" },
+        "xl": { "value": "24px" },
+        "2xl": { "value": "32px" },
+        "display": { "value": "48px" }
+      },
+      "fontWeight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "500" },
+        "bold": { "value": "700" }
+      },
+      "lineHeight": {
+        "tight": { "value": "1.15" },
+        "normal": { "value": "1.5" },
+        "relaxed": { "value": "1.65" }
+      }
+    },
+    "spacing": {
+      "0": { "value": "0" },
+      "1": { "value": "4px" },
+      "2": { "value": "8px" },
+      "3": { "value": "12px" },
+      "4": { "value": "16px" },
+      "6": { "value": "24px" },
+      "8": { "value": "32px" },
+      "12": { "value": "48px" }
+    },
+    "radius": {
+      "sm": { "value": "4px" },
+      "md": { "value": "8px" },
+      "lg": { "value": "16px" },
+      "full": { "value": "9999px" }
+    },
+    "shadow": {
+      "sm": { "value": "0 1px 2px rgba(0,0,0,0.06)" },
+      "md": { "value": "0 4px 12px rgba(0,0,0,0.08)" }
+    },
+    "motion": {
+      "duration": {
+        "fast": { "value": "150ms" },
+        "normal": { "value": "300ms" },
+        "slow": { "value": "500ms" }
+      },
+      "easing": {
+        "default": { "value": "cubic-bezier(0.4, 0, 0.2, 1)" }
+      }
+    }
+  },
+  "voice": {
+    "attributes": ["teaching-forward", "hopeful", "clear", "Word-centered"],
+    "do": ["Lead with scripture", "Invite story submission", "Use accessible language"],
+    "dont": ["Clipart", "Insider jargon", "Low-res imagery"]
+  },
+  "photography": {
+    "style": "High-quality original or licensed stock; diverse congregation; warm institutional.",
+    "subjects": ["worship", "community", "serve", "families", "The Bridge events"],
+    "forbidden": ["clipart", "low_resolution", "stock-watermark-visible"]
+  },
+  "components": {
+    "social.sermon_quote": { "tier": "template", "dam_path": "Templates/Social/Sermon Quote", "token_bindings": { "background": "surface.default", "text": "text.primary", "accent": "brand.secondary" } },
+    "social.community_story": { "tier": "template", "dam_path": "Templates/Social/Community Story", "token_bindings": { "headline": "typography.fontSize.xl" } },
+    "slides.sermon_deck": { "tier": "template", "dam_path": "Templates/Slides/Sermon Deck", "token_bindings": { "title": "typography.fontFamily.display" } }
+  },
+  "series_overrides": []
+}

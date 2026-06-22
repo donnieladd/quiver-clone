@@ -1,116 +1,312 @@
 {
   "version": "2.0.0",
-  "vertical": "church",
   "product": "brand-studio",
   "generated_at": "2026-06-22T14:04:55.045Z",
-  "skill_count": 293,
-  "note": "Full manifest: skills/manifest.json",
-  "workflows": [
-    "workflows/sermon-to-social.md",
-    "workflows/weekly-service-kit.md",
-    "workflows/series-launch.md",
-    "workflows/worship-visuals.md",
-    "workflows/volunteer-template-ops.md",
-    "workflows/approval-governance.md"
-  ],
-  "playbooks": [
-    "playbooks/faith-chapel.md",
-    "playbooks/union-bldrs.md",
-    "playbooks/transformation-church.md",
-    "playbooks/highlands-resources.md",
-    "playbooks/elevation-church.md",
-    "playbooks/hillsong-social-strategy.md"
-  ],
-  "profiles": [
-    {
-      "id": "church.faith-chapel",
-      "slug": "faith-chapel",
-      "name": "Faith Chapel",
-      "file": "faith-chapel.json",
-      "playbook": "playbooks/faith-chapel.md",
-      "story_model": "movement-institution",
-      "pastor_face_ratio_max_30d": 0.5,
-      "visual_bar": "institutional-premium"
-    },
-    {
-      "id": "church.union-church",
-      "slug": "union-church",
-      "name": "Union Church",
-      "file": "union-church.json",
-      "playbook": "playbooks/union-bldrs.md",
-      "story_model": "community-mix",
-      "pastor_face_ratio_max_30d": 0.4,
-      "sub_brands": [
-        "union-sound",
-        "bldrs-network"
-      ],
-      "visual_bar": "institutional-premium"
-    },
-    {
-      "id": "church.transformation-church",
-      "slug": "transformation-church",
-      "name": "Transformation Church",
-      "file": "transformation-church.json",
-      "playbook": "playbooks/transformation-church.md",
-      "story_model": "cinematic-pastor-human",
-      "pastor_face_ratio_max_30d": 0.55,
-      "sub_brands": [
-        "mike-todd-personal",
-        "transformation-youtube"
-      ],
-      "visual_bar": "siteinspire-forward"
-    },
-    {
-      "id": "church.church-of-the-highlands",
-      "slug": "church-of-the-highlands",
-      "name": "Church of the Highlands",
-      "file": "church-of-the-highlands.json",
-      "playbook": "playbooks/highlands-resources.md",
-      "story_model": "systems-multi-campus",
-      "pastor_face_ratio_max_30d": 0.45,
-      "sub_brands": [
-        "highlands-resources",
-        "highlands-college",
-        "grow",
-        "arc"
-      ],
-      "visual_bar": "institutional-premium",
-      "campus_count": 26
-    },
-    {
-      "id": "church.elevation-church",
-      "slug": "elevation-church",
-      "name": "Elevation Church",
-      "file": "elevation-church.json",
-      "playbook": "playbooks/elevation-church.md",
-      "story_model": "distributed-clips-community",
-      "pastor_face_ratio_max_30d": 0.5,
-      "sub_brands": [
-        "elevation-worship",
-        "efam",
-        "steven-furtick-ministries"
-      ],
-      "visual_bar": "institutional-premium"
-    }
-  ],
+  "skill_count": 325,
+  "packs": {
+    "brand-system": 20,
+    "church": 293,
+    "platform": 12
+  },
   "domains": {
+    "components": 2,
+    "export": 3,
+    "lifecycle": 4,
+    "logos": 3,
+    "qa": 17,
+    "strategy": 1,
+    "tokens": 6,
     "brand": 19,
     "content": 23,
     "env": 13,
     "motion": 21,
     "ops": 21,
     "print": 14,
-    "qa": 16,
     "series": 29,
     "slides": 24,
     "social": 38,
     "story": 24,
     "web-premium": 8,
     "web": 16,
-    "workflows": 6,
-    "worship": 21
+    "workflow": 6,
+    "worship": 21,
+    "brand_studio": 12
+  },
+  "church": {
+    "workflows": [
+      "church/workflows/sermon-to-social.md",
+      "church/workflows/weekly-service-kit.md",
+      "church/workflows/series-launch.md",
+      "church/workflows/worship-visuals.md",
+      "church/workflows/volunteer-template-ops.md",
+      "church/workflows/approval-governance.md"
+    ],
+    "playbooks": [
+      "church/playbooks/faith-chapel.md",
+      "church/playbooks/union-bldrs.md",
+      "church/playbooks/transformation-church.md",
+      "church/playbooks/highlands-resources.md",
+      "church/playbooks/elevation-church.md",
+      "church/playbooks/hillsong-social-strategy.md"
+    ],
+    "profiles": [
+      {
+        "id": "church.faith-chapel",
+        "slug": "faith-chapel",
+        "name": "Faith Chapel",
+        "file": "faith-chapel.json",
+        "playbook": "playbooks/faith-chapel.md",
+        "story_model": "movement-institution",
+        "pastor_face_ratio_max_30d": 0.5,
+        "visual_bar": "institutional-premium"
+      },
+      {
+        "id": "church.union-church",
+        "slug": "union-church",
+        "name": "Union Church",
+        "file": "union-church.json",
+        "playbook": "playbooks/union-bldrs.md",
+        "story_model": "community-mix",
+        "pastor_face_ratio_max_30d": 0.4,
+        "sub_brands": [
+          "union-sound",
+          "bldrs-network"
+        ],
+        "visual_bar": "institutional-premium"
+      },
+      {
+        "id": "church.transformation-church",
+        "slug": "transformation-church",
+        "name": "Transformation Church",
+        "file": "transformation-church.json",
+        "playbook": "playbooks/transformation-church.md",
+        "story_model": "cinematic-pastor-human",
+        "pastor_face_ratio_max_30d": 0.55,
+        "sub_brands": [
+          "mike-todd-personal",
+          "transformation-youtube"
+        ],
+        "visual_bar": "siteinspire-forward"
+      },
+      {
+        "id": "church.church-of-the-highlands",
+        "slug": "church-of-the-highlands",
+        "name": "Church of the Highlands",
+        "file": "church-of-the-highlands.json",
+        "playbook": "playbooks/highlands-resources.md",
+        "story_model": "systems-multi-campus",
+        "pastor_face_ratio_max_30d": 0.45,
+        "sub_brands": [
+          "highlands-resources",
+          "highlands-college",
+          "grow",
+          "arc"
+        ],
+        "visual_bar": "institutional-premium",
+        "campus_count": 26
+      },
+      {
+        "id": "church.elevation-church",
+        "slug": "elevation-church",
+        "name": "Elevation Church",
+        "file": "elevation-church.json",
+        "playbook": "playbooks/elevation-church.md",
+        "story_model": "distributed-clips-community",
+        "pastor_face_ratio_max_30d": 0.5,
+        "sub_brands": [
+          "elevation-worship",
+          "efam",
+          "steven-furtick-ministries"
+        ],
+        "visual_bar": "institutional-premium"
+      }
+    ]
+  },
+  "brand_system": {
+    "schema": "brand-system/schema.json",
+    "reference_client": "brand-system/clients/faith-chapel.tokens.json"
   },
   "skills": [
+    {
+      "id": "brand-system.components.define_component_tier_structure",
+      "pack": "brand-system",
+      "domain": "components",
+      "slug": "define_component_tier_structure",
+      "title": "Define component tier structure",
+      "tier": "foundation",
+      "path": "brand-system/define_component_tier_structure.md"
+    },
+    {
+      "id": "brand-system.components.map_tokens_to_template_families",
+      "pack": "brand-system",
+      "domain": "components",
+      "slug": "map_tokens_to_template_families",
+      "title": "Map tokens to template families",
+      "tier": "production",
+      "path": "brand-system/map_tokens_to_template_families.md"
+    },
+    {
+      "id": "brand-system.export.export_tokens_css_variables",
+      "pack": "brand-system",
+      "domain": "export",
+      "slug": "export_tokens_css_variables",
+      "title": "Export tokens to CSS variables",
+      "tier": "production",
+      "path": "brand-system/export_tokens_css_variables.md"
+    },
+    {
+      "id": "brand-system.export.export_tokens_json_for_figma",
+      "pack": "brand-system",
+      "domain": "export",
+      "slug": "export_tokens_json_for_figma",
+      "title": "Export tokens JSON for Figma",
+      "tier": "production",
+      "path": "brand-system/export_tokens_json_for_figma.md"
+    },
+    {
+      "id": "brand-system.export.export_tokens_tailwind_theme",
+      "pack": "brand-system",
+      "domain": "export",
+      "slug": "export_tokens_tailwind_theme",
+      "title": "Export tokens to Tailwind theme",
+      "tier": "production",
+      "path": "brand-system/export_tokens_tailwind_theme.md"
+    },
+    {
+      "id": "brand-system.lifecycle.archive_series_token_override",
+      "pack": "brand-system",
+      "domain": "lifecycle",
+      "slug": "archive_series_token_override",
+      "title": "Archive series token override",
+      "tier": "ops",
+      "path": "brand-system/archive_series_token_override.md"
+    },
+    {
+      "id": "brand-system.lifecycle.create_series_token_override",
+      "pack": "brand-system",
+      "domain": "lifecycle",
+      "slug": "create_series_token_override",
+      "title": "Create series token override",
+      "tier": "production",
+      "path": "brand-system/create_series_token_override.md"
+    },
+    {
+      "id": "brand-system.lifecycle.migrate_prose_brand_to_tokens",
+      "pack": "brand-system",
+      "domain": "lifecycle",
+      "slug": "migrate_prose_brand_to_tokens",
+      "title": "Migrate prose brand guide to tokens",
+      "tier": "foundation",
+      "path": "brand-system/migrate_prose_brand_to_tokens.md"
+    },
+    {
+      "id": "brand-system.lifecycle.version_brand_system_release",
+      "pack": "brand-system",
+      "domain": "lifecycle",
+      "slug": "version_brand_system_release",
+      "title": "Version brand system release",
+      "tier": "ops",
+      "path": "brand-system/version_brand_system_release.md"
+    },
+    {
+      "id": "brand-system.logos.define_logo_usage_rules",
+      "pack": "brand-system",
+      "domain": "logos",
+      "slug": "define_logo_usage_rules",
+      "title": "Define logo usage rules",
+      "tier": "foundation",
+      "path": "brand-system/define_logo_usage_rules.md"
+    },
+    {
+      "id": "brand-system.logos.define_subbrand_inheritance",
+      "pack": "brand-system",
+      "domain": "logos",
+      "slug": "define_subbrand_inheritance",
+      "title": "Define sub-brand inheritance",
+      "tier": "production",
+      "path": "brand-system/define_subbrand_inheritance.md"
+    },
+    {
+      "id": "brand-system.logos.document_logo_matrix",
+      "pack": "brand-system",
+      "domain": "logos",
+      "slug": "document_logo_matrix",
+      "title": "Document logo matrix",
+      "tier": "foundation",
+      "path": "brand-system/document_logo_matrix.md"
+    },
+    {
+      "id": "brand-system.qa.run_token_lint_on_asset",
+      "pack": "brand-system",
+      "domain": "qa",
+      "slug": "run_token_lint_on_asset",
+      "title": "Run token lint on asset",
+      "tier": "qa",
+      "path": "brand-system/run_token_lint_on_asset.md"
+    },
+    {
+      "id": "brand-system.strategy.define_brand_strategy_tier",
+      "pack": "brand-system",
+      "domain": "strategy",
+      "slug": "define_brand_strategy_tier",
+      "title": "Define brand strategy tier (Tier 0)",
+      "tier": "foundation",
+      "path": "brand-system/define_brand_strategy_tier.md"
+    },
+    {
+      "id": "brand-system.tokens.define_color_semantic_tokens",
+      "pack": "brand-system",
+      "domain": "tokens",
+      "slug": "define_color_semantic_tokens",
+      "title": "Define semantic color tokens",
+      "tier": "foundation",
+      "path": "brand-system/define_color_semantic_tokens.md"
+    },
+    {
+      "id": "brand-system.tokens.define_design_tokens",
+      "pack": "brand-system",
+      "domain": "tokens",
+      "slug": "define_design_tokens",
+      "title": "Define design tokens master file",
+      "tier": "foundation",
+      "path": "brand-system/define_design_tokens.md"
+    },
+    {
+      "id": "brand-system.tokens.define_elevation_shadow_tokens",
+      "pack": "brand-system",
+      "domain": "tokens",
+      "slug": "define_elevation_shadow_tokens",
+      "title": "Define elevation and shadow tokens",
+      "tier": "foundation",
+      "path": "brand-system/define_elevation_shadow_tokens.md"
+    },
+    {
+      "id": "brand-system.tokens.define_motion_tokens",
+      "pack": "brand-system",
+      "domain": "tokens",
+      "slug": "define_motion_tokens",
+      "title": "Define motion tokens",
+      "tier": "foundation",
+      "path": "brand-system/define_motion_tokens.md"
+    },
+    {
+      "id": "brand-system.tokens.define_spacing_radius_tokens",
+      "pack": "brand-system",
+      "domain": "tokens",
+      "slug": "define_spacing_radius_tokens",
+      "title": "Define spacing and radius tokens",
+      "tier": "foundation",
+      "path": "brand-system/define_spacing_radius_tokens.md"
+    },
+    {
+      "id": "brand-system.tokens.define_typography_scale",
+      "pack": "brand-system",
+      "domain": "tokens",
+      "slug": "define_typography_scale",
+      "title": "Define typography scale",
+      "tier": "foundation",
+      "path": "brand-system/define_typography_scale.md"
+    },
     {
       "id": "church.brand.align_brand_to_denominational_guidelines",
       "pack": "church",
@@ -2747,6 +2943,114 @@
       "title": "Union Sound release kit",
       "tier": "production",
       "path": "church/worship/union_sound_release_kit.md"
+    },
+    {
+      "id": "platform.brand_studio.agent_read_order",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "agent_read_order",
+      "title": "Brand Studio agent read order",
+      "tier": "foundation",
+      "path": "platform/agent_read_order.md"
+    },
+    {
+      "id": "platform.brand_studio.approval_workflow_state",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "approval_workflow_state",
+      "title": "Approval workflow state machine",
+      "tier": "ops",
+      "path": "platform/approval_workflow_state.md"
+    },
+    {
+      "id": "platform.brand_studio.attach_client_profile",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "attach_client_profile",
+      "title": "Attach client profile to project",
+      "tier": "foundation",
+      "path": "platform/attach_client_profile.md"
+    },
+    {
+      "id": "platform.brand_studio.content_calendar_sync",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "content_calendar_sync",
+      "title": "Sync content calendar to project",
+      "tier": "production",
+      "path": "platform/content_calendar_sync.md"
+    },
+    {
+      "id": "platform.brand_studio.export_deliverable_bundle",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "export_deliverable_bundle",
+      "title": "Export deliverable bundle",
+      "tier": "production",
+      "path": "platform/export_deliverable_bundle.md"
+    },
+    {
+      "id": "platform.brand_studio.integrate_quiver_svg",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "integrate_quiver_svg",
+      "title": "Integrate Quiver SVG generation",
+      "tier": "production",
+      "path": "platform/integrate_quiver_svg.md"
+    },
+    {
+      "id": "platform.brand_studio.load_project",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "load_project",
+      "title": "Load Brand Studio project",
+      "tier": "foundation",
+      "path": "platform/load_project.md"
+    },
+    {
+      "id": "platform.brand_studio.monorepo_pack_layout",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "monorepo_pack_layout",
+      "title": "Monorepo skill pack layout",
+      "tier": "foundation",
+      "path": "platform/monorepo_pack_layout.md"
+    },
+    {
+      "id": "platform.brand_studio.resolve_skill_chain",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "resolve_skill_chain",
+      "title": "Resolve skill chain from intent",
+      "tier": "production",
+      "path": "platform/resolve_skill_chain.md"
+    },
+    {
+      "id": "platform.brand_studio.route_media_generation",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "route_media_generation",
+      "title": "Route media generation to API",
+      "tier": "production",
+      "path": "platform/route_media_generation.md"
+    },
+    {
+      "id": "platform.brand_studio.run_qa_pipeline",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "run_qa_pipeline",
+      "title": "Run QA pipeline on deliverables",
+      "tier": "qa",
+      "path": "platform/run_qa_pipeline.md"
+    },
+    {
+      "id": "platform.brand_studio.sync_dam_paths",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "sync_dam_paths",
+      "title": "Sync DAM paths from profile",
+      "tier": "ops",
+      "path": "platform/sync_dam_paths.md"
     }
   ]
 }

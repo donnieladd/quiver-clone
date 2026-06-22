@@ -713,59 +713,52 @@ const ALL_SKILLS = [
   ...qaSkills,
 ];
 
-// Write files
+// Write files — skip hand-written skills (preserve list + story/web-premium/platform/brand-system)
+const PRESERVE_DIRS = new Set(["story", "web-premium"]);
+const PRESERVE_FILES = new Set([
+  "run_brand_education_session.md",
+  "union_sound_release_kit.md",
+  "phone_native_for_pastor_bts.md",
+  "design_sermon_for_clip_extraction.md",
+  "package_cinematic_series_kit.md",
+  "cinematic_excellence_standard.md",
+  "package_open_network_style_kit.md",
+  "include_master_painting_layer.md",
+  "use_highlands_scheduling_grid.md",
+  "steven_furtick_clip_strategy.md",
+  "apply_hillsong_strategy_framework.md",
+  "ship_open_network_elevation_kit.md",
+  "efam_watch_party_promo.md",
+  "pop_up_city_creative.md",
+  "multi_campus_variant_switcher.md",
+  "promote_bridge_community_events.md",
+  "launch_worship_subbrand_channel.md",
+  "music_video_release_cadence.md",
+  "ship_web_1920_social_slides_video.md",
+  "extract_quotable_lines.md",
+  "template_sermon_quote.md",
+  "define_series_creative_brief.md",
+]);
+
 let written = 0;
+let skipped = 0;
 for (const s of ALL_SKILLS) {
   const dir = join(ROOT, s.domain);
-  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-  const filePath = join(dir, s.file.endsWith(".md") ? s.file : `${s.slug}.md`);
+  if (PRESERVE_DIRS.has(s.domain)) {
+    skipped++;
+    continue;
+  }
   const outPath = join(dir, `${s.slug.split("/").pop()}.md`);
+  const baseName = `${s.slug.split("/").pop()}.md`;
+  if (PRESERVE_FILES.has(baseName)) {
+    skipped++;
+    continue;
+  }
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   writeFileSync(outPath, renderMarkdown(s));
   written++;
 }
 
-const registry = {
-  version: "1.0.0",
-  vertical: "church",
-  generated_at: new Date().toISOString(),
-  skill_count: ALL_SKILLS.length,
-  workflows: [
-    "workflows/sermon-to-social.md",
-    "workflows/weekly-service-kit.md",
-    "workflows/series-launch.md",
-    "workflows/worship-visuals.md",
-    "workflows/volunteer-template-ops.md",
-    "workflows/approval-governance.md",
-  ],
-  domains: {
-    brand: brandSkills.length,
-    series: seriesSkills.length,
-    social: socialSkills.length,
-    slides: slidesSkills.length,
-    worship: worshipSkills.length,
-    motion: motionSkills.length,
-    print: printSkills.length,
-    web: webSkills.length,
-    content: contentSkills.length,
-    env: envSkills.length,
-    ops: opsSkills.length,
-    qa: qaSkills.length,
-  },
-  skills: ALL_SKILLS.map(({ id, domain, slug, title, tier, inputs, outputs, related }) => ({
-    id,
-    domain,
-    slug,
-    title,
-    tier,
-    inputs,
-    outputs,
-    related,
-    path: `${domain}/${slug}.md`,
-  })),
-};
-
-writeFileSync(join(ROOT, "registry.json"), JSON.stringify(registry, null, 2));
-
-console.log(`Generated ${written} skill files in ${ROOT}`);
-console.log(`Registry: ${ALL_SKILLS.length} skills`);
-console.log("Domains:", registry.domains);
+// Do not overwrite registry — use npm run skills:update-registry for Brand Studio manifest
+console.log(`Generated ${written} skill files in ${ROOT} (skipped ${skipped} hand-written)`);
+console.log(`Run: npm run skills:update-registry`);

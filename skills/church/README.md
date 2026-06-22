@@ -1,6 +1,14 @@
 # Church / Ministry Media Skills Pack
 
-**276 atomic skills** · **6 workflows** · **5 client profiles** · Agent-ready markdown for AI experts and platform automation.
+**325 skills (3 packs)** · **6 workflows** · **5 client profiles** · Destination: **Brand Studio**
+
+| Pack | Skills | Path |
+|------|--------|------|
+| Church vertical | 293 | `church/` |
+| Brand system | 20 | `brand-system/` |
+| Platform | 12 | `platform/` |
+
+Full manifest: `../manifest.json`
 
 ## Quick start
 

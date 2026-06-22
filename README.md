@@ -1,6 +1,17 @@
-# Quiver Clone
+# Quiver Clone → Brand Studio
 
-A functional QuiverAI-style application with a **QuiverAI-compatible REST API** at `/v1`.
+A **QuiverAI-compatible REST API** at `/v1` plus a **Brand Studio skills foundation** — tokens, church vertical, agent runtime — ready to merge into [Brand Studio](https://github.com/donnieladd).
+
+| Layer | Location |
+|-------|----------|
+| SVG API + playground | `src/app/v1/`, `src/app/app/` |
+| Skills (325) | `skills/manifest.json` |
+| Brand Studio handoff | [`skills/BRAND_STUDIO_INTEGRATION.md`](skills/BRAND_STUDIO_INTEGRATION.md) |
+
+```bash
+npm run skills:update-registry   # rebuild manifest after skill edits
+npm run skills:validate-profiles
+```
 
 ## Features
 

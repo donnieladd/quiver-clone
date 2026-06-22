@@ -23,6 +23,7 @@
   ],
   "brand": {
     "hub_url": "https://www.faithchapel.net/brand",
+    "tokens_file": "../../brand-system/clients/faith-chapel.tokens.json",
     "tagline": "We're more than a church — we're a movement.",
     "tier": "institutional-premium",
     "logo_variants": ["primary", "reversed", "submark", "social_avatar"],

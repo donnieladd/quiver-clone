@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brand-studio.local/schemas/brand-system.json",
+  "title": "BrandSystem",
+  "description": "Machine-readable brand identity system for Brand Studio and vertical skill packs.",
+  "type": "object",
+  "required": ["id", "name", "version", "strategy", "tokens"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^brand\\.[a-z0-9-]+$" },
+    "name": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "client_slug": { "type": "string", "description": "Links to vertical profile e.g. faith-chapel" },
+    "vertical": { "type": "string", "enum": ["church", "nonprofit", "consumer", "saas"] },
+    "strategy": {
+      "type": "object",
+      "properties": {
+        "mission": { "type": "string" },
+        "vision": { "type": "string" },
+        "values": { "type": "array", "items": { "type": "string" } },
+        "positioning": { "type": "string" },
+        "audiences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "logos": {
+      "type": "object",
+      "properties": {
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "path"],
+            "properties": {
+              "id": { "type": "string" },
+              "path": { "type": "string" },
+              "min_width_px": { "type": "number" },
+              "clear_space_ratio": { "type": "number" },
+              "backgrounds": { "type": "array", "items": { "enum": ["light", "dark", "photo", "color"] } }
+            }
+          }
+        },
+        "forbidden": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "sub_brands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "extends": { "type": "string", "default": "parent" },
+          "token_overrides": { "type": "object" }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "required": ["color", "typography"],
+      "properties": {
+        "color": {
+          "type": "object",
+          "description": "Semantic color tokens",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "value": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "fontFamily": { "type": "object" },
+            "fontSize": { "type": "object" },
+            "fontWeight": { "type": "object" },
+            "lineHeight": { "type": "object" },
+            "letterSpacing": { "type": "object" }
+          }
+        },
+        "spacing": { "type": "object" },
+        "radius": { "type": "object" },
+        "shadow": { "type": "object" },
+        "motion": {
+          "type": "object",
+          "properties": {
+            "duration": { "type": "object" },
+            "easing": { "type": "object" }
+          }
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "properties": {
+        "attributes": { "type": "array", "items": { "type": "string" } },
+        "do": { "type": "array", "items": { "type": "string" } },
+        "dont": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "photography": {
+      "type": "object",
+      "properties": {
+        "style": { "type": "string" },
+        "subjects": { "type": "array", "items": { "type": "string" } },
+        "forbidden": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "components": {
+      "type": "object",
+      "description": "Tier 3 — named template families",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "tier": { "enum": ["foundation", "component", "template", "campaign"] },
+          "dam_path": { "type": "string" },
+          "token_bindings": { "type": "object" }
+        }
+      }
+    },
+    "series_overrides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "series_id": { "type": "string" },
+          "active_from": { "type": "string", "format": "date" },
+          "active_until": { "type": "string", "format": "date" },
+          "token_overrides": { "type": "object" }
+        }
+      }
+    }
+  }
+}

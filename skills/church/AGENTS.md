@@ -4,7 +4,9 @@ You are operating inside the **Church Media Skills** system for this repository.
 
 ## Required reading order
 
-1. **Client profile** — `profiles/{slug}.json`  
+0. **Brand Studio bootstrap** — `platform.brand_studio.agent_read_order` (when running in Brand Studio)
+1. **Brand tokens** — `brand-system/clients/{slug}.tokens.json` when present on profile
+2. **Client profile** — `profiles/{slug}.json`  
    - `faith-chapel` · `union-church` · `transformation-church` · `church-of-the-highlands` · `elevation-church`
 2. **Linked playbook** — path in profile's `playbook` field.
 3. **`INDEX.md`** — route the request to the correct workflow and skill(s).
