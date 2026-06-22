@@ -1,0 +1,50 @@
+{
+  "id": "personal-os.dontae",
+  "name": "Donae Ladson",
+  "slug": "dontae",
+  "timezone": "America/Chicago",
+  "rhythms": {
+    "weekly_alignment": {
+      "workflow_id": "personal-os.weekly_alignment",
+      "day": "sunday",
+      "label": "Sunday night",
+      "duration_minutes": 15,
+      "hard_stop": true,
+      "notes": "Home base rhythm. Brief + scorecard + top 3. Not a todo dump."
+    },
+    "personal_aar": {
+      "workflow_id": "personal-os.personal_aar",
+      "trigger": "After hard weeks or finished life projects",
+      "duration_minutes": 20
+    }
+  },
+  "scorecard": {
+    "lead_indicators": [
+      { "id": "alignment_done", "label": "Weekly alignment completed (Sun night)", "target": "1/week" },
+      { "id": "sleep_anchor", "label": "Sleep window hit (5+ nights)", "target": "5/7" },
+      { "id": "movement", "label": "Movement sessions", "target": "3/week" },
+      { "id": "deep_work_blocks", "label": "Deep work / creative blocks (90+ min)", "target": "3/week" },
+      { "id": "connect", "label": "Intentional connect (person, not scroll)", "target": "2/week" }
+    ],
+    "lag_indicators": [
+      { "id": "energy", "label": "Average energy (honest 1-5)", "target": "≥3" },
+      { "id": "shipped", "label": "Something shipped / closed loop", "target": "≥1/week" },
+      { "id": "inbox_zero_life", "label": "Life admin caught up (bills, msgs, errands)", "target": "yes/no" },
+      { "id": "regret_events", "label": "Regret spirals / shame days", "target": "≤1/week" },
+      { "id": "meds_adherence", "label": "ADHD med protocol followed", "target": "daily" }
+    ]
+  },
+  "non_negotiable_sops": [
+    { "id": "meds", "label": "ADHD medication protocol", "status": "define_in_write_personal_sop" },
+    { "id": "sleep", "label": "Sleep anchor window", "status": "define_in_write_personal_sop" },
+    { "id": "money_day", "label": "Money / admin touchpoint", "status": "define_in_write_personal_sop" }
+  ],
+  "framework": {
+    "origin": "Document Architecture (Experience Division — universal, not church-specific)",
+    "home_doc": "personal-os/PERSONAL_LIFE_OS.md"
+  },
+  "brand_studio": {
+    "workflows_ui": "/app/workflows",
+    "filter_vertical": "personal-os"
+  }
+}

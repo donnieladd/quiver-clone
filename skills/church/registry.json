@@ -2,8 +2,8 @@
   "version": "2.0.0",
   "vertical": "church",
   "product": "brand-studio",
-  "generated_at": "2026-06-22T14:19:00.248Z",
-  "skill_count": 293,
+  "generated_at": "2026-06-22T19:06:30.409Z",
+  "skill_count": 310,
   "note": "Full manifest: skills/manifest.json",
   "workflows": [
     "workflows/sermon-to-social.md",
@@ -94,8 +94,10 @@
     }
   ],
   "domains": {
+    "workflows": 9,
     "brand": 19,
     "content": 23,
+    "doc-architecture": 14,
     "env": 13,
     "motion": 21,
     "ops": 21,
@@ -107,10 +109,18 @@
     "story": 24,
     "web-premium": 8,
     "web": 16,
-    "workflows": 6,
     "worship": 21
   },
   "skills": [
+    {
+      "id": "church.big_day_charter",
+      "pack": "church",
+      "domain": "big_day_charter",
+      "slug": "big-day-charter",
+      "title": "Big day project charter",
+      "tier": "production",
+      "path": "church/workflows/big-day-charter.md"
+    },
     {
       "id": "church.brand.align_brand_to_denominational_guidelines",
       "pack": "church",
@@ -488,6 +498,141 @@
       "title": "Write Youtube Description",
       "tier": "production",
       "path": "church/content/write_youtube_description.md"
+    },
+    {
+      "id": "church.creative_brief_to_production",
+      "pack": "church",
+      "domain": "creative_brief_to_production",
+      "slug": "creative-brief-to-production",
+      "title": "Creative brief → production",
+      "tier": "production",
+      "path": "church/workflows/creative-brief-to-production.md"
+    },
+    {
+      "id": "church.doc-architecture.write_after_action_report",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_after_action_report",
+      "title": "Write after action report",
+      "tier": "reporting",
+      "path": "church/doc-architecture/write_after_action_report.md"
+    },
+    {
+      "id": "church.doc-architecture.write_concept_note",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_concept_note",
+      "title": "Write concept note",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_concept_note.md"
+    },
+    {
+      "id": "church.doc-architecture.write_creative_brief",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_creative_brief",
+      "title": "Write creative brief",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_creative_brief.md"
+    },
+    {
+      "id": "church.doc-architecture.write_decision_memo",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_decision_memo",
+      "title": "Write decision memo",
+      "tier": "decision",
+      "path": "church/doc-architecture/write_decision_memo.md"
+    },
+    {
+      "id": "church.doc-architecture.write_executive_brief",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_executive_brief",
+      "title": "Write executive brief",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_executive_brief.md"
+    },
+    {
+      "id": "church.doc-architecture.write_project_brief",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_project_brief",
+      "title": "Write project brief",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_project_brief.md"
+    },
+    {
+      "id": "church.doc-architecture.write_project_charter",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_project_charter",
+      "title": "Write project charter",
+      "tier": "planning",
+      "path": "church/doc-architecture/write_project_charter.md"
+    },
+    {
+      "id": "church.doc-architecture.write_raci_matrix",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_raci_matrix",
+      "title": "Write RACI matrix",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_raci_matrix.md"
+    },
+    {
+      "id": "church.doc-architecture.write_risk_register",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_risk_register",
+      "title": "Write risk register",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_risk_register.md"
+    },
+    {
+      "id": "church.doc-architecture.write_run_of_show",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_run_of_show",
+      "title": "Write run of show",
+      "tier": "planning",
+      "path": "church/doc-architecture/write_run_of_show.md"
+    },
+    {
+      "id": "church.doc-architecture.write_scorecard",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_scorecard",
+      "title": "Write scorecard",
+      "tier": "reporting",
+      "path": "church/doc-architecture/write_scorecard.md"
+    },
+    {
+      "id": "church.doc-architecture.write_sla",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_sla",
+      "title": "Write SLA",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_sla.md"
+    },
+    {
+      "id": "church.doc-architecture.write_sop",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_sop",
+      "title": "Write SOP",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_sop.md"
+    },
+    {
+      "id": "church.doc-architecture.write_status_report",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_status_report",
+      "title": "Write status report",
+      "tier": "reporting",
+      "path": "church/doc-architecture/write_status_report.md"
     },
     {
       "id": "church.env.design_child_ministry_visual_system",
@@ -983,6 +1128,15 @@
       "title": "Version Brand Assets",
       "tier": "ops",
       "path": "church/ops/version_brand_assets.md"
+    },
+    {
+      "id": "church.post_event_aar",
+      "pack": "church",
+      "domain": "post_event_aar",
+      "slug": "post-event-aar",
+      "title": "After action report (post-event)",
+      "tier": "production",
+      "path": "church/workflows/post-event-aar.md"
     },
     {
       "id": "church.print.design_banner_standee",
@@ -1514,6 +1668,15 @@
       "title": "Test key art on stage photo mockup",
       "tier": "qa",
       "path": "church/series/test_key_art_on_stage_photo.md"
+    },
+    {
+      "id": "church.sermon_to_social",
+      "pack": "church",
+      "domain": "sermon_to_social",
+      "slug": "sermon-to-social",
+      "title": "Sermon → social content",
+      "tier": "production",
+      "path": "church/workflows/sermon-to-social.md"
     },
     {
       "id": "church.slides.announcement_seven_second_rule",
@@ -2506,6 +2669,15 @@
       "path": "church/web/update_home_hero_for_series.md"
     },
     {
+      "id": "church.weekly_service_kit",
+      "pack": "church",
+      "domain": "weekly_service_kit",
+      "slug": "weekly-service-kit",
+      "title": "Weekly service kit",
+      "tier": "production",
+      "path": "church/workflows/weekly-service-kit.md"
+    },
+    {
       "id": "church.workflow.approval_governance",
       "pack": "church",
       "domain": "workflow",
@@ -2524,15 +2696,6 @@
       "path": "church/workflows/series-launch.md"
     },
     {
-      "id": "church.workflow.sermon_to_social",
-      "pack": "church",
-      "domain": "workflow",
-      "slug": "sermon-to-social",
-      "title": "Sermon to Social Content Workflow",
-      "tier": "production",
-      "path": "church/workflows/sermon-to-social.md"
-    },
-    {
       "id": "church.workflow.volunteer_template_ops",
       "pack": "church",
       "domain": "workflow",
@@ -2540,15 +2703,6 @@
       "title": "Volunteer Template Operations Workflow",
       "tier": "production",
       "path": "church/workflows/volunteer-template-ops.md"
-    },
-    {
-      "id": "church.workflow.weekly_service_kit",
-      "pack": "church",
-      "domain": "workflow",
-      "slug": "weekly-service-kit",
-      "title": "Weekly Service Kit Workflow",
-      "tier": "production",
-      "path": "church/workflows/weekly-service-kit.md"
     },
     {
       "id": "church.workflow.worship_visuals",

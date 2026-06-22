@@ -196,7 +196,24 @@
     "weekly_service": "workflows/weekly-service-kit.md",
     "sermon_to_social": "workflows/sermon-to-social.md",
     "volunteer_ops": "workflows/volunteer-template-ops.md",
-    "approval": "workflows/approval-governance.md"
+    "approval": "workflows/approval-governance.md",
+    "creative_brief_to_production": "workflows/creative-brief-to-production.md",
+    "big_day_charter": "workflows/big-day-charter.md",
+    "post_event_aar": "workflows/post-event-aar.md"
+  },
+  "document_architecture": {
+    "version": "1.0",
+    "note": "Reference implementation of universal framework — see skills/personal-os/PERSONAL_LIFE_OS.md",
+    "index": "doc-architecture/INDEX.md",
+    "in_use": ["creative_brief", "sop", "policy", "memo", "scorecard"],
+    "formalize_next": [
+      "project_charter",
+      "concept_note",
+      "decision_record",
+      "after_action_report",
+      "risk_register"
+    ],
+    "dam_root": "Faith Chapel/Documents/"
   },
   "skill_priorities": [
     "church.brand.setup_canva_brand_kit",

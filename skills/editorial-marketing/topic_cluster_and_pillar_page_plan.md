@@ -1,0 +1,26 @@
+---
+id: editorial-marketing.seo.topic_cluster_and_pillar_page_plan
+tier: foundation
+vertical: editorial-marketing
+title: "Topic cluster and pillar page plan"
+inputs: []
+outputs: []
+related: [marketing-stack.platform.editorial_channel_matrix]
+---
+
+# Topic cluster and pillar page plan
+
+## Purpose
+
+Hub-spoke SEO architecture.
+
+## AI + platform
+
+See `marketing-stack.platform.select_platform_for_objective` and `marketing-stack.ai.route_tool_for_job` before generating assets.
+
+## Steps
+
+1. Load brand tokens (`brand-system/*`) and vertical playbook.
+2. Select platform + AI tool from marketing-stack INDEX.
+3. Execute workflow in `editorial-marketing/workflows/`.
+4. `media.router.route_generation_request` → `brand-system.qa.run_token_lint_on_asset`.

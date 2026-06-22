@@ -9,6 +9,10 @@
     "lint": "eslint",
     "skills:church": "node skills/church/scripts/generate-skills.mjs",
     "skills:generate-verticals": "node skills/scripts/generate-verticals.mjs",
+    "skills:generate-marketing": "node skills/scripts/generate-marketing-verticals.mjs",
+    "skills:generate-personal-os": "node skills/scripts/generate-personal-os.mjs",
+    "skills:generate-doc-architecture": "node skills/scripts/generate-doc-architecture.mjs",
+    "skills:sync-workflows": "npx tsx skills/scripts/sync-workflow-docs.ts",
     "skills:update-registry": "node skills/scripts/update-registry.mjs",
     "skills:validate-profiles": "node skills/church/scripts/validate-profiles.mjs"
   },

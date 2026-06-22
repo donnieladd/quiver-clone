@@ -57,6 +57,7 @@ Site navigation includes:
 | Brand book | Agent-readable skills + lint |
 | Story page | `church.story.run_share_your_story_campaign` |
 | Series graphics | `workflows/series-launch.md` kit |
+| **Document Architecture v1.0** | `doc-architecture/INDEX.md` + 3 workflows |
 | Pastor teaching brand | Profile `pastor_face_ratio_max_30d: 0.5` |
 
 ## Skills mapped

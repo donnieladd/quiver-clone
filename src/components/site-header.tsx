@@ -24,6 +24,9 @@ export function SiteHeader() {
           <Link href="/app/studio" className="transition hover:text-foreground">
             Studio
           </Link>
+          <Link href="/app/workflows" className="transition hover:text-foreground">
+            Workflows
+          </Link>
         </nav>
         <div className="flex items-center gap-3">
           <Link

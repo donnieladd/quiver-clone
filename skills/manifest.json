@@ -1,16 +1,22 @@
 {
   "version": "2.0.0",
   "product": "brand-studio",
-  "generated_at": "2026-06-22T14:19:00.248Z",
-  "skill_count": 422,
+  "generated_at": "2026-06-22T19:06:30.409Z",
+  "skill_count": 569,
   "packs": {
     "brand-system": 20,
-    "church": 293,
-    "creator": 27,
+    "church": 310,
+    "corporate-marketing": 24,
+    "creator": 28,
+    "editorial-marketing": 22,
+    "fashion-luxury": 23,
+    "marketing-stack": 20,
     "media": 26,
-    "personal-brand": 21,
-    "platform": 12,
-    "product-brand": 23
+    "personal-brand": 22,
+    "personal-os": 16,
+    "platform": 13,
+    "product-brand": 24,
+    "product-marketing": 21
   },
   "domains": {
     "components": 2,
@@ -18,28 +24,61 @@
     "lifecycle": 4,
     "logos": 3,
     "qa": 17,
-    "strategy": 7,
+    "strategy": 16,
     "tokens": 6,
+    "big_day_charter": 1,
     "brand": 19,
-    "content": 32,
+    "content": 42,
+    "creative_brief_to_production": 1,
+    "doc-architecture": 14,
     "env": 13,
     "motion": 21,
-    "ops": 31,
-    "print": 14,
+    "ops": 40,
+    "post_event_aar": 1,
+    "print": 16,
     "series": 29,
+    "sermon_to_social": 1,
     "slides": 24,
-    "social": 45,
+    "social": 48,
     "story": 24,
     "web-premium": 8,
     "web": 16,
+    "weekly_service_kit": 1,
     "workflow": 6,
     "worship": 21,
-    "analytics": 1,
+    "case_study": 1,
+    "digital": 2,
+    "earnings_kit": 1,
+    "events": 2,
+    "pr": 2,
+    "sales_enablement_sprint": 1,
+    "sales": 3,
+    "thought_leadership": 1,
+    "analytics": 4,
     "business": 5,
     "community": 1,
     "live": 2,
     "media": 8,
     "product": 4,
+    "weekly_production": 1,
+    "ai": 15,
+    "article_social_ladder": 1,
+    "content_cluster": 1,
+    "distribution": 3,
+    "newsletter_edition": 1,
+    "pillar_page": 1,
+    "seo": 3,
+    "visual": 3,
+    "writing": 3,
+    "campaign": 4,
+    "capsule_drop": 1,
+    "collab_announce": 1,
+    "editorial": 3,
+    "lookbook_season": 1,
+    "retail": 2,
+    "campaign_orchestration": 1,
+    "platform": 4,
+    "qa_pipeline": 1,
     "audio": 1,
     "higgsfield": 8,
     "image": 4,
@@ -49,13 +88,24 @@
     "router": 4,
     "video": 2,
     "identity": 5,
-    "brand_studio": 12,
+    "thirty_day": 1,
+    "doc": 12,
+    "life_project_charter": 1,
+    "personal_aar": 1,
+    "personal_creative_brief": 1,
+    "weekly_alignment": 1,
+    "brand_studio": 13,
     "creator": 3,
-    "launch": 4,
+    "dtc_launch": 1,
+    "launch": 9,
     "marketplace": 3,
     "packaging": 2,
     "photo": 2,
-    "saas": 3
+    "saas": 3,
+    "enablement": 2,
+    "positioning_from_prd": 1,
+    "tier1_launch": 1,
+    "tier2_launch": 1
   },
   "church": {
     "workflows": [
@@ -150,6 +200,42 @@
   "brand_system": {
     "schema": "brand-system/schema.json",
     "reference_client": "brand-system/clients/faith-chapel.tokens.json"
+  },
+  "workflows": {
+    "index": "workflows/INDEX.md",
+    "runtime_ui": "/app/workflows",
+    "api": "/v1/workflows",
+    "count": 28,
+    "ids": [
+      "marketing-stack.campaign_orchestration",
+      "marketing-stack.qa_pipeline",
+      "corporate-marketing.thought_leadership",
+      "corporate-marketing.case_study",
+      "corporate-marketing.sales_enablement_sprint",
+      "corporate-marketing.earnings_kit",
+      "product-marketing.tier1_launch",
+      "product-marketing.tier2_launch",
+      "product-marketing.positioning_from_prd",
+      "fashion-luxury.capsule_drop",
+      "fashion-luxury.lookbook_season",
+      "fashion-luxury.collab_announce",
+      "editorial-marketing.pillar_page",
+      "editorial-marketing.content_cluster",
+      "editorial-marketing.newsletter_edition",
+      "editorial-marketing.article_social_ladder",
+      "product-brand.dtc_launch",
+      "personal-brand.thirty_day",
+      "creator.weekly_production",
+      "church.sermon_to_social",
+      "church.weekly_service_kit",
+      "church.creative_brief_to_production",
+      "church.big_day_charter",
+      "church.post_event_aar",
+      "personal-os.weekly_alignment",
+      "personal-os.life_project_charter",
+      "personal-os.personal_aar",
+      "personal-os.personal_creative_brief"
+    ]
   },
   "skills": [
     {
@@ -331,6 +417,15 @@
       "title": "Define typography scale",
       "tier": "foundation",
       "path": "brand-system/define_typography_scale.md"
+    },
+    {
+      "id": "church.big_day_charter",
+      "pack": "church",
+      "domain": "big_day_charter",
+      "slug": "big-day-charter",
+      "title": "Big day project charter",
+      "tier": "production",
+      "path": "church/workflows/big-day-charter.md"
     },
     {
       "id": "church.brand.align_brand_to_denominational_guidelines",
@@ -709,6 +804,141 @@
       "title": "Write Youtube Description",
       "tier": "production",
       "path": "church/content/write_youtube_description.md"
+    },
+    {
+      "id": "church.creative_brief_to_production",
+      "pack": "church",
+      "domain": "creative_brief_to_production",
+      "slug": "creative-brief-to-production",
+      "title": "Creative brief → production",
+      "tier": "production",
+      "path": "church/workflows/creative-brief-to-production.md"
+    },
+    {
+      "id": "church.doc-architecture.write_after_action_report",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_after_action_report",
+      "title": "Write after action report",
+      "tier": "reporting",
+      "path": "church/doc-architecture/write_after_action_report.md"
+    },
+    {
+      "id": "church.doc-architecture.write_concept_note",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_concept_note",
+      "title": "Write concept note",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_concept_note.md"
+    },
+    {
+      "id": "church.doc-architecture.write_creative_brief",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_creative_brief",
+      "title": "Write creative brief",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_creative_brief.md"
+    },
+    {
+      "id": "church.doc-architecture.write_decision_memo",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_decision_memo",
+      "title": "Write decision memo",
+      "tier": "decision",
+      "path": "church/doc-architecture/write_decision_memo.md"
+    },
+    {
+      "id": "church.doc-architecture.write_executive_brief",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_executive_brief",
+      "title": "Write executive brief",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_executive_brief.md"
+    },
+    {
+      "id": "church.doc-architecture.write_project_brief",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_project_brief",
+      "title": "Write project brief",
+      "tier": "alignment",
+      "path": "church/doc-architecture/write_project_brief.md"
+    },
+    {
+      "id": "church.doc-architecture.write_project_charter",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_project_charter",
+      "title": "Write project charter",
+      "tier": "planning",
+      "path": "church/doc-architecture/write_project_charter.md"
+    },
+    {
+      "id": "church.doc-architecture.write_raci_matrix",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_raci_matrix",
+      "title": "Write RACI matrix",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_raci_matrix.md"
+    },
+    {
+      "id": "church.doc-architecture.write_risk_register",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_risk_register",
+      "title": "Write risk register",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_risk_register.md"
+    },
+    {
+      "id": "church.doc-architecture.write_run_of_show",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_run_of_show",
+      "title": "Write run of show",
+      "tier": "planning",
+      "path": "church/doc-architecture/write_run_of_show.md"
+    },
+    {
+      "id": "church.doc-architecture.write_scorecard",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_scorecard",
+      "title": "Write scorecard",
+      "tier": "reporting",
+      "path": "church/doc-architecture/write_scorecard.md"
+    },
+    {
+      "id": "church.doc-architecture.write_sla",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_sla",
+      "title": "Write SLA",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_sla.md"
+    },
+    {
+      "id": "church.doc-architecture.write_sop",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_sop",
+      "title": "Write SOP",
+      "tier": "governance",
+      "path": "church/doc-architecture/write_sop.md"
+    },
+    {
+      "id": "church.doc-architecture.write_status_report",
+      "pack": "church",
+      "domain": "doc-architecture",
+      "slug": "write_status_report",
+      "title": "Write status report",
+      "tier": "reporting",
+      "path": "church/doc-architecture/write_status_report.md"
     },
     {
       "id": "church.env.design_child_ministry_visual_system",
@@ -1204,6 +1434,15 @@
       "title": "Version Brand Assets",
       "tier": "ops",
       "path": "church/ops/version_brand_assets.md"
+    },
+    {
+      "id": "church.post_event_aar",
+      "pack": "church",
+      "domain": "post_event_aar",
+      "slug": "post-event-aar",
+      "title": "After action report (post-event)",
+      "tier": "production",
+      "path": "church/workflows/post-event-aar.md"
     },
     {
       "id": "church.print.design_banner_standee",
@@ -1735,6 +1974,15 @@
       "title": "Test key art on stage photo mockup",
       "tier": "qa",
       "path": "church/series/test_key_art_on_stage_photo.md"
+    },
+    {
+      "id": "church.sermon_to_social",
+      "pack": "church",
+      "domain": "sermon_to_social",
+      "slug": "sermon-to-social",
+      "title": "Sermon → social content",
+      "tier": "production",
+      "path": "church/workflows/sermon-to-social.md"
     },
     {
       "id": "church.slides.announcement_seven_second_rule",
@@ -2727,6 +2975,15 @@
       "path": "church/web/update_home_hero_for_series.md"
     },
     {
+      "id": "church.weekly_service_kit",
+      "pack": "church",
+      "domain": "weekly_service_kit",
+      "slug": "weekly-service-kit",
+      "title": "Weekly service kit",
+      "tier": "production",
+      "path": "church/workflows/weekly-service-kit.md"
+    },
+    {
       "id": "church.workflow.approval_governance",
       "pack": "church",
       "domain": "workflow",
@@ -2745,15 +3002,6 @@
       "path": "church/workflows/series-launch.md"
     },
     {
-      "id": "church.workflow.sermon_to_social",
-      "pack": "church",
-      "domain": "workflow",
-      "slug": "sermon-to-social",
-      "title": "Sermon to Social Content Workflow",
-      "tier": "production",
-      "path": "church/workflows/sermon-to-social.md"
-    },
-    {
       "id": "church.workflow.volunteer_template_ops",
       "pack": "church",
       "domain": "workflow",
@@ -2761,15 +3009,6 @@
       "title": "Volunteer Template Operations Workflow",
       "tier": "production",
       "path": "church/workflows/volunteer-template-ops.md"
-    },
-    {
-      "id": "church.workflow.weekly_service_kit",
-      "pack": "church",
-      "domain": "workflow",
-      "slug": "weekly-service-kit",
-      "title": "Weekly Service Kit Workflow",
-      "tier": "production",
-      "path": "church/workflows/weekly-service-kit.md"
     },
     {
       "id": "church.workflow.worship_visuals",
@@ -2968,6 +3207,222 @@
       "title": "Union Sound release kit",
       "tier": "production",
       "path": "church/worship/union_sound_release_kit.md"
+    },
+    {
+      "id": "corporate-marketing.case_study",
+      "pack": "corporate-marketing",
+      "domain": "case_study",
+      "slug": "case-study-production",
+      "title": "Customer case study production",
+      "tier": "production",
+      "path": "corporate-marketing/workflows/case-study-production.md"
+    },
+    {
+      "id": "corporate-marketing.content.csr_esg_storytelling",
+      "pack": "corporate-marketing",
+      "domain": "content",
+      "slug": "csr_esg_storytelling",
+      "title": "CSR ESG storytelling",
+      "tier": "production",
+      "path": "corporate-marketing/csr_esg_storytelling.md"
+    },
+    {
+      "id": "corporate-marketing.content.design_earnings_visual_summary",
+      "pack": "corporate-marketing",
+      "domain": "content",
+      "slug": "design_earnings_visual_summary",
+      "title": "Design earnings visual summary",
+      "tier": "production",
+      "path": "corporate-marketing/design_earnings_visual_summary.md"
+    },
+    {
+      "id": "corporate-marketing.content.employer_branding_campaign",
+      "pack": "corporate-marketing",
+      "domain": "content",
+      "slug": "employer_branding_campaign",
+      "title": "Employer branding campaign",
+      "tier": "production",
+      "path": "corporate-marketing/employer_branding_campaign.md"
+    },
+    {
+      "id": "corporate-marketing.content.executive_thought_leadership_program",
+      "pack": "corporate-marketing",
+      "domain": "content",
+      "slug": "executive_thought_leadership_program",
+      "title": "Executive thought leadership program",
+      "tier": "production",
+      "path": "corporate-marketing/executive_thought_leadership_program.md"
+    },
+    {
+      "id": "corporate-marketing.content.internal_comms_visual_system",
+      "pack": "corporate-marketing",
+      "domain": "content",
+      "slug": "internal_comms_visual_system",
+      "title": "Internal comms visual system",
+      "tier": "foundation",
+      "path": "corporate-marketing/internal_comms_visual_system.md"
+    },
+    {
+      "id": "corporate-marketing.content.write_annual_report_narrative",
+      "pack": "corporate-marketing",
+      "domain": "content",
+      "slug": "write_annual_report_narrative",
+      "title": "Write annual report narrative",
+      "tier": "production",
+      "path": "corporate-marketing/write_annual_report_narrative.md"
+    },
+    {
+      "id": "corporate-marketing.digital.corporate_website_information_architecture",
+      "pack": "corporate-marketing",
+      "domain": "digital",
+      "slug": "corporate_website_information_architecture",
+      "title": "Corporate website information architecture",
+      "tier": "foundation",
+      "path": "corporate-marketing/corporate_website_information_architecture.md"
+    },
+    {
+      "id": "corporate-marketing.digital.linkedin_company_page_system",
+      "pack": "corporate-marketing",
+      "domain": "digital",
+      "slug": "linkedin_company_page_system",
+      "title": "LinkedIn company page system",
+      "tier": "production",
+      "path": "corporate-marketing/linkedin_company_page_system.md"
+    },
+    {
+      "id": "corporate-marketing.earnings_kit",
+      "pack": "corporate-marketing",
+      "domain": "earnings_kit",
+      "slug": "earnings-kit",
+      "title": "Quarterly earnings visual kit",
+      "tier": "production",
+      "path": "corporate-marketing/workflows/earnings-kit.md"
+    },
+    {
+      "id": "corporate-marketing.events.corporate_event_brand_system",
+      "pack": "corporate-marketing",
+      "domain": "events",
+      "slug": "corporate_event_brand_system",
+      "title": "Corporate event brand system",
+      "tier": "production",
+      "path": "corporate-marketing/corporate_event_brand_system.md"
+    },
+    {
+      "id": "corporate-marketing.events.webinar_production_kit",
+      "pack": "corporate-marketing",
+      "domain": "events",
+      "slug": "webinar_production_kit",
+      "title": "Webinar production kit",
+      "tier": "production",
+      "path": "corporate-marketing/webinar_production_kit.md"
+    },
+    {
+      "id": "corporate-marketing.ops.agency_of_record_brief",
+      "pack": "corporate-marketing",
+      "domain": "ops",
+      "slug": "agency_of_record_brief",
+      "title": "Agency of record brief",
+      "tier": "ops",
+      "path": "corporate-marketing/agency_of_record_brief.md"
+    },
+    {
+      "id": "corporate-marketing.ops.brand_governance_committee_charter",
+      "pack": "corporate-marketing",
+      "domain": "ops",
+      "slug": "brand_governance_committee_charter",
+      "title": "Brand governance committee charter",
+      "tier": "ops",
+      "path": "corporate-marketing/brand_governance_committee_charter.md"
+    },
+    {
+      "id": "corporate-marketing.ops.dam_taxonomy_enterprise",
+      "pack": "corporate-marketing",
+      "domain": "ops",
+      "slug": "dam_taxonomy_enterprise",
+      "title": "DAM taxonomy enterprise",
+      "tier": "ops",
+      "path": "corporate-marketing/dam_taxonomy_enterprise.md"
+    },
+    {
+      "id": "corporate-marketing.pr.crisis_comms_hold_message_templates",
+      "pack": "corporate-marketing",
+      "domain": "pr",
+      "slug": "crisis_comms_hold_message_templates",
+      "title": "Crisis comms hold message templates",
+      "tier": "foundation",
+      "path": "corporate-marketing/crisis_comms_hold_message_templates.md"
+    },
+    {
+      "id": "corporate-marketing.pr.press_release_visual_companion",
+      "pack": "corporate-marketing",
+      "domain": "pr",
+      "slug": "press_release_visual_companion",
+      "title": "Press release visual companion",
+      "tier": "production",
+      "path": "corporate-marketing/press_release_visual_companion.md"
+    },
+    {
+      "id": "corporate-marketing.sales_enablement_sprint",
+      "pack": "corporate-marketing",
+      "domain": "sales_enablement_sprint",
+      "slug": "sales-enablement-sprint",
+      "title": "Sales enablement sprint",
+      "tier": "production",
+      "path": "corporate-marketing/workflows/sales-enablement-sprint.md"
+    },
+    {
+      "id": "corporate-marketing.sales.case_study_production_workflow",
+      "pack": "corporate-marketing",
+      "domain": "sales",
+      "slug": "case_study_production_workflow",
+      "title": "Case study production workflow",
+      "tier": "production",
+      "path": "corporate-marketing/case_study_production_workflow.md"
+    },
+    {
+      "id": "corporate-marketing.sales.rfp_response_visual_standards",
+      "pack": "corporate-marketing",
+      "domain": "sales",
+      "slug": "rfp_response_visual_standards",
+      "title": "RFP response visual standards",
+      "tier": "production",
+      "path": "corporate-marketing/rfp_response_visual_standards.md"
+    },
+    {
+      "id": "corporate-marketing.sales.sales_enablement_deck_system",
+      "pack": "corporate-marketing",
+      "domain": "sales",
+      "slug": "sales_enablement_deck_system",
+      "title": "Sales enablement deck system",
+      "tier": "production",
+      "path": "corporate-marketing/sales_enablement_deck_system.md"
+    },
+    {
+      "id": "corporate-marketing.strategy.define_corporate_brand_architecture",
+      "pack": "corporate-marketing",
+      "domain": "strategy",
+      "slug": "define_corporate_brand_architecture",
+      "title": "Define corporate brand architecture",
+      "tier": "foundation",
+      "path": "corporate-marketing/define_corporate_brand_architecture.md"
+    },
+    {
+      "id": "corporate-marketing.strategy.map_stakeholder_messaging_matrix",
+      "pack": "corporate-marketing",
+      "domain": "strategy",
+      "slug": "map_stakeholder_messaging_matrix",
+      "title": "Map stakeholder messaging matrix",
+      "tier": "foundation",
+      "path": "corporate-marketing/map_stakeholder_messaging_matrix.md"
+    },
+    {
+      "id": "corporate-marketing.thought_leadership",
+      "pack": "corporate-marketing",
+      "domain": "thought_leadership",
+      "slug": "thought-leadership",
+      "title": "Executive thought leadership program",
+      "tier": "production",
+      "path": "corporate-marketing/workflows/thought-leadership.md"
     },
     {
       "id": "creator.analytics.weekly_creator_analytics_review",
@@ -3211,6 +3666,600 @@
       "title": "Define creator niche",
       "tier": "foundation",
       "path": "creator/define_creator_niche.md"
+    },
+    {
+      "id": "creator.weekly_production",
+      "pack": "creator",
+      "domain": "weekly_production",
+      "slug": "weekly-production",
+      "title": "Creator weekly production",
+      "tier": "production",
+      "path": "creator/workflows/weekly-production.md"
+    },
+    {
+      "id": "editorial-marketing.ai.ai_fact_check_and_citation_gate",
+      "pack": "editorial-marketing",
+      "domain": "ai",
+      "slug": "ai_fact_check_and_citation_gate",
+      "title": "AI fact check and citation gate",
+      "tier": "qa",
+      "path": "editorial-marketing/ai_fact_check_and_citation_gate.md"
+    },
+    {
+      "id": "editorial-marketing.ai.ai_outline_from_keyword_research",
+      "pack": "editorial-marketing",
+      "domain": "ai",
+      "slug": "ai_outline_from_keyword_research",
+      "title": "AI outline from keyword research",
+      "tier": "production",
+      "path": "editorial-marketing/ai_outline_from_keyword_research.md"
+    },
+    {
+      "id": "editorial-marketing.ai.ai_refresh_decaying_content",
+      "pack": "editorial-marketing",
+      "domain": "ai",
+      "slug": "ai_refresh_decaying_content",
+      "title": "AI refresh decaying content",
+      "tier": "production",
+      "path": "editorial-marketing/ai_refresh_decaying_content.md"
+    },
+    {
+      "id": "editorial-marketing.analytics.content_performance_review_quarterly",
+      "pack": "editorial-marketing",
+      "domain": "analytics",
+      "slug": "content_performance_review_quarterly",
+      "title": "Content performance review quarterly",
+      "tier": "ops",
+      "path": "editorial-marketing/content_performance_review_quarterly.md"
+    },
+    {
+      "id": "editorial-marketing.article_social_ladder",
+      "pack": "editorial-marketing",
+      "domain": "article_social_ladder",
+      "slug": "article-social-ladder",
+      "title": "Article → social teaser ladder",
+      "tier": "production",
+      "path": "editorial-marketing/workflows/article-social-ladder.md"
+    },
+    {
+      "id": "editorial-marketing.content_cluster",
+      "pack": "editorial-marketing",
+      "domain": "content_cluster",
+      "slug": "content-cluster-sprint",
+      "title": "Content cluster sprint (4 weeks)",
+      "tier": "production",
+      "path": "editorial-marketing/workflows/content-cluster-sprint.md"
+    },
+    {
+      "id": "editorial-marketing.distribution.organic_social_teaser_ladder",
+      "pack": "editorial-marketing",
+      "domain": "distribution",
+      "slug": "organic_social_teaser_ladder",
+      "title": "Organic social teaser ladder",
+      "tier": "production",
+      "path": "editorial-marketing/organic_social_teaser_ladder.md"
+    },
+    {
+      "id": "editorial-marketing.distribution.podcast_and_video_derivative",
+      "pack": "editorial-marketing",
+      "domain": "distribution",
+      "slug": "podcast_and_video_derivative",
+      "title": "Podcast and video derivative",
+      "tier": "production",
+      "path": "editorial-marketing/podcast_and_video_derivative.md"
+    },
+    {
+      "id": "editorial-marketing.distribution.syndication_and_republish_rules",
+      "pack": "editorial-marketing",
+      "domain": "distribution",
+      "slug": "syndication_and_republish_rules",
+      "title": "Syndication and republish rules",
+      "tier": "ops",
+      "path": "editorial-marketing/syndication_and_republish_rules.md"
+    },
+    {
+      "id": "editorial-marketing.newsletter_edition",
+      "pack": "editorial-marketing",
+      "domain": "newsletter_edition",
+      "slug": "newsletter-edition",
+      "title": "Newsletter edition production",
+      "tier": "production",
+      "path": "editorial-marketing/workflows/newsletter-edition.md"
+    },
+    {
+      "id": "editorial-marketing.pillar_page",
+      "pack": "editorial-marketing",
+      "domain": "pillar_page",
+      "slug": "pillar-page-production",
+      "title": "SEO pillar page production",
+      "tier": "production",
+      "path": "editorial-marketing/workflows/pillar-page-production.md"
+    },
+    {
+      "id": "editorial-marketing.seo.programmatic_seo_governance",
+      "pack": "editorial-marketing",
+      "domain": "seo",
+      "slug": "programmatic_seo_governance",
+      "title": "Programmatic SEO governance",
+      "tier": "ops",
+      "path": "editorial-marketing/programmatic_seo_governance.md"
+    },
+    {
+      "id": "editorial-marketing.seo.search_intent_content_brief",
+      "pack": "editorial-marketing",
+      "domain": "seo",
+      "slug": "search_intent_content_brief",
+      "title": "Search intent content brief",
+      "tier": "production",
+      "path": "editorial-marketing/search_intent_content_brief.md"
+    },
+    {
+      "id": "editorial-marketing.seo.topic_cluster_and_pillar_page_plan",
+      "pack": "editorial-marketing",
+      "domain": "seo",
+      "slug": "topic_cluster_and_pillar_page_plan",
+      "title": "Topic cluster and pillar page plan",
+      "tier": "foundation",
+      "path": "editorial-marketing/topic_cluster_and_pillar_page_plan.md"
+    },
+    {
+      "id": "editorial-marketing.strategy.content_pillar_research_backed",
+      "pack": "editorial-marketing",
+      "domain": "strategy",
+      "slug": "content_pillar_research_backed",
+      "title": "Content pillar research backed",
+      "tier": "foundation",
+      "path": "editorial-marketing/content_pillar_research_backed.md"
+    },
+    {
+      "id": "editorial-marketing.strategy.define_editorial_voice_and_pillars",
+      "pack": "editorial-marketing",
+      "domain": "strategy",
+      "slug": "define_editorial_voice_and_pillars",
+      "title": "Define editorial voice and pillars",
+      "tier": "foundation",
+      "path": "editorial-marketing/define_editorial_voice_and_pillars.md"
+    },
+    {
+      "id": "editorial-marketing.visual.data_visualization_brand_style",
+      "pack": "editorial-marketing",
+      "domain": "visual",
+      "slug": "data_visualization_brand_style",
+      "title": "Data visualization brand style",
+      "tier": "production",
+      "path": "editorial-marketing/data_visualization_brand_style.md"
+    },
+    {
+      "id": "editorial-marketing.visual.editorial_hero_typography",
+      "pack": "editorial-marketing",
+      "domain": "visual",
+      "slug": "editorial_hero_typography",
+      "title": "Editorial hero typography",
+      "tier": "production",
+      "path": "editorial-marketing/editorial_hero_typography.md"
+    },
+    {
+      "id": "editorial-marketing.visual.quote_pull_and_callout_system",
+      "pack": "editorial-marketing",
+      "domain": "visual",
+      "slug": "quote_pull_and_callout_system",
+      "title": "Quote pull and callout system",
+      "tier": "production",
+      "path": "editorial-marketing/quote_pull_and_callout_system.md"
+    },
+    {
+      "id": "editorial-marketing.writing.executive_byline_ghostwriting",
+      "pack": "editorial-marketing",
+      "domain": "writing",
+      "slug": "executive_byline_ghostwriting",
+      "title": "Executive byline ghostwriting",
+      "tier": "production",
+      "path": "editorial-marketing/executive_byline_ghostwriting.md"
+    },
+    {
+      "id": "editorial-marketing.writing.long_form_article_structure",
+      "pack": "editorial-marketing",
+      "domain": "writing",
+      "slug": "long_form_article_structure",
+      "title": "Long form article structure",
+      "tier": "production",
+      "path": "editorial-marketing/long_form_article_structure.md"
+    },
+    {
+      "id": "editorial-marketing.writing.newsletter_edition_template",
+      "pack": "editorial-marketing",
+      "domain": "writing",
+      "slug": "newsletter_edition_template",
+      "title": "Newsletter edition template",
+      "tier": "production",
+      "path": "editorial-marketing/newsletter_edition_template.md"
+    },
+    {
+      "id": "fashion-luxury.ai.ai_look_generation_moodboard",
+      "pack": "fashion-luxury",
+      "domain": "ai",
+      "slug": "ai_look_generation_moodboard",
+      "title": "AI look generation moodboard",
+      "tier": "production",
+      "path": "fashion-luxury/ai_look_generation_moodboard.md"
+    },
+    {
+      "id": "fashion-luxury.ai.ai_on_model_vs_ghost_mannequin_policy",
+      "pack": "fashion-luxury",
+      "domain": "ai",
+      "slug": "ai_on_model_vs_ghost_mannequin_policy",
+      "title": "AI on-model vs ghost mannequin policy",
+      "tier": "qa",
+      "path": "fashion-luxury/ai_on_model_vs_ghost_mannequin_policy.md"
+    },
+    {
+      "id": "fashion-luxury.campaign.capsule_drop_hype_sequence",
+      "pack": "fashion-luxury",
+      "domain": "campaign",
+      "slug": "capsule_drop_hype_sequence",
+      "title": "Capsule drop hype sequence",
+      "tier": "production",
+      "path": "fashion-luxury/capsule_drop_hype_sequence.md"
+    },
+    {
+      "id": "fashion-luxury.campaign.collaboration_co_brand_announcement",
+      "pack": "fashion-luxury",
+      "domain": "campaign",
+      "slug": "collaboration_co_brand_announcement",
+      "title": "Collaboration co-brand announcement",
+      "tier": "production",
+      "path": "fashion-luxury/collaboration_co_brand_announcement.md"
+    },
+    {
+      "id": "fashion-luxury.campaign.lookbook_art_direction_brief",
+      "pack": "fashion-luxury",
+      "domain": "campaign",
+      "slug": "lookbook_art_direction_brief",
+      "title": "Lookbook art direction brief",
+      "tier": "production",
+      "path": "fashion-luxury/lookbook_art_direction_brief.md"
+    },
+    {
+      "id": "fashion-luxury.campaign.runway_to_retail_campaign_bridge",
+      "pack": "fashion-luxury",
+      "domain": "campaign",
+      "slug": "runway_to_retail_campaign_bridge",
+      "title": "Runway to retail campaign bridge",
+      "tier": "production",
+      "path": "fashion-luxury/runway_to_retail_campaign_bridge.md"
+    },
+    {
+      "id": "fashion-luxury.capsule_drop",
+      "pack": "fashion-luxury",
+      "domain": "capsule_drop",
+      "slug": "capsule-drop",
+      "title": "Capsule drop hype sequence",
+      "tier": "production",
+      "path": "fashion-luxury/workflows/capsule-drop.md"
+    },
+    {
+      "id": "fashion-luxury.collab_announce",
+      "pack": "fashion-luxury",
+      "domain": "collab_announce",
+      "slug": "collab-announcement",
+      "title": "Collaboration announcement",
+      "tier": "production",
+      "path": "fashion-luxury/workflows/collab-announcement.md"
+    },
+    {
+      "id": "fashion-luxury.editorial.ecommerce_pdp_premium_template",
+      "pack": "fashion-luxury",
+      "domain": "editorial",
+      "slug": "ecommerce_pdp_premium_template",
+      "title": "Ecommerce PDP premium template",
+      "tier": "production",
+      "path": "fashion-luxury/ecommerce_pdp_premium_template.md"
+    },
+    {
+      "id": "fashion-luxury.editorial.fashion_editorial_layout_system",
+      "pack": "fashion-luxury",
+      "domain": "editorial",
+      "slug": "fashion_editorial_layout_system",
+      "title": "Fashion editorial layout system",
+      "tier": "production",
+      "path": "fashion-luxury/fashion_editorial_layout_system.md"
+    },
+    {
+      "id": "fashion-luxury.editorial.journal_content_format",
+      "pack": "fashion-luxury",
+      "domain": "editorial",
+      "slug": "journal_content_format",
+      "title": "Journal content format",
+      "tier": "production",
+      "path": "fashion-luxury/journal_content_format.md"
+    },
+    {
+      "id": "fashion-luxury.lookbook_season",
+      "pack": "fashion-luxury",
+      "domain": "lookbook_season",
+      "slug": "lookbook-season",
+      "title": "Season lookbook production",
+      "tier": "production",
+      "path": "fashion-luxury/workflows/lookbook-season.md"
+    },
+    {
+      "id": "fashion-luxury.ops.model_release_and_usage_rights",
+      "pack": "fashion-luxury",
+      "domain": "ops",
+      "slug": "model_release_and_usage_rights",
+      "title": "Model release and usage rights",
+      "tier": "qa",
+      "path": "fashion-luxury/model_release_and_usage_rights.md"
+    },
+    {
+      "id": "fashion-luxury.ops.sample_tracking_campaign_assets",
+      "pack": "fashion-luxury",
+      "domain": "ops",
+      "slug": "sample_tracking_campaign_assets",
+      "title": "Sample tracking campaign assets",
+      "tier": "ops",
+      "path": "fashion-luxury/sample_tracking_campaign_assets.md"
+    },
+    {
+      "id": "fashion-luxury.print.luxury_invitation_and_event_print",
+      "pack": "fashion-luxury",
+      "domain": "print",
+      "slug": "luxury_invitation_and_event_print",
+      "title": "Luxury invitation and event print",
+      "tier": "production",
+      "path": "fashion-luxury/luxury_invitation_and_event_print.md"
+    },
+    {
+      "id": "fashion-luxury.print.packaging_unboxing_luxury",
+      "pack": "fashion-luxury",
+      "domain": "print",
+      "slug": "packaging_unboxing_luxury",
+      "title": "Packaging unboxing luxury",
+      "tier": "production",
+      "path": "fashion-luxury/packaging_unboxing_luxury.md"
+    },
+    {
+      "id": "fashion-luxury.retail.flagship_store_digital_companion",
+      "pack": "fashion-luxury",
+      "domain": "retail",
+      "slug": "flagship_store_digital_companion",
+      "title": "Flagship store digital companion",
+      "tier": "production",
+      "path": "fashion-luxury/flagship_store_digital_companion.md"
+    },
+    {
+      "id": "fashion-luxury.retail.visual_merchandising_guidelines",
+      "pack": "fashion-luxury",
+      "domain": "retail",
+      "slug": "visual_merchandising_guidelines",
+      "title": "Visual merchandising guidelines",
+      "tier": "production",
+      "path": "fashion-luxury/visual_merchandising_guidelines.md"
+    },
+    {
+      "id": "fashion-luxury.social.instagram_reels_fashion_native",
+      "pack": "fashion-luxury",
+      "domain": "social",
+      "slug": "instagram_reels_fashion_native",
+      "title": "Instagram Reels fashion native",
+      "tier": "production",
+      "path": "fashion-luxury/instagram_reels_fashion_native.md"
+    },
+    {
+      "id": "fashion-luxury.social.pinterest_seasonal_boards",
+      "pack": "fashion-luxury",
+      "domain": "social",
+      "slug": "pinterest_seasonal_boards",
+      "title": "Pinterest seasonal boards",
+      "tier": "production",
+      "path": "fashion-luxury/pinterest_seasonal_boards.md"
+    },
+    {
+      "id": "fashion-luxury.social.tiktok_fashion_discovery_hooks",
+      "pack": "fashion-luxury",
+      "domain": "social",
+      "slug": "tiktok_fashion_discovery_hooks",
+      "title": "TikTok fashion discovery hooks",
+      "tier": "production",
+      "path": "fashion-luxury/tiktok_fashion_discovery_hooks.md"
+    },
+    {
+      "id": "fashion-luxury.strategy.define_luxury_brand_codes",
+      "pack": "fashion-luxury",
+      "domain": "strategy",
+      "slug": "define_luxury_brand_codes",
+      "title": "Define luxury brand codes",
+      "tier": "foundation",
+      "path": "fashion-luxury/define_luxury_brand_codes.md"
+    },
+    {
+      "id": "fashion-luxury.strategy.season_narrative_concept",
+      "pack": "fashion-luxury",
+      "domain": "strategy",
+      "slug": "season_narrative_concept",
+      "title": "Season narrative concept",
+      "tier": "foundation",
+      "path": "fashion-luxury/season_narrative_concept.md"
+    },
+    {
+      "id": "marketing-stack.ai.automation_stack_zapier_make",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "automation_stack_zapier_make",
+      "title": "Automation stack Zapier Make",
+      "tier": "ops",
+      "path": "marketing-stack/automation_stack_zapier_make.md"
+    },
+    {
+      "id": "marketing-stack.ai.cli_vs_api_vs_ui_decision",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "cli_vs_api_vs_ui_decision",
+      "title": "CLI vs API vs UI decision",
+      "tier": "foundation",
+      "path": "marketing-stack/cli_vs_api_vs_ui_decision.md"
+    },
+    {
+      "id": "marketing-stack.ai.copy_generation_tool_matrix",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "copy_generation_tool_matrix",
+      "title": "Copy generation tool matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/copy_generation_tool_matrix.md"
+    },
+    {
+      "id": "marketing-stack.ai.design_tool_matrix",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "design_tool_matrix",
+      "title": "Design tool matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/design_tool_matrix.md"
+    },
+    {
+      "id": "marketing-stack.ai.image_generation_tool_matrix",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "image_generation_tool_matrix",
+      "title": "Image generation tool matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/image_generation_tool_matrix.md"
+    },
+    {
+      "id": "marketing-stack.ai.research_tool_matrix",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "research_tool_matrix",
+      "title": "Research tool matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/research_tool_matrix.md"
+    },
+    {
+      "id": "marketing-stack.ai.video_generation_tool_matrix",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "video_generation_tool_matrix",
+      "title": "Video generation tool matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/video_generation_tool_matrix.md"
+    },
+    {
+      "id": "marketing-stack.ai.voice_and_audio_tool_matrix",
+      "pack": "marketing-stack",
+      "domain": "ai",
+      "slug": "voice_and_audio_tool_matrix",
+      "title": "Voice and audio tool matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/voice_and_audio_tool_matrix.md"
+    },
+    {
+      "id": "marketing-stack.campaign_orchestration",
+      "pack": "marketing-stack",
+      "domain": "campaign_orchestration",
+      "slug": "campaign-orchestration",
+      "title": "End-to-end campaign orchestration",
+      "tier": "production",
+      "path": "marketing-stack/workflows/campaign-orchestration.md"
+    },
+    {
+      "id": "marketing-stack.ops.api_key_vault_and_rotation",
+      "pack": "marketing-stack",
+      "domain": "ops",
+      "slug": "api_key_vault_and_rotation",
+      "title": "API key vault and rotation",
+      "tier": "ops",
+      "path": "marketing-stack/api_key_vault_and_rotation.md"
+    },
+    {
+      "id": "marketing-stack.ops.asset_handoff_figma_to_dam",
+      "pack": "marketing-stack",
+      "domain": "ops",
+      "slug": "asset_handoff_figma_to_dam",
+      "title": "Asset handoff Figma to DAM",
+      "tier": "ops",
+      "path": "marketing-stack/asset_handoff_figma_to_dam.md"
+    },
+    {
+      "id": "marketing-stack.ops.marketing_tool_budget_tiers",
+      "pack": "marketing-stack",
+      "domain": "ops",
+      "slug": "marketing_tool_budget_tiers",
+      "title": "Marketing tool budget tiers",
+      "tier": "ops",
+      "path": "marketing-stack/marketing_tool_budget_tiers.md"
+    },
+    {
+      "id": "marketing-stack.ops.weekly_marstack_review",
+      "pack": "marketing-stack",
+      "domain": "ops",
+      "slug": "weekly_marstack_review",
+      "title": "Weekly marstack review",
+      "tier": "ops",
+      "path": "marketing-stack/weekly_marstack_review.md"
+    },
+    {
+      "id": "marketing-stack.platform.corporate_channel_matrix",
+      "pack": "marketing-stack",
+      "domain": "platform",
+      "slug": "corporate_channel_matrix",
+      "title": "Corporate channel matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/corporate_channel_matrix.md"
+    },
+    {
+      "id": "marketing-stack.platform.creator_commerce_channel_matrix",
+      "pack": "marketing-stack",
+      "domain": "platform",
+      "slug": "creator_commerce_channel_matrix",
+      "title": "Creator commerce channel matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/creator_commerce_channel_matrix.md"
+    },
+    {
+      "id": "marketing-stack.platform.editorial_channel_matrix",
+      "pack": "marketing-stack",
+      "domain": "platform",
+      "slug": "editorial_channel_matrix",
+      "title": "Editorial channel matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/editorial_channel_matrix.md"
+    },
+    {
+      "id": "marketing-stack.platform.fashion_channel_matrix",
+      "pack": "marketing-stack",
+      "domain": "platform",
+      "slug": "fashion_channel_matrix",
+      "title": "Fashion channel matrix",
+      "tier": "foundation",
+      "path": "marketing-stack/fashion_channel_matrix.md"
+    },
+    {
+      "id": "marketing-stack.qa_pipeline",
+      "pack": "marketing-stack",
+      "domain": "qa_pipeline",
+      "slug": "qa-pipeline",
+      "title": "AI + human QA pipeline",
+      "tier": "production",
+      "path": "marketing-stack/workflows/qa-pipeline.md"
+    },
+    {
+      "id": "marketing-stack.workflow.ai_human_qa_gates",
+      "pack": "marketing-stack",
+      "domain": "workflow",
+      "slug": "ai_human_qa_gates",
+      "title": "AI human QA gates",
+      "tier": "qa",
+      "path": "marketing-stack/ai_human_qa_gates.md"
+    },
+    {
+      "id": "marketing-stack.workflow.end_to_end_campaign_orchestration",
+      "pack": "marketing-stack",
+      "domain": "workflow",
+      "slug": "end_to_end_campaign_orchestration",
+      "title": "End to end campaign orchestration",
+      "tier": "production",
+      "path": "marketing-stack/end_to_end_campaign_orchestration.md"
     },
     {
       "id": "media.audio.elevenlabs_voice_generate",
@@ -3636,6 +4685,159 @@
       "path": "personal-brand/define_signature_story.md"
     },
     {
+      "id": "personal-brand.thirty_day",
+      "pack": "personal-brand",
+      "domain": "thirty_day",
+      "slug": "thirty-day-launch",
+      "title": "30-day personal brand launch",
+      "tier": "production",
+      "path": "personal-brand/workflows/thirty-day-launch.md"
+    },
+    {
+      "id": "personal-os.doc.write_concept_note_personal",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_concept_note_personal",
+      "title": "Write personal concept note",
+      "tier": "alignment",
+      "path": "personal-os/doc-architecture/write_concept_note_personal.md"
+    },
+    {
+      "id": "personal-os.doc.write_life_project_charter",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_life_project_charter",
+      "title": "Write life project charter",
+      "tier": "planning",
+      "path": "personal-os/doc-architecture/write_life_project_charter.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_aar",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_aar",
+      "title": "Write personal after action report",
+      "tier": "reporting",
+      "path": "personal-os/doc-architecture/write_personal_aar.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_creative_brief",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_creative_brief",
+      "title": "Write personal creative brief",
+      "tier": "alignment",
+      "path": "personal-os/doc-architecture/write_personal_creative_brief.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_decision_memo",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_decision_memo",
+      "title": "Write personal decision memo",
+      "tier": "decision",
+      "path": "personal-os/doc-architecture/write_personal_decision_memo.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_risk_register",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_risk_register",
+      "title": "Write personal risk register",
+      "tier": "governance",
+      "path": "personal-os/doc-architecture/write_personal_risk_register.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_run_of_show",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_run_of_show",
+      "title": "Write personal run of show",
+      "tier": "planning",
+      "path": "personal-os/doc-architecture/write_personal_run_of_show.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_scorecard",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_scorecard",
+      "title": "Write personal scorecard",
+      "tier": "reporting",
+      "path": "personal-os/doc-architecture/write_personal_scorecard.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_sop",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_sop",
+      "title": "Write personal SOP",
+      "tier": "governance",
+      "path": "personal-os/doc-architecture/write_personal_sop.md"
+    },
+    {
+      "id": "personal-os.doc.write_personal_status_report",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_personal_status_report",
+      "title": "Write personal status report",
+      "tier": "reporting",
+      "path": "personal-os/doc-architecture/write_personal_status_report.md"
+    },
+    {
+      "id": "personal-os.doc.write_quarter_strategy_brief",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_quarter_strategy_brief",
+      "title": "Write quarter strategy brief",
+      "tier": "alignment",
+      "path": "personal-os/doc-architecture/write_quarter_strategy_brief.md"
+    },
+    {
+      "id": "personal-os.doc.write_weekly_alignment_brief",
+      "pack": "personal-os",
+      "domain": "doc",
+      "slug": "write_weekly_alignment_brief",
+      "title": "Write weekly alignment brief",
+      "tier": "alignment",
+      "path": "personal-os/doc-architecture/write_weekly_alignment_brief.md"
+    },
+    {
+      "id": "personal-os.life_project_charter",
+      "pack": "personal-os",
+      "domain": "life_project_charter",
+      "slug": "life-project-charter",
+      "title": "Life project charter",
+      "tier": "production",
+      "path": "personal-os/workflows/life-project-charter.md"
+    },
+    {
+      "id": "personal-os.personal_aar",
+      "pack": "personal-os",
+      "domain": "personal_aar",
+      "slug": "personal-aar",
+      "title": "Personal after action review",
+      "tier": "production",
+      "path": "personal-os/workflows/personal-aar.md"
+    },
+    {
+      "id": "personal-os.personal_creative_brief",
+      "pack": "personal-os",
+      "domain": "personal_creative_brief",
+      "slug": "personal-creative-brief",
+      "title": "Personal creative brief",
+      "tier": "production",
+      "path": "personal-os/workflows/personal-creative-brief.md"
+    },
+    {
+      "id": "personal-os.weekly_alignment",
+      "pack": "personal-os",
+      "domain": "weekly_alignment",
+      "slug": "weekly-alignment",
+      "title": "Weekly personal alignment",
+      "tier": "production",
+      "path": "personal-os/workflows/weekly-alignment.md"
+    },
+    {
       "id": "platform.brand_studio.agent_read_order",
       "pack": "platform",
       "domain": "brand_studio",
@@ -3670,6 +4872,15 @@
       "title": "Sync content calendar to project",
       "tier": "production",
       "path": "platform/content_calendar_sync.md"
+    },
+    {
+      "id": "platform.brand_studio.execute_workflow",
+      "pack": "platform",
+      "domain": "brand_studio",
+      "slug": "execute_workflow",
+      "title": "Execute workflow",
+      "tier": "production",
+      "path": "platform/execute_workflow.md"
     },
     {
       "id": "platform.brand_studio.export_deliverable_bundle",
@@ -3769,6 +4980,15 @@
       "title": "Write UGC brief for product",
       "tier": "production",
       "path": "product-brand/write_ugc_brief_for_product.md"
+    },
+    {
+      "id": "product-brand.dtc_launch",
+      "pack": "product-brand",
+      "domain": "dtc_launch",
+      "slug": "dtc-launch",
+      "title": "DTC product launch",
+      "tier": "production",
+      "path": "product-brand/workflows/dtc-launch.md"
     },
     {
       "id": "product-brand.identity.define_product_brand_tokens",
@@ -3949,6 +5169,195 @@
       "title": "Product naming workflow",
       "tier": "foundation",
       "path": "product-brand/product_naming_workflow.md"
+    },
+    {
+      "id": "product-marketing.ai.ai_generate_pmm_draft_from_prd",
+      "pack": "product-marketing",
+      "domain": "ai",
+      "slug": "ai_generate_pmm_draft_from_prd",
+      "title": "AI generate PMM draft from PRD",
+      "tier": "production",
+      "path": "product-marketing/ai_generate_pmm_draft_from_prd.md"
+    },
+    {
+      "id": "product-marketing.ai.ai_synthetic_user_quotes_guardrails",
+      "pack": "product-marketing",
+      "domain": "ai",
+      "slug": "ai_synthetic_user_quotes_guardrails",
+      "title": "AI synthetic user quotes guardrails",
+      "tier": "qa",
+      "path": "product-marketing/ai_synthetic_user_quotes_guardrails.md"
+    },
+    {
+      "id": "product-marketing.analytics.launch_metrics_dashboard_spec",
+      "pack": "product-marketing",
+      "domain": "analytics",
+      "slug": "launch_metrics_dashboard_spec",
+      "title": "Launch metrics dashboard spec",
+      "tier": "ops",
+      "path": "product-marketing/launch_metrics_dashboard_spec.md"
+    },
+    {
+      "id": "product-marketing.analytics.win_loss_interview_synthesis",
+      "pack": "product-marketing",
+      "domain": "analytics",
+      "slug": "win_loss_interview_synthesis",
+      "title": "Win loss interview synthesis",
+      "tier": "production",
+      "path": "product-marketing/win_loss_interview_synthesis.md"
+    },
+    {
+      "id": "product-marketing.content.changelog_to_marketing_repurpose",
+      "pack": "product-marketing",
+      "domain": "content",
+      "slug": "changelog_to_marketing_repurpose",
+      "title": "Changelog to marketing repurpose",
+      "tier": "production",
+      "path": "product-marketing/changelog_to_marketing_repurpose.md"
+    },
+    {
+      "id": "product-marketing.content.comparison_landing_page",
+      "pack": "product-marketing",
+      "domain": "content",
+      "slug": "comparison_landing_page",
+      "title": "Comparison landing page",
+      "tier": "production",
+      "path": "product-marketing/comparison_landing_page.md"
+    },
+    {
+      "id": "product-marketing.content.feature_adoption_campaign",
+      "pack": "product-marketing",
+      "domain": "content",
+      "slug": "feature_adoption_campaign",
+      "title": "Feature adoption campaign",
+      "tier": "production",
+      "path": "product-marketing/feature_adoption_campaign.md"
+    },
+    {
+      "id": "product-marketing.content.product_demo_storyboard",
+      "pack": "product-marketing",
+      "domain": "content",
+      "slug": "product_demo_storyboard",
+      "title": "Product demo storyboard",
+      "tier": "production",
+      "path": "product-marketing/product_demo_storyboard.md"
+    },
+    {
+      "id": "product-marketing.enablement.objection_handling_one_pagers",
+      "pack": "product-marketing",
+      "domain": "enablement",
+      "slug": "objection_handling_one_pagers",
+      "title": "Objection handling one pagers",
+      "tier": "production",
+      "path": "product-marketing/objection_handling_one_pagers.md"
+    },
+    {
+      "id": "product-marketing.enablement.pricing_and_packaging_visual",
+      "pack": "product-marketing",
+      "domain": "enablement",
+      "slug": "pricing_and_packaging_visual",
+      "title": "Pricing and packaging visual",
+      "tier": "production",
+      "path": "product-marketing/pricing_and_packaging_visual.md"
+    },
+    {
+      "id": "product-marketing.launch.analyst_and_press_briefing_kit",
+      "pack": "product-marketing",
+      "domain": "launch",
+      "slug": "analyst_and_press_briefing_kit",
+      "title": "Analyst and press briefing kit",
+      "tier": "production",
+      "path": "product-marketing/analyst_and_press_briefing_kit.md"
+    },
+    {
+      "id": "product-marketing.launch.customer_announcement_email_sequence",
+      "pack": "product-marketing",
+      "domain": "launch",
+      "slug": "customer_announcement_email_sequence",
+      "title": "Customer announcement email sequence",
+      "tier": "production",
+      "path": "product-marketing/customer_announcement_email_sequence.md"
+    },
+    {
+      "id": "product-marketing.launch.gtm_launch_tier_selection",
+      "pack": "product-marketing",
+      "domain": "launch",
+      "slug": "gtm_launch_tier_selection",
+      "title": "GTM launch tier selection",
+      "tier": "foundation",
+      "path": "product-marketing/gtm_launch_tier_selection.md"
+    },
+    {
+      "id": "product-marketing.launch.launch_narrative_and_hook",
+      "pack": "product-marketing",
+      "domain": "launch",
+      "slug": "launch_narrative_and_hook",
+      "title": "Launch narrative and hook",
+      "tier": "production",
+      "path": "product-marketing/launch_narrative_and_hook.md"
+    },
+    {
+      "id": "product-marketing.launch.sales_launch_kit",
+      "pack": "product-marketing",
+      "domain": "launch",
+      "slug": "sales_launch_kit",
+      "title": "Sales launch kit",
+      "tier": "production",
+      "path": "product-marketing/sales_launch_kit.md"
+    },
+    {
+      "id": "product-marketing.positioning_from_prd",
+      "pack": "product-marketing",
+      "domain": "positioning_from_prd",
+      "slug": "positioning-from-prd",
+      "title": "Positioning from PRD",
+      "tier": "production",
+      "path": "product-marketing/workflows/positioning-from-prd.md"
+    },
+    {
+      "id": "product-marketing.strategy.build_buyer_persona_research_synthesis",
+      "pack": "product-marketing",
+      "domain": "strategy",
+      "slug": "build_buyer_persona_research_synthesis",
+      "title": "Build buyer persona research synthesis",
+      "tier": "foundation",
+      "path": "product-marketing/build_buyer_persona_research_synthesis.md"
+    },
+    {
+      "id": "product-marketing.strategy.competitive_battlecard_system",
+      "pack": "product-marketing",
+      "domain": "strategy",
+      "slug": "competitive_battlecard_system",
+      "title": "Competitive battlecard system",
+      "tier": "production",
+      "path": "product-marketing/competitive_battlecard_system.md"
+    },
+    {
+      "id": "product-marketing.strategy.write_positioning_and_messaging_doc",
+      "pack": "product-marketing",
+      "domain": "strategy",
+      "slug": "write_positioning_and_messaging_doc",
+      "title": "Write positioning and messaging doc",
+      "tier": "foundation",
+      "path": "product-marketing/write_positioning_and_messaging_doc.md"
+    },
+    {
+      "id": "product-marketing.tier1_launch",
+      "pack": "product-marketing",
+      "domain": "tier1_launch",
+      "slug": "tier1-launch",
+      "title": "Tier 1 product launch (GTM)",
+      "tier": "production",
+      "path": "product-marketing/workflows/tier1-launch.md"
+    },
+    {
+      "id": "product-marketing.tier2_launch",
+      "pack": "product-marketing",
+      "domain": "tier2_launch",
+      "slug": "tier2-launch",
+      "title": "Tier 2 feature launch",
+      "tier": "production",
+      "path": "product-marketing/workflows/tier2-launch.md"
     }
   ]
 }

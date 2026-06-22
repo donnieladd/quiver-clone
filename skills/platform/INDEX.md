@@ -17,6 +17,7 @@ Prefix: `platform.brand_studio.*`
 | `sync_dam_paths` | Profile folder structure |
 | `content_calendar_sync` | Story / series calendar import |
 | `approval_workflow_state` | Approval chain state machine |
+| `execute_workflow` | Run step-by-step workflows via API/UI |
 | `monorepo_pack_layout` | Merge Brand Studio repo + this skills tree |
 
 Full manifest: `../manifest.json`

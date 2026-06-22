@@ -1,42 +1,28 @@
 # Skills — Brand Studio foundation
 
-**422 skills** across 7 packs · Unified manifest · Higgsfield-style media API
+**536+ skills** · **21 workflows** · 12 packs · [`MARKETING_OS.md`](./MARKETING_OS.md) is the master map
 
-| Pack | Skills | Purpose |
-|------|--------|---------|
-| `brand-system/` | 20 | Tokens, logos, lint, export |
-| `personal-brand/` | 21 | Creator / executive personal brand |
-| `product-brand/` | 23 | DTC, SaaS, packaging, launch |
-| `creator/` | 27 | Content economy, UGC, monetization |
-| `media/` | 26 | AI generator APIs (Higgsfield, OpenAI, …) |
-| `platform/` | 12 | Brand Studio runtime |
-| `church/` | 293 | Ministry vertical (first client pack) |
-
-## Commands
+| Pack | Purpose |
+|------|---------|
+| `workflows/` | **Executable workflows index** — start at `/app/workflows` |
+| `marketing-stack/` | **Start here** — platform + AI tool routing |
+| `brand-system/` | Tokens, logos, lint |
+| `corporate-marketing/` | B2B, enterprise, sales enablement |
+| `product-marketing/` | PMM, GTM, launch |
+| `product-brand/` | DTC, packaging, Amazon |
+| `fashion-luxury/` | High-end fashion, drops, editorial |
+| `editorial-marketing/` | SEO, long-form, newsletter at scale |
+| `personal-brand/` | Executive / creator personal brand |
+| `creator/` | Content economy |
+| `media/` | Generator API integrations |
+| `platform/` | Brand Studio runtime |
+| `church/` | Ministry vertical |
 
 ```bash
-npm run skills:generate-verticals   # personal/product/creator/media
-npm run skills:church               # church baseline (preserves hand-written)
-npm run skills:update-registry      # skills/manifest.json
-npm run skills:validate-profiles
+npm run skills:sync-workflows    # sync workflow markdown from TS registry
+npm run skills:generate-marketing   # corporate, PMM, fashion, editorial, stack
+npm run skills:generate-verticals   # personal, product-brand, creator, media
+npm run skills:update-registry
 ```
 
-## Media API + Studio
-
-- Docs: [`../docs/MEDIA_ENGINE.md`](../docs/MEDIA_ENGINE.md)
-- UI: `/app/studio`
-- API: `/v1/media/models`, `/v1/media/generations`
-
-## Brand Studio merge
-
-[`BRAND_STUDIO_INTEGRATION.md`](./BRAND_STUDIO_INTEGRATION.md)
-
-## Agent read order
-
-```
-platform.brand_studio.agent_read_order
-  → brand-system/clients/{slug}.tokens.json
-  → vertical profile (church, personal-brand, …)
-  → media.router.route_generation_request
-  → brand-system.qa.run_token_lint_on_asset
-```
+**If you're overwhelmed:** read [`MARKETING_OS.md`](./MARKETING_OS.md) — one page, pick your row, then open [`/app/workflows`](../../app/app/workflows/page.tsx).

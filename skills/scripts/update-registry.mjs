@@ -12,7 +12,13 @@ const PACK_DIRS = [
   "brand-system",
   "platform",
   "personal-brand",
+  "personal-os",
   "product-brand",
+  "product-marketing",
+  "corporate-marketing",
+  "fashion-luxury",
+  "editorial-marketing",
+  "marketing-stack",
   "creator",
   "media",
   "church",
@@ -108,8 +114,49 @@ const manifest = {
     schema: "brand-system/schema.json",
     reference_client: "brand-system/clients/faith-chapel.tokens.json",
   },
+  workflows: {
+    index: "workflows/INDEX.md",
+    runtime_ui: "/app/workflows",
+    api: "/v1/workflows",
+    count: 0, // filled below
+    ids: [],
+  },
   skills,
 };
+
+// Workflow IDs from TypeScript registry (static list synced by skills:sync-workflows)
+const workflowIds = [
+  "marketing-stack.campaign_orchestration",
+  "marketing-stack.qa_pipeline",
+  "corporate-marketing.thought_leadership",
+  "corporate-marketing.case_study",
+  "corporate-marketing.sales_enablement_sprint",
+  "corporate-marketing.earnings_kit",
+  "product-marketing.tier1_launch",
+  "product-marketing.tier2_launch",
+  "product-marketing.positioning_from_prd",
+  "fashion-luxury.capsule_drop",
+  "fashion-luxury.lookbook_season",
+  "fashion-luxury.collab_announce",
+  "editorial-marketing.pillar_page",
+  "editorial-marketing.content_cluster",
+  "editorial-marketing.newsletter_edition",
+  "editorial-marketing.article_social_ladder",
+  "product-brand.dtc_launch",
+  "personal-brand.thirty_day",
+  "creator.weekly_production",
+  "church.sermon_to_social",
+  "church.weekly_service_kit",
+  "church.creative_brief_to_production",
+  "church.big_day_charter",
+  "church.post_event_aar",
+  "personal-os.weekly_alignment",
+  "personal-os.life_project_charter",
+  "personal-os.personal_aar",
+  "personal-os.personal_creative_brief",
+];
+manifest.workflows.count = workflowIds.length;
+manifest.workflows.ids = workflowIds;
 
 writeFileSync(join(SKILLS_ROOT, "manifest.json"), JSON.stringify(manifest, null, 2));
 
