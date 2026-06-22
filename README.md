@@ -5,7 +5,8 @@ A **QuiverAI-compatible REST API** at `/v1` plus a **Brand Studio skills foundat
 | Layer | Location |
 |-------|----------|
 | SVG API + playground | `src/app/v1/`, `src/app/app/` |
-| Skills (325) | `skills/manifest.json` |
+| Skills (422) | `skills/manifest.json` |
+| Media Studio | `/app/studio` · [`docs/MEDIA_ENGINE.md`](docs/MEDIA_ENGINE.md) |
 | Brand Studio handoff | [`skills/BRAND_STUDIO_INTEGRATION.md`](skills/BRAND_STUDIO_INTEGRATION.md) |
 
 ```bash
@@ -20,6 +21,7 @@ npm run skills:validate-profiles
 - **Model discovery** — `GET /v1/models`, `GET /v1/models/{model}`
 - **OpenAPI spec** — `GET /v1/openapi.json`
 - Playground UI, gallery, export (SVG/PNG)
+- **Media Studio** — unified image/video/SVG generation (`/v1/media/*`, Higgsfield-style)
 
 ## Quick start
 

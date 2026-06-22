@@ -1,12 +1,16 @@
 {
   "version": "2.0.0",
   "product": "brand-studio",
-  "generated_at": "2026-06-22T14:04:55.045Z",
-  "skill_count": 325,
+  "generated_at": "2026-06-22T14:19:00.248Z",
+  "skill_count": 422,
   "packs": {
     "brand-system": 20,
     "church": 293,
-    "platform": 12
+    "creator": 27,
+    "media": 26,
+    "personal-brand": 21,
+    "platform": 12,
+    "product-brand": 23
   },
   "domains": {
     "components": 2,
@@ -14,23 +18,44 @@
     "lifecycle": 4,
     "logos": 3,
     "qa": 17,
-    "strategy": 1,
+    "strategy": 7,
     "tokens": 6,
     "brand": 19,
-    "content": 23,
+    "content": 32,
     "env": 13,
     "motion": 21,
-    "ops": 21,
+    "ops": 31,
     "print": 14,
     "series": 29,
     "slides": 24,
-    "social": 38,
+    "social": 45,
     "story": 24,
     "web-premium": 8,
     "web": 16,
     "workflow": 6,
     "worship": 21,
-    "brand_studio": 12
+    "analytics": 1,
+    "business": 5,
+    "community": 1,
+    "live": 2,
+    "media": 8,
+    "product": 4,
+    "audio": 1,
+    "higgsfield": 8,
+    "image": 4,
+    "openai": 1,
+    "quiver": 1,
+    "research": 1,
+    "router": 4,
+    "video": 2,
+    "identity": 5,
+    "brand_studio": 12,
+    "creator": 3,
+    "launch": 4,
+    "marketplace": 3,
+    "packaging": 2,
+    "photo": 2,
+    "saas": 3
   },
   "church": {
     "workflows": [
@@ -2945,6 +2970,672 @@
       "path": "church/worship/union_sound_release_kit.md"
     },
     {
+      "id": "creator.analytics.weekly_creator_analytics_review",
+      "pack": "creator",
+      "domain": "analytics",
+      "slug": "weekly_creator_analytics_review",
+      "title": "Weekly creator analytics review",
+      "tier": "ops",
+      "path": "creator/weekly_creator_analytics_review.md"
+    },
+    {
+      "id": "creator.business.affiliate_link_placement_guide",
+      "pack": "creator",
+      "domain": "business",
+      "slug": "affiliate_link_placement_guide",
+      "title": "Affiliate link placement guide",
+      "tier": "production",
+      "path": "creator/affiliate_link_placement_guide.md"
+    },
+    {
+      "id": "creator.business.brand_deal_negotiation_checklist",
+      "pack": "creator",
+      "domain": "business",
+      "slug": "brand_deal_negotiation_checklist",
+      "title": "Brand deal negotiation checklist",
+      "tier": "ops",
+      "path": "creator/brand_deal_negotiation_checklist.md"
+    },
+    {
+      "id": "creator.business.build_creator_media_kit",
+      "pack": "creator",
+      "domain": "business",
+      "slug": "build_creator_media_kit",
+      "title": "Build creator media kit",
+      "tier": "production",
+      "path": "creator/build_creator_media_kit.md"
+    },
+    {
+      "id": "creator.business.hire_editor_brief",
+      "pack": "creator",
+      "domain": "business",
+      "slug": "hire_editor_brief",
+      "title": "Hire editor brief",
+      "tier": "ops",
+      "path": "creator/hire_editor_brief.md"
+    },
+    {
+      "id": "creator.business.sponsorship_disclosure_compliance",
+      "pack": "creator",
+      "domain": "business",
+      "slug": "sponsorship_disclosure_compliance",
+      "title": "Sponsorship disclosure compliance",
+      "tier": "qa",
+      "path": "creator/sponsorship_disclosure_compliance.md"
+    },
+    {
+      "id": "creator.community.community_post_engagement_system",
+      "pack": "creator",
+      "domain": "community",
+      "slug": "community_post_engagement_system",
+      "title": "Community post engagement system",
+      "tier": "production",
+      "path": "creator/community_post_engagement_system.md"
+    },
+    {
+      "id": "creator.content.batch_filming_day_plan",
+      "pack": "creator",
+      "domain": "content",
+      "slug": "batch_filming_day_plan",
+      "title": "Batch filming day plan",
+      "tier": "ops",
+      "path": "creator/batch_filming_day_plan.md"
+    },
+    {
+      "id": "creator.content.build_hook_formula_library",
+      "pack": "creator",
+      "domain": "content",
+      "slug": "build_hook_formula_library",
+      "title": "Build hook formula library",
+      "tier": "foundation",
+      "path": "creator/build_hook_formula_library.md"
+    },
+    {
+      "id": "creator.content.plan_creator_calendar_30d",
+      "pack": "creator",
+      "domain": "content",
+      "slug": "plan_creator_calendar_30d",
+      "title": "Plan creator calendar 30d",
+      "tier": "production",
+      "path": "creator/plan_creator_calendar_30d.md"
+    },
+    {
+      "id": "creator.content.repurpose_long_to_short_clips",
+      "pack": "creator",
+      "domain": "content",
+      "slug": "repurpose_long_to_short_clips",
+      "title": "Repurpose long to short clips",
+      "tier": "production",
+      "path": "creator/repurpose_long_to_short_clips.md"
+    },
+    {
+      "id": "creator.content.script_short_form_video",
+      "pack": "creator",
+      "domain": "content",
+      "slug": "script_short_form_video",
+      "title": "Script short form video",
+      "tier": "production",
+      "path": "creator/script_short_form_video.md"
+    },
+    {
+      "id": "creator.content.write_long_form_youtube_script",
+      "pack": "creator",
+      "domain": "content",
+      "slug": "write_long_form_youtube_script",
+      "title": "Write long form YouTube script",
+      "tier": "production",
+      "path": "creator/write_long_form_youtube_script.md"
+    },
+    {
+      "id": "creator.live.design_live_stream_overlay_kit",
+      "pack": "creator",
+      "domain": "live",
+      "slug": "design_live_stream_overlay_kit",
+      "title": "Design live stream overlay kit",
+      "tier": "production",
+      "path": "creator/design_live_stream_overlay_kit.md"
+    },
+    {
+      "id": "creator.live.podcast_clip_extraction_workflow",
+      "pack": "creator",
+      "domain": "live",
+      "slug": "podcast_clip_extraction_workflow",
+      "title": "Podcast clip extraction workflow",
+      "tier": "production",
+      "path": "creator/podcast_clip_extraction_workflow.md"
+    },
+    {
+      "id": "creator.media.ai_assisted_b_roll_generation",
+      "pack": "creator",
+      "domain": "media",
+      "slug": "ai_assisted_b_roll_generation",
+      "title": "AI assisted B-roll generation",
+      "tier": "production",
+      "path": "creator/ai_assisted_b_roll_generation.md"
+    },
+    {
+      "id": "creator.media.ai_voiceover_workflow",
+      "pack": "creator",
+      "domain": "media",
+      "slug": "ai_voiceover_workflow",
+      "title": "AI voiceover workflow",
+      "tier": "production",
+      "path": "creator/ai_voiceover_workflow.md"
+    },
+    {
+      "id": "creator.product.collab_with_brand_on_product",
+      "pack": "creator",
+      "domain": "product",
+      "slug": "collab_with_brand_on_product",
+      "title": "Collab with brand on product",
+      "tier": "production",
+      "path": "creator/collab_with_brand_on_product.md"
+    },
+    {
+      "id": "creator.product.design_course_launch_visuals",
+      "pack": "creator",
+      "domain": "product",
+      "slug": "design_course_launch_visuals",
+      "title": "Design course launch visuals",
+      "tier": "production",
+      "path": "creator/design_course_launch_visuals.md"
+    },
+    {
+      "id": "creator.product.launch_creator_digital_product",
+      "pack": "creator",
+      "domain": "product",
+      "slug": "launch_creator_digital_product",
+      "title": "Launch creator digital product",
+      "tier": "production",
+      "path": "creator/launch_creator_digital_product.md"
+    },
+    {
+      "id": "creator.product.lead_magnet_funnel_visuals",
+      "pack": "creator",
+      "domain": "product",
+      "slug": "lead_magnet_funnel_visuals",
+      "title": "Lead magnet funnel visuals",
+      "tier": "production",
+      "path": "creator/lead_magnet_funnel_visuals.md"
+    },
+    {
+      "id": "creator.social.caption_style_guide_creator",
+      "pack": "creator",
+      "domain": "social",
+      "slug": "caption_style_guide_creator",
+      "title": "Caption style guide creator",
+      "tier": "foundation",
+      "path": "creator/caption_style_guide_creator.md"
+    },
+    {
+      "id": "creator.social.design_thumbnail_ab_system",
+      "pack": "creator",
+      "domain": "social",
+      "slug": "design_thumbnail_ab_system",
+      "title": "Design thumbnail A/B system",
+      "tier": "production",
+      "path": "creator/design_thumbnail_ab_system.md"
+    },
+    {
+      "id": "creator.social.export_platform_native_aspects",
+      "pack": "creator",
+      "domain": "social",
+      "slug": "export_platform_native_aspects",
+      "title": "Export platform native aspects",
+      "tier": "production",
+      "path": "creator/export_platform_native_aspects.md"
+    },
+    {
+      "id": "creator.social.trend_scan_weekly",
+      "pack": "creator",
+      "domain": "social",
+      "slug": "trend_scan_weekly",
+      "title": "Trend scan weekly",
+      "tier": "production",
+      "path": "creator/trend_scan_weekly.md"
+    },
+    {
+      "id": "creator.strategy.define_creator_monetization_stack",
+      "pack": "creator",
+      "domain": "strategy",
+      "slug": "define_creator_monetization_stack",
+      "title": "Define creator monetization stack",
+      "tier": "foundation",
+      "path": "creator/define_creator_monetization_stack.md"
+    },
+    {
+      "id": "creator.strategy.define_creator_niche",
+      "pack": "creator",
+      "domain": "strategy",
+      "slug": "define_creator_niche",
+      "title": "Define creator niche",
+      "tier": "foundation",
+      "path": "creator/define_creator_niche.md"
+    },
+    {
+      "id": "media.audio.elevenlabs_voice_generate",
+      "pack": "media",
+      "domain": "audio",
+      "slug": "elevenlabs_voice_generate",
+      "title": "ElevenLabs voice generate",
+      "tier": "production",
+      "path": "media/elevenlabs_voice_generate.md"
+    },
+    {
+      "id": "media.higgsfield.cli_generate_wrapper",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "cli_generate_wrapper",
+      "title": "Higgsfield CLI generate wrapper",
+      "tier": "ops",
+      "path": "media/cli_generate_wrapper.md"
+    },
+    {
+      "id": "media.higgsfield.image_to_video_dop",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "image_to_video_dop",
+      "title": "Higgsfield image to video DoP",
+      "tier": "production",
+      "path": "media/image_to_video_dop.md"
+    },
+    {
+      "id": "media.higgsfield.kling_video_generate",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "kling_video_generate",
+      "title": "Higgsfield Kling video generate",
+      "tier": "production",
+      "path": "media/kling_video_generate.md"
+    },
+    {
+      "id": "media.higgsfield.marketing_studio_generate",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "marketing_studio_generate",
+      "title": "Higgsfield Marketing Studio generate",
+      "tier": "production",
+      "path": "media/marketing_studio_generate.md"
+    },
+    {
+      "id": "media.higgsfield.soul_character_train",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "soul_character_train",
+      "title": "Higgsfield Soul character train",
+      "tier": "production",
+      "path": "media/soul_character_train.md"
+    },
+    {
+      "id": "media.higgsfield.sync_model_catalog_cli",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "sync_model_catalog_cli",
+      "title": "Higgsfield sync model catalog CLI",
+      "tier": "ops",
+      "path": "media/sync_model_catalog_cli.md"
+    },
+    {
+      "id": "media.higgsfield.text_to_image",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "text_to_image",
+      "title": "Higgsfield text to image",
+      "tier": "production",
+      "path": "media/text_to_image.md"
+    },
+    {
+      "id": "media.higgsfield.veo_video_generate",
+      "pack": "media",
+      "domain": "higgsfield",
+      "slug": "veo_video_generate",
+      "title": "Higgsfield Veo video generate",
+      "tier": "production",
+      "path": "media/veo_video_generate.md"
+    },
+    {
+      "id": "media.image.fal_ai_route",
+      "pack": "media",
+      "domain": "image",
+      "slug": "fal_ai_route",
+      "title": "fal.ai route",
+      "tier": "production",
+      "path": "media/fal_ai_route.md"
+    },
+    {
+      "id": "media.image.remove_background_api",
+      "pack": "media",
+      "domain": "image",
+      "slug": "remove_background_api",
+      "title": "Remove background API",
+      "tier": "production",
+      "path": "media/remove_background_api.md"
+    },
+    {
+      "id": "media.image.replicate_route",
+      "pack": "media",
+      "domain": "image",
+      "slug": "replicate_route",
+      "title": "Replicate route",
+      "tier": "production",
+      "path": "media/replicate_route.md"
+    },
+    {
+      "id": "media.image.upscale_image_api",
+      "pack": "media",
+      "domain": "image",
+      "slug": "upscale_image_api",
+      "title": "Upscale image API",
+      "tier": "production",
+      "path": "media/upscale_image_api.md"
+    },
+    {
+      "id": "media.openai.gpt_image_generate",
+      "pack": "media",
+      "domain": "openai",
+      "slug": "gpt_image_generate",
+      "title": "OpenAI GPT image generate",
+      "tier": "production",
+      "path": "media/gpt_image_generate.md"
+    },
+    {
+      "id": "media.ops.brand_lint_after_generation",
+      "pack": "media",
+      "domain": "ops",
+      "slug": "brand_lint_after_generation",
+      "title": "Brand lint after generation",
+      "tier": "qa",
+      "path": "media/brand_lint_after_generation.md"
+    },
+    {
+      "id": "media.ops.cache_generation_results",
+      "pack": "media",
+      "domain": "ops",
+      "slug": "cache_generation_results",
+      "title": "Cache generation results",
+      "tier": "ops",
+      "path": "media/cache_generation_results.md"
+    },
+    {
+      "id": "media.ops.rate_limit_media_jobs",
+      "pack": "media",
+      "domain": "ops",
+      "slug": "rate_limit_media_jobs",
+      "title": "Rate limit media jobs",
+      "tier": "ops",
+      "path": "media/rate_limit_media_jobs.md"
+    },
+    {
+      "id": "media.ops.validate_api_keys_env",
+      "pack": "media",
+      "domain": "ops",
+      "slug": "validate_api_keys_env",
+      "title": "Validate API keys env",
+      "tier": "ops",
+      "path": "media/validate_api_keys_env.md"
+    },
+    {
+      "id": "media.quiver.svg_generate_via_media_api",
+      "pack": "media",
+      "domain": "quiver",
+      "slug": "svg_generate_via_media_api",
+      "title": "Quiver SVG generate via media API",
+      "tier": "production",
+      "path": "media/svg_generate_via_media_api.md"
+    },
+    {
+      "id": "media.research.perplexity_research_brief",
+      "pack": "media",
+      "domain": "research",
+      "slug": "perplexity_research_brief",
+      "title": "Perplexity research brief",
+      "tier": "production",
+      "path": "media/perplexity_research_brief.md"
+    },
+    {
+      "id": "media.router.estimate_generation_cost",
+      "pack": "media",
+      "domain": "router",
+      "slug": "estimate_generation_cost",
+      "title": "Estimate generation cost",
+      "tier": "foundation",
+      "path": "media/estimate_generation_cost.md"
+    },
+    {
+      "id": "media.router.failover_provider_chain",
+      "pack": "media",
+      "domain": "router",
+      "slug": "failover_provider_chain",
+      "title": "Failover provider chain",
+      "tier": "production",
+      "path": "media/failover_provider_chain.md"
+    },
+    {
+      "id": "media.router.poll_job_status",
+      "pack": "media",
+      "domain": "router",
+      "slug": "poll_job_status",
+      "title": "Poll job status",
+      "tier": "production",
+      "path": "media/poll_job_status.md"
+    },
+    {
+      "id": "media.router.route_generation_request",
+      "pack": "media",
+      "domain": "router",
+      "slug": "route_generation_request",
+      "title": "Route generation request",
+      "tier": "foundation",
+      "path": "media/route_generation_request.md"
+    },
+    {
+      "id": "media.video.heygen_avatar_video",
+      "pack": "media",
+      "domain": "video",
+      "slug": "heygen_avatar_video",
+      "title": "HeyGen avatar video",
+      "tier": "production",
+      "path": "media/heygen_avatar_video.md"
+    },
+    {
+      "id": "media.video.runway_video_route",
+      "pack": "media",
+      "domain": "video",
+      "slug": "runway_video_route",
+      "title": "Runway video route",
+      "tier": "production",
+      "path": "media/runway_video_route.md"
+    },
+    {
+      "id": "personal-brand.content.map_content_pillars_personal",
+      "pack": "personal-brand",
+      "domain": "content",
+      "slug": "map_content_pillars_personal",
+      "title": "Map content pillars personal",
+      "tier": "production",
+      "path": "personal-brand/map_content_pillars_personal.md"
+    },
+    {
+      "id": "personal-brand.content.plan_personal_brand_calendar_30d",
+      "pack": "personal-brand",
+      "domain": "content",
+      "slug": "plan_personal_brand_calendar_30d",
+      "title": "Plan personal brand calendar 30d",
+      "tier": "production",
+      "path": "personal-brand/plan_personal_brand_calendar_30d.md"
+    },
+    {
+      "id": "personal-brand.content.write_ghostwriting_voice_guide",
+      "pack": "personal-brand",
+      "domain": "content",
+      "slug": "write_ghostwriting_voice_guide",
+      "title": "Write ghostwriting voice guide",
+      "tier": "foundation",
+      "path": "personal-brand/write_ghostwriting_voice_guide.md"
+    },
+    {
+      "id": "personal-brand.identity.define_personal_color_palette",
+      "pack": "personal-brand",
+      "domain": "identity",
+      "slug": "define_personal_color_palette",
+      "title": "Define personal color palette",
+      "tier": "foundation",
+      "path": "personal-brand/define_personal_color_palette.md"
+    },
+    {
+      "id": "personal-brand.identity.define_personal_typography_pairing",
+      "pack": "personal-brand",
+      "domain": "identity",
+      "slug": "define_personal_typography_pairing",
+      "title": "Define personal typography pairing",
+      "tier": "foundation",
+      "path": "personal-brand/define_personal_typography_pairing.md"
+    },
+    {
+      "id": "personal-brand.identity.design_personal_logo_mark",
+      "pack": "personal-brand",
+      "domain": "identity",
+      "slug": "design_personal_logo_mark",
+      "title": "Design personal logo mark",
+      "tier": "production",
+      "path": "personal-brand/design_personal_logo_mark.md"
+    },
+    {
+      "id": "personal-brand.media.create_personal_media_kit",
+      "pack": "personal-brand",
+      "domain": "media",
+      "slug": "create_personal_media_kit",
+      "title": "Create personal media kit",
+      "tier": "production",
+      "path": "personal-brand/create_personal_media_kit.md"
+    },
+    {
+      "id": "personal-brand.media.create_speaker_one_sheet",
+      "pack": "personal-brand",
+      "domain": "media",
+      "slug": "create_speaker_one_sheet",
+      "title": "Create speaker one sheet",
+      "tier": "production",
+      "path": "personal-brand/create_speaker_one_sheet.md"
+    },
+    {
+      "id": "personal-brand.media.design_newsletter_header",
+      "pack": "personal-brand",
+      "domain": "media",
+      "slug": "design_newsletter_header",
+      "title": "Design newsletter header",
+      "tier": "production",
+      "path": "personal-brand/design_newsletter_header.md"
+    },
+    {
+      "id": "personal-brand.media.design_podcast_cover_personal",
+      "pack": "personal-brand",
+      "domain": "media",
+      "slug": "design_podcast_cover_personal",
+      "title": "Design podcast cover personal",
+      "tier": "production",
+      "path": "personal-brand/design_podcast_cover_personal.md"
+    },
+    {
+      "id": "personal-brand.media.design_youtube_channel_art",
+      "pack": "personal-brand",
+      "domain": "media",
+      "slug": "design_youtube_channel_art",
+      "title": "Design YouTube channel art",
+      "tier": "production",
+      "path": "personal-brand/design_youtube_channel_art.md"
+    },
+    {
+      "id": "personal-brand.media.direct_personal_headshot_shoot",
+      "pack": "personal-brand",
+      "domain": "media",
+      "slug": "direct_personal_headshot_shoot",
+      "title": "Direct personal headshot shoot",
+      "tier": "production",
+      "path": "personal-brand/direct_personal_headshot_shoot.md"
+    },
+    {
+      "id": "personal-brand.ops.collaboration_outreach_template",
+      "pack": "personal-brand",
+      "domain": "ops",
+      "slug": "collaboration_outreach_template",
+      "title": "Collaboration outreach template",
+      "tier": "production",
+      "path": "personal-brand/collaboration_outreach_template.md"
+    },
+    {
+      "id": "personal-brand.ops.creator_rate_card_template",
+      "pack": "personal-brand",
+      "domain": "ops",
+      "slug": "creator_rate_card_template",
+      "title": "Creator rate card template",
+      "tier": "production",
+      "path": "personal-brand/creator_rate_card_template.md"
+    },
+    {
+      "id": "personal-brand.ops.personal_brand_consistency_audit",
+      "pack": "personal-brand",
+      "domain": "ops",
+      "slug": "personal_brand_consistency_audit",
+      "title": "Personal brand consistency audit",
+      "tier": "qa",
+      "path": "personal-brand/personal_brand_consistency_audit.md"
+    },
+    {
+      "id": "personal-brand.ops.personal_rebrand_phase_plan",
+      "pack": "personal-brand",
+      "domain": "ops",
+      "slug": "personal_rebrand_phase_plan",
+      "title": "Personal rebrand phase plan",
+      "tier": "ops",
+      "path": "personal-brand/personal_rebrand_phase_plan.md"
+    },
+    {
+      "id": "personal-brand.social.design_link_in_bio_page",
+      "pack": "personal-brand",
+      "domain": "social",
+      "slug": "design_link_in_bio_page",
+      "title": "Design link-in-bio page",
+      "tier": "production",
+      "path": "personal-brand/design_link_in_bio_page.md"
+    },
+    {
+      "id": "personal-brand.social.optimize_instagram_bio",
+      "pack": "personal-brand",
+      "domain": "social",
+      "slug": "optimize_instagram_bio",
+      "title": "Optimize Instagram bio",
+      "tier": "production",
+      "path": "personal-brand/optimize_instagram_bio.md"
+    },
+    {
+      "id": "personal-brand.social.optimize_linkedin_banner",
+      "pack": "personal-brand",
+      "domain": "social",
+      "slug": "optimize_linkedin_banner",
+      "title": "Optimize LinkedIn banner",
+      "tier": "production",
+      "path": "personal-brand/optimize_linkedin_banner.md"
+    },
+    {
+      "id": "personal-brand.strategy.define_personal_brand_positioning",
+      "pack": "personal-brand",
+      "domain": "strategy",
+      "slug": "define_personal_brand_positioning",
+      "title": "Define personal brand positioning",
+      "tier": "foundation",
+      "path": "personal-brand/define_personal_brand_positioning.md"
+    },
+    {
+      "id": "personal-brand.strategy.define_signature_story",
+      "pack": "personal-brand",
+      "domain": "strategy",
+      "slug": "define_signature_story",
+      "title": "Define signature story",
+      "tier": "foundation",
+      "path": "personal-brand/define_signature_story.md"
+    },
+    {
       "id": "platform.brand_studio.agent_read_order",
       "pack": "platform",
       "domain": "brand_studio",
@@ -3051,6 +3742,213 @@
       "title": "Sync DAM paths from profile",
       "tier": "ops",
       "path": "platform/sync_dam_paths.md"
+    },
+    {
+      "id": "product-brand.creator.design_influencer_seeding_kit",
+      "pack": "product-brand",
+      "domain": "creator",
+      "slug": "design_influencer_seeding_kit",
+      "title": "Design influencer seeding kit",
+      "tier": "production",
+      "path": "product-brand/design_influencer_seeding_kit.md"
+    },
+    {
+      "id": "product-brand.creator.whop_gumroad_product_page",
+      "pack": "product-brand",
+      "domain": "creator",
+      "slug": "whop_gumroad_product_page",
+      "title": "Whop Gumroad product page",
+      "tier": "production",
+      "path": "product-brand/whop_gumroad_product_page.md"
+    },
+    {
+      "id": "product-brand.creator.write_ugc_brief_for_product",
+      "pack": "product-brand",
+      "domain": "creator",
+      "slug": "write_ugc_brief_for_product",
+      "title": "Write UGC brief for product",
+      "tier": "production",
+      "path": "product-brand/write_ugc_brief_for_product.md"
+    },
+    {
+      "id": "product-brand.identity.define_product_brand_tokens",
+      "pack": "product-brand",
+      "domain": "identity",
+      "slug": "define_product_brand_tokens",
+      "title": "Define product brand tokens",
+      "tier": "foundation",
+      "path": "product-brand/define_product_brand_tokens.md"
+    },
+    {
+      "id": "product-brand.identity.design_product_logo_system",
+      "pack": "product-brand",
+      "domain": "identity",
+      "slug": "design_product_logo_system",
+      "title": "Design product logo system",
+      "tier": "production",
+      "path": "product-brand/design_product_logo_system.md"
+    },
+    {
+      "id": "product-brand.launch.create_product_demo_video_script",
+      "pack": "product-brand",
+      "domain": "launch",
+      "slug": "create_product_demo_video_script",
+      "title": "Create product demo video script",
+      "tier": "production",
+      "path": "product-brand/create_product_demo_video_script.md"
+    },
+    {
+      "id": "product-brand.launch.crowdfunding_campaign_visuals",
+      "pack": "product-brand",
+      "domain": "launch",
+      "slug": "crowdfunding_campaign_visuals",
+      "title": "Crowdfunding campaign visuals",
+      "tier": "production",
+      "path": "product-brand/crowdfunding_campaign_visuals.md"
+    },
+    {
+      "id": "product-brand.launch.design_unboxing_experience",
+      "pack": "product-brand",
+      "domain": "launch",
+      "slug": "design_unboxing_experience",
+      "title": "Design unboxing experience",
+      "tier": "production",
+      "path": "product-brand/design_unboxing_experience.md"
+    },
+    {
+      "id": "product-brand.launch.plan_product_launch_teaser",
+      "pack": "product-brand",
+      "domain": "launch",
+      "slug": "plan_product_launch_teaser",
+      "title": "Plan product launch teaser",
+      "tier": "production",
+      "path": "product-brand/plan_product_launch_teaser.md"
+    },
+    {
+      "id": "product-brand.marketplace.design_app_store_screenshots",
+      "pack": "product-brand",
+      "domain": "marketplace",
+      "slug": "design_app_store_screenshots",
+      "title": "Design app store screenshots",
+      "tier": "production",
+      "path": "product-brand/design_app_store_screenshots.md"
+    },
+    {
+      "id": "product-brand.marketplace.optimize_amazon_a_plus_content",
+      "pack": "product-brand",
+      "domain": "marketplace",
+      "slug": "optimize_amazon_a_plus_content",
+      "title": "Optimize Amazon A+ content",
+      "tier": "production",
+      "path": "product-brand/optimize_amazon_a_plus_content.md"
+    },
+    {
+      "id": "product-brand.marketplace.product_hunt_launch_kit",
+      "pack": "product-brand",
+      "domain": "marketplace",
+      "slug": "product_hunt_launch_kit",
+      "title": "Product Hunt launch kit",
+      "tier": "production",
+      "path": "product-brand/product_hunt_launch_kit.md"
+    },
+    {
+      "id": "product-brand.ops.merch_line_extension",
+      "pack": "product-brand",
+      "domain": "ops",
+      "slug": "merch_line_extension",
+      "title": "Merch line extension",
+      "tier": "production",
+      "path": "product-brand/merch_line_extension.md"
+    },
+    {
+      "id": "product-brand.ops.product_brand_guidelines_pdf",
+      "pack": "product-brand",
+      "domain": "ops",
+      "slug": "product_brand_guidelines_pdf",
+      "title": "Product brand guidelines PDF",
+      "tier": "production",
+      "path": "product-brand/product_brand_guidelines_pdf.md"
+    },
+    {
+      "id": "product-brand.packaging.design_dtc_shopify_brand_kit",
+      "pack": "product-brand",
+      "domain": "packaging",
+      "slug": "design_dtc_shopify_brand_kit",
+      "title": "Design DTC Shopify brand kit",
+      "tier": "production",
+      "path": "product-brand/design_dtc_shopify_brand_kit.md"
+    },
+    {
+      "id": "product-brand.packaging.write_packaging_design_brief",
+      "pack": "product-brand",
+      "domain": "packaging",
+      "slug": "write_packaging_design_brief",
+      "title": "Write packaging design brief",
+      "tier": "production",
+      "path": "product-brand/write_packaging_design_brief.md"
+    },
+    {
+      "id": "product-brand.photo.design_sku_variant_system",
+      "pack": "product-brand",
+      "domain": "photo",
+      "slug": "design_sku_variant_system",
+      "title": "Design SKU variant system",
+      "tier": "production",
+      "path": "product-brand/design_sku_variant_system.md"
+    },
+    {
+      "id": "product-brand.photo.write_product_photography_brief",
+      "pack": "product-brand",
+      "domain": "photo",
+      "slug": "write_product_photography_brief",
+      "title": "Write product photography brief",
+      "tier": "production",
+      "path": "product-brand/write_product_photography_brief.md"
+    },
+    {
+      "id": "product-brand.saas.define_saas_ui_tokens",
+      "pack": "product-brand",
+      "domain": "saas",
+      "slug": "define_saas_ui_tokens",
+      "title": "Define SaaS UI tokens",
+      "tier": "foundation",
+      "path": "product-brand/define_saas_ui_tokens.md"
+    },
+    {
+      "id": "product-brand.saas.design_pricing_page",
+      "pack": "product-brand",
+      "domain": "saas",
+      "slug": "design_pricing_page",
+      "title": "Design pricing page",
+      "tier": "production",
+      "path": "product-brand/design_pricing_page.md"
+    },
+    {
+      "id": "product-brand.saas.feature_naming_system",
+      "pack": "product-brand",
+      "domain": "saas",
+      "slug": "feature_naming_system",
+      "title": "Feature naming system",
+      "tier": "foundation",
+      "path": "product-brand/feature_naming_system.md"
+    },
+    {
+      "id": "product-brand.strategy.define_product_positioning",
+      "pack": "product-brand",
+      "domain": "strategy",
+      "slug": "define_product_positioning",
+      "title": "Define product positioning",
+      "tier": "foundation",
+      "path": "product-brand/define_product_positioning.md"
+    },
+    {
+      "id": "product-brand.strategy.product_naming_workflow",
+      "pack": "product-brand",
+      "domain": "strategy",
+      "slug": "product_naming_workflow",
+      "title": "Product naming workflow",
+      "tier": "foundation",
+      "path": "product-brand/product_naming_workflow.md"
     }
   ]
 }

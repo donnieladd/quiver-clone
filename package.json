@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "eslint",
     "skills:church": "node skills/church/scripts/generate-skills.mjs",
+    "skills:generate-verticals": "node skills/scripts/generate-verticals.mjs",
     "skills:update-registry": "node skills/scripts/update-registry.mjs",
     "skills:validate-profiles": "node skills/church/scripts/validate-profiles.mjs"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.85",
     "@ai-sdk/openai": "^3.0.73",
+    "@higgsfield/client": "^0.2.1",
     "ai": "^6.0.208",
     "canvas": "^3.2.3",
     "clsx": "^2.1.1",

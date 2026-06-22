@@ -7,7 +7,16 @@ import { join, dirname, relative } from "path";
 import { fileURLToPath } from "url";
 
 const SKILLS_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const CHURCH_ROOT = join(SKILLS_ROOT, "church");
+
+const PACK_DIRS = [
+  "brand-system",
+  "platform",
+  "personal-brand",
+  "product-brand",
+  "creator",
+  "media",
+  "church",
+];
 
 function parseFrontmatter(content) {
   const m = content.match(/^---\n([\s\S]*?)\n---/);
@@ -52,9 +61,9 @@ function scanMarkdownFiles(rootDir, skills) {
 }
 
 const skills = [];
-scanMarkdownFiles(join(SKILLS_ROOT, "brand-system"), skills);
-scanMarkdownFiles(join(SKILLS_ROOT, "platform"), skills);
-scanMarkdownFiles(CHURCH_ROOT, skills);
+for (const pack of PACK_DIRS) {
+  scanMarkdownFiles(join(SKILLS_ROOT, pack), skills);
+}
 
 skills.sort((a, b) => a.id.localeCompare(b.id));
 
@@ -65,7 +74,9 @@ for (const s of skills) {
   packCounts[s.pack] = (packCounts[s.pack] ?? 0) + 1;
 }
 
-const profiles = JSON.parse(readFileSync(join(CHURCH_ROOT, "profiles/index.json"), "utf8")).profiles;
+const profiles = JSON.parse(
+  readFileSync(join(SKILLS_ROOT, "church/profiles/index.json"), "utf8"),
+).profiles;
 
 const manifest = {
   version: "2.0.0",
@@ -110,7 +121,7 @@ for (const s of churchSkills) {
 }
 
 writeFileSync(
-  join(CHURCH_ROOT, "registry.json"),
+  join(SKILLS_ROOT, "church/registry.json"),
   JSON.stringify(
     {
       version: "2.0.0",
