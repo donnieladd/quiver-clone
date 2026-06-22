@@ -1,0 +1,229 @@
+{
+  "id": "church.transformation-church",
+  "name": "Transformation Church",
+  "slug": "transformation-church",
+  "website": "https://transformchurch.us",
+  "playbook": "playbooks/transformation-church.md",
+  "leadership": {
+    "lead_pastor": "Michael (Mike) Todd",
+    "executive_pastor": "Transformation Church Executive Team",
+    "creative_lead": "Broadcast / Creative Production",
+    "worship_lead": "Worship & Experience Team"
+  },
+  "campuses": [
+    {
+      "id": "tulsa-primary",
+      "name": "Transformation Church Tulsa",
+      "city": "Tulsa",
+      "state": "OK",
+      "timezone": "America/Chicago",
+      "service_times": ["See website for current times"],
+      "is_primary": true
+    }
+  ],
+  "brand": {
+    "hub_url": "https://transformchurch.us",
+    "tagline": "RE-present God to the world.",
+    "tier": "cinematic-global",
+    "logo_variants": ["primary", "reversed", "series_lockup", "monochrome"],
+    "forbidden": [
+      "low_effort_series_redesign_weekly",
+      "stage_quality_on_phone_social",
+      "phone_quality_on_broadcast_thumbnails",
+      "posts_without_vision_language_check",
+      "clipart_or_stock_cliche_religious"
+    ],
+    "photography": "Cinematic, bold, diverse; stage and lifestyle; thumbnail-safe composition for clips.",
+    "fonts": {
+      "primary": "TC brand sans (series docs)",
+      "secondary": "TC brand sans alt",
+      "display": "Series title — bold, iconic, high contrast"
+    },
+    "colors": {
+      "primary": "TC brand primaries — bold, saturated series palettes",
+      "secondary": "Supporting series colors",
+      "accent": "Clip titles and CTAs",
+      "neutral": "Broadcast lower thirds and web"
+    }
+  },
+  "sub_brands": [
+    {
+      "id": "mike-todd-personal",
+      "name": "Pastor Mike Todd Personal",
+      "url": "https://www.instagram.com/michael.todd/",
+      "tagline": "Personal faith, family, fitness — phone-native.",
+      "template_family": "social/pastor-phone-native",
+      "social_handles": {
+        "instagram": "michael.todd",
+        "youtube": "michael.todd"
+      }
+    },
+    {
+      "id": "transformation-youtube",
+      "name": "Transformation Church YouTube",
+      "url": "https://www.youtube.com/@transformchurch",
+      "tagline": "Global content ministry — full services and clips.",
+      "template_family": "video/youtube-thumbnail",
+      "social_handles": {
+        "youtube": "transformchurch",
+        "instagram": "transformchurch"
+      }
+    }
+  ],
+  "voice": {
+    "attributes": ["bold", "relatable", "cinematic", "vision-driven", "excellent", "picture-forward"],
+    "do": [
+      "Filter captions through vision language (RE-present, transformation themes)",
+      "Design sermon illustrations for clip extraction",
+      "Use phone-native capture for pastor personal channel",
+      "Use cinematic production for stage, YouTube, series art",
+      "Maintain series visual equity across all weeks"
+    ],
+    "dont": [
+      "Publish church social without vision-language check",
+      "Use pro-camera faux-casual on pastor personal posts",
+      "Break series identity mid-run for novelty",
+      "One-dimensional pastor-only grid without series/community balance"
+    ],
+    "seeker_first": true
+  },
+  "story": {
+    "model": "cinematic-pastor-human",
+    "pastor_face_ratio_max_30d": 0.55,
+    "story_submission_url": "https://transformchurch.us/connect",
+    "community_surfaces": [
+      "YouTube comments community",
+      "Small groups",
+      "Serve teams",
+      "Personal pastor channel (humanity lane)"
+    ],
+    "values": [
+      "RE-present God to the world",
+      "Excellence as worship",
+      "Transformation through practical teaching",
+      "Global content ministry",
+      "Pictures that outlast words"
+    ],
+    "vision_phrases": [
+      "RE-present",
+      "transformation",
+      "representation of God"
+    ]
+  },
+  "content_pillars": [
+    {
+      "id": "teaching-clips",
+      "name": "Teaching & Clips",
+      "description": "Sermon moments engineered for YouTube, Reels, TikTok.",
+      "template_skills": [
+        "church.content.design_sermon_for_clip_extraction",
+        "church.social.template_reel_cover",
+        "church.social.template_youtube_thumbnail",
+        "church.motion.burn_in_captions_sermon_clip"
+      ]
+    },
+    {
+      "id": "series-cinematic",
+      "name": "Cinematic Series",
+      "description": "Iconic series IP — art, motion, stage, openers.",
+      "template_skills": [
+        "church.series.package_cinematic_series_kit",
+        "church.motion.cinematic_excellence_standard",
+        "church.motion.design_series_opener",
+        "church.series.design_key_art"
+      ]
+    },
+    {
+      "id": "pastor-personal",
+      "name": "Pastor Personal",
+      "description": "Mike Todd phone-native humanity lane.",
+      "template_skills": [
+        "church.social.phone_native_for_pastor_bts",
+        "church.social.template_pastoral_message"
+      ]
+    },
+    {
+      "id": "quotes-vision",
+      "name": "Quotes & Vision Language",
+      "description": "Graphics filtered through RE-present and series vocabulary.",
+      "template_skills": [
+        "church.story.apply_represent_language_filter",
+        "church.social.template_sermon_quote",
+        "church.social.template_teaching_carousel"
+      ]
+    }
+  ],
+  "social": {
+    "handles": {
+      "instagram_church": "transformchurch",
+      "instagram_pastor": "michael.todd",
+      "youtube": "transformchurch",
+      "tiktok": "transformchurch"
+    },
+    "platforms": ["youtube", "instagram", "tiktok", "facebook"],
+    "weekly_post_target": 12,
+    "scheduling_skill": "church.ops.schedule_content_planner"
+  },
+  "approval": {
+    "chain": [
+      {
+        "asset_type": "sermon_clip",
+        "reviewer": "Content / Social Lead",
+        "final_approver": "Teaching Pastor or Content Creator to Lead"
+      },
+      {
+        "asset_type": "series_launch_cinematic",
+        "reviewer": "Creative Production",
+        "final_approver": "Lead Pastor"
+      },
+      {
+        "asset_type": "pastor_personal_phone",
+        "reviewer": "Content Creator to Lead Pastor",
+        "final_approver": "Pastor Mike Todd"
+      },
+      {
+        "asset_type": "general_social",
+        "reviewer": "Social Team",
+        "final_approver": "Vision language filter pass + Comms Lead"
+      }
+    ]
+  },
+  "visual": {
+    "web_bar": "siteinspire-forward",
+    "motion_bar": "cinematic",
+    "social_style": "Dual lane: phone-native pastor personal + cinematic church/series; bold color; clip-first thumbnails."
+  },
+  "workflows": {
+    "series_launch": "workflows/series-launch.md",
+    "sermon_to_social": "workflows/sermon-to-social.md",
+    "worship_visuals": "workflows/worship-visuals.md",
+    "approval": "workflows/approval-governance.md"
+  },
+  "skill_priorities": [
+    "church.story.apply_represent_language_filter",
+    "church.story.plan_story_content_calendar",
+    "church.content.design_sermon_for_clip_extraction",
+    "church.series.package_cinematic_series_kit",
+    "church.social.phone_native_for_pastor_bts",
+    "church.motion.cinematic_excellence_standard",
+    "church.content.extract_sermon_clips"
+  ],
+  "integrations": [
+    "youtube",
+    "instagram",
+    "tiktok",
+    "planning_center",
+    "broadcast_stream"
+  ],
+  "dam": {
+    "folder_root": "Transformation Church/",
+    "template_paths": {
+      "series_cinematic_kit": "Series/{series_name}/Cinematic/",
+      "social_reel_cover": "Templates/Social/Reel Cover",
+      "social_youtube_thumb": "Templates/Social/YouTube Thumbnail",
+      "motion_stage": "Templates/Motion/Stage Loops",
+      "pastor_phone": "Templates/Social/Pastor Phone Native",
+      "clips_archive": "Clips/{yyyy-mm-dd}/"
+    }
+  }
+}

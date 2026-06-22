@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quiver-clone.local/schemas/church-profile.json",
+  "title": "ChurchProfile",
+  "description": "Client context for church media skills, workflows, and brand lint.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "slug",
+    "playbook",
+    "leadership",
+    "brand",
+    "voice",
+    "story",
+    "content_pillars",
+    "social",
+    "approval",
+    "visual"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^church\\.[a-z0-9-]+$" },
+    "name": { "type": "string" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "website": { "type": "string", "format": "uri" },
+    "playbook": { "type": "string", "description": "Path to playbook markdown relative to skills/church/" },
+    "leadership": {
+      "type": "object",
+      "required": ["lead_pastor"],
+      "properties": {
+        "lead_pastor": { "type": "string" },
+        "executive_pastor": { "type": "string" },
+        "creative_lead": { "type": "string" },
+        "worship_lead": { "type": "string" }
+      }
+    },
+    "campuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "city", "state"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "timezone": { "type": "string" },
+          "service_times": { "type": "array", "items": { "type": "string" } },
+          "is_primary": { "type": "boolean" }
+        }
+      }
+    },
+    "brand": {
+      "type": "object",
+      "required": ["hub_url", "tier"],
+      "properties": {
+        "hub_url": { "type": "string" },
+        "tagline": { "type": "string" },
+        "tier": {
+          "enum": ["institutional-premium", "contemporary-bold", "cinematic-global", "multi-campus-systems"]
+        },
+        "logo_variants": { "type": "array", "items": { "type": "string" } },
+        "forbidden": { "type": "array", "items": { "type": "string" } },
+        "photography": { "type": "string" },
+        "fonts": {
+          "type": "object",
+          "properties": {
+            "primary": { "type": "string" },
+            "secondary": { "type": "string" },
+            "display": { "type": "string" }
+          }
+        },
+        "colors": {
+          "type": "object",
+          "properties": {
+            "primary": { "type": "string" },
+            "secondary": { "type": "string" },
+            "accent": { "type": "string" },
+            "neutral": { "type": "string" }
+          }
+        }
+      }
+    },
+    "sub_brands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "url": { "type": "string" },
+          "tagline": { "type": "string" },
+          "template_family": { "type": "string" },
+          "social_handles": { "type": "object", "additionalProperties": { "type": "string" } }
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "required": ["attributes", "do", "dont"],
+      "properties": {
+        "attributes": { "type": "array", "items": { "type": "string" } },
+        "do": { "type": "array", "items": { "type": "string" } },
+        "dont": { "type": "array", "items": { "type": "string" } },
+        "seeker_first": { "type": "boolean" }
+      }
+    },
+    "story": {
+      "type": "object",
+      "required": ["model", "pastor_face_ratio_max_30d"],
+      "properties": {
+        "model": {
+          "enum": ["movement-institution", "community-mix", "cinematic-pastor-human", "systems-multi-campus"]
+        },
+        "pastor_face_ratio_max_30d": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Max share of social posts featuring lead pastor face in rolling 30 days"
+        },
+        "story_submission_url": { "type": "string" },
+        "community_surfaces": { "type": "array", "items": { "type": "string" } },
+        "values": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "content_pillars": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "template_skills"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "template_skills": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "social": {
+      "type": "object",
+      "properties": {
+        "handles": { "type": "object", "additionalProperties": { "type": "string" } },
+        "platforms": { "type": "array", "items": { "type": "string" } },
+        "weekly_post_target": { "type": "integer" },
+        "scheduling_skill": { "type": "string" }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": ["chain"],
+      "properties": {
+        "chain": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["asset_type", "reviewer", "final_approver"],
+            "properties": {
+              "asset_type": { "type": "string" },
+              "reviewer": { "type": "string" },
+              "final_approver": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "properties": {
+        "web_bar": { "enum": ["ministry-standard", "institutional-premium", "siteinspire-forward"] },
+        "motion_bar": { "enum": ["minimal", "standard", "cinematic"] },
+        "social_style": { "type": "string" }
+      }
+    },
+    "workflows": {
+      "type": "object",
+      "description": "Default workflow paths for this client",
+      "additionalProperties": { "type": "string" }
+    },
+    "skill_priorities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Skill IDs to prefer when routing ambiguous tasks"
+    },
+    "integrations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dam": {
+      "type": "object",
+      "properties": {
+        "folder_root": { "type": "string" },
+        "template_paths": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "role": { "type": "string" }
+      }
+    }
+  }
+}

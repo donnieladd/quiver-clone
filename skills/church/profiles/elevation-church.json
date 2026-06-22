@@ -1,0 +1,251 @@
+{
+  "id": "church.elevation-church",
+  "name": "Elevation Church",
+  "slug": "elevation-church",
+  "website": "https://www.elevationchurch.org",
+  "playbook": "playbooks/elevation-church.md",
+  "leadership": {
+    "lead_pastor": "Steven Furtick",
+    "executive_pastor": "Executive Team",
+    "creative_lead": "Creative Ministry Team",
+    "worship_lead": "Elevation Worship"
+  },
+  "campuses": [
+    {
+      "id": "charlotte-template",
+      "name": "Charlotte Metro Campus (template)",
+      "city": "Charlotte",
+      "state": "NC",
+      "timezone": "America/New_York",
+      "service_times": ["Multiple — see website"],
+      "is_primary": true,
+      "notes": "Multiple physical locations Charlotte area + US/Canada — use campus variant skill"
+    }
+  ],
+  "brand": {
+    "hub_url": "https://www.elevationchurch.org",
+    "tagline": "See what God can do through you.",
+    "tier": "cinematic-global",
+    "logo_variants": ["primary", "reversed", "series", "elevation_worship"],
+    "forbidden": [
+      "incomplete_open_network_kit",
+      "pastor_only_social_month",
+      "watch_party_promo_without_host_story",
+      "off_mission_copy",
+      "low_res_or_unlicensed_media"
+    ],
+    "photography": "Broadcast-quality; diverse; energetic; invite-forward.",
+    "fonts": {
+      "primary": "Elevation brand sans",
+      "secondary": "Elevation brand sans alt",
+      "display": "Series / event display"
+    },
+    "colors": {
+      "primary": "Elevation brand palette",
+      "secondary": "Series-specific from kit",
+      "accent": "CTA and invite highlights",
+      "neutral": "Web and print neutrals"
+    }
+  },
+  "sub_brands": [
+    {
+      "id": "steven-furtick-ministries",
+      "name": "Steven Furtick Ministries",
+      "url": "https://stevenfurtick.com",
+      "tagline": "Getting God's Word into people's hearts.",
+      "template_family": "social/pastor-clips",
+      "social_handles": {
+        "youtube": "StevenFurtick"
+      }
+    },
+    {
+      "id": "elevation-worship",
+      "name": "Elevation Worship",
+      "url": "https://www.elevationworship.com",
+      "tagline": "Worship music and live experiences.",
+      "template_family": "worship/elevation-worship",
+      "social_handles": {
+        "youtube": "elevationworship",
+        "instagram": "elevationworship"
+      }
+    },
+    {
+      "id": "efam",
+      "name": "eFam",
+      "url": "https://www.elevationchurch.org",
+      "tagline": "Online church family — stream from anywhere.",
+      "template_family": "experiences/efam",
+      "social_handles": {}
+    }
+  ],
+  "experiences": {
+    "physical_campus": "In-person worship at locations",
+    "efam": "Live stream online community",
+    "watch_party": "Groups streaming together",
+    "pop_up": "Church brought to other cities"
+  },
+  "voice": {
+    "attributes": ["bold", "hopeful", "invitational", "excellent", "scripture-rooted", "energetic"],
+    "do": [
+      "Invite people far from God with clarity",
+      "Promote eFam, Watch Party, and campus paths equally in campaigns",
+      "Ship Open Network kits when publishing series externally",
+      "Use clip strategy for Steven Furtick teaching moments",
+      "Highlight eGroups and outreach stories"
+    ],
+    "dont": [
+      "Make social only Steven-centric",
+      "Launch series without kit structure",
+      "Ignore online-only audience in creative",
+      "Use insider church language on invite creative"
+    ],
+    "seeker_first": true
+  },
+  "story": {
+    "model": "distributed-clips-community",
+    "pastor_face_ratio_max_30d": 0.5,
+    "story_submission_url": "https://www.elevationchurch.org/connect",
+    "community_surfaces": [
+      "eGroups",
+      "Outreach Ministry",
+      "Watch Parties",
+      "eFam community",
+      "Serve teams",
+      "Pop-Up events"
+    ],
+    "values": [
+      "Raised to life in Christ",
+      "See what God can do through you",
+      "Connecting people, activating faith",
+      "Local and global reach"
+    ]
+  },
+  "content_pillars": [
+    {
+      "id": "weekend-teaching",
+      "name": "Weekend Teaching",
+      "description": "Series, messages, Open Network kits.",
+      "template_skills": [
+        "church.series.ship_open_network_elevation_kit",
+        "church.series.package_open_network_style_kit",
+        "church.social.template_series_week_promo"
+      ]
+    },
+    {
+      "id": "pastor-clips",
+      "name": "Pastor Clips",
+      "description": "Steven Furtick 1-min clips, YouTube, email.",
+      "template_skills": [
+        "church.social.steven_furtick_clip_strategy",
+        "church.social.template_reel_cover",
+        "church.content.extract_sermon_clips"
+      ]
+    },
+    {
+      "id": "distributed-church",
+      "name": "Distributed Church",
+      "description": "eFam, Watch Party, Pop-Up, campuses.",
+      "template_skills": [
+        "church.story.efam_community_story",
+        "church.ops.efam_watch_party_promo",
+        "church.ops.pop_up_city_creative",
+        "church.ops.multi_campus_variant_switcher"
+      ]
+    },
+    {
+      "id": "community-impact",
+      "name": "Community & Impact",
+      "description": "eGroups, outreach, serve.",
+      "template_skills": [
+        "church.story.outreach_impact_feature",
+        "church.story.groups_highlight",
+        "church.story.serve_team_spotlight",
+        "church.social.template_community_story"
+      ]
+    },
+    {
+      "id": "worship",
+      "name": "Elevation Worship",
+      "description": "Worship sub-brand lane.",
+      "template_skills": [
+        "church.story.promote_worship_subbrand",
+        "church.social.template_worship_highlight"
+      ]
+    }
+  ],
+  "social": {
+    "handles": {
+      "instagram": "elevationchurch",
+      "youtube": "elevationchurch",
+      "facebook": "elevationchurch"
+    },
+    "platforms": ["youtube", "instagram", "facebook", "tiktok"],
+    "weekly_post_target": 10,
+    "scheduling_skill": "church.social.apply_hillsong_strategy_framework"
+  },
+  "approval": {
+    "chain": [
+      {
+        "asset_type": "open_network_kit",
+        "reviewer": "Creative Lead",
+        "final_approver": "Lead Pastor (major series)"
+      },
+      {
+        "asset_type": "steven_furtick_clip",
+        "reviewer": "SF Ministries / Comms",
+        "final_approver": "Steven Furtick team"
+      },
+      {
+        "asset_type": "watch_party_pop_up",
+        "reviewer": "Experience Team",
+        "final_approver": "Comms Director"
+      },
+      {
+        "asset_type": "community_story",
+        "reviewer": "Comms Lead",
+        "final_approver": "Participant consent"
+      }
+    ]
+  },
+  "visual": {
+    "web_bar": "institutional-premium",
+    "motion_bar": "cinematic",
+    "social_style": "Broadcast polish; invite-forward; clip-heavy; experience-aware (campus/online/party/pop-up)."
+  },
+  "workflows": {
+    "series_launch": "workflows/series-launch.md",
+    "sermon_to_social": "workflows/sermon-to-social.md",
+    "weekly_service": "workflows/weekly-service-kit.md",
+    "approval": "workflows/approval-governance.md"
+  },
+  "skill_priorities": [
+    "church.series.ship_open_network_elevation_kit",
+    "church.social.steven_furtick_clip_strategy",
+    "church.story.efam_community_story",
+    "church.story.balance_pastor_vs_community_faces",
+    "church.ops.efam_watch_party_promo",
+    "church.story.plan_story_content_calendar"
+  ],
+  "integrations": [
+    "open_network_life_church",
+    "youtube",
+    "planning_center",
+    "steven_furtick_ministries_email"
+  ],
+  "dam": {
+    "folder_root": "Elevation Church/",
+    "template_paths": {
+      "open_network_kit": "Series/{series_name}/OpenNetwork/",
+      "watch_party": "Templates/Experiences/Watch Party/",
+      "pop_up": "Templates/Experiences/Pop-Up/",
+      "efam": "Templates/Experiences/eFam/",
+      "steven_clips": "Clips/StevenFurtick/",
+      "elevation_worship": "Worship/ElevationWorship/"
+    }
+  },
+  "network": {
+    "name": "Life.Church Open Network",
+    "url": "https://open.life.church/partners/elevation-church",
+    "role": "Publish series kits for global church reuse"
+  }
+}

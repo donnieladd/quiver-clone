@@ -1,0 +1,272 @@
+{
+  "id": "church.union-church",
+  "name": "Union Church",
+  "slug": "union-church",
+  "website": "https://theunionchurch.com",
+  "playbook": "playbooks/union-bldrs.md",
+  "leadership": {
+    "lead_pastor": "Stephen Chandler",
+    "executive_pastor": "Zai Chandler",
+    "creative_lead": "Senior Creative / Video Production",
+    "worship_lead": "Central Worship Director (Union Sound)"
+  },
+  "campuses": [
+    {
+      "id": "glen-burnie-md",
+      "name": "Glen Burnie Campus",
+      "city": "Glen Burnie",
+      "state": "MD",
+      "timezone": "America/New_York",
+      "service_times": ["Sunday AM (see website)"],
+      "is_primary": true
+    },
+    {
+      "id": "virginia",
+      "name": "Virginia Campus",
+      "city": "Virginia",
+      "state": "VA",
+      "timezone": "America/New_York",
+      "service_times": ["Sunday AM (see website)"],
+      "is_primary": false
+    },
+    {
+      "id": "north-carolina",
+      "name": "North Carolina Campus",
+      "city": "North Carolina",
+      "state": "NC",
+      "timezone": "America/New_York",
+      "service_times": ["Sunday AM (see website)"],
+      "is_primary": false
+    }
+  ],
+  "brand": {
+    "hub_url": "https://theunionchurch.com",
+    "tagline": "Bold, encouraging, life-giving — united to purpose.",
+    "tier": "multi-campus-systems",
+    "logo_variants": ["primary", "reversed", "campus_lockup", "union_sound_lockup"],
+    "forbidden": [
+      "insider_christianese_on_outreach",
+      "solo_pastor_only_grid",
+      "off_brand_union_sound_on_sermon_templates",
+      "unapproved_campus_specific_claims"
+    ],
+    "photography": "Contemporary, diverse, seeker-accessible; production team quality; authentic congregation moments.",
+    "fonts": {
+      "primary": "Union Church brand sans",
+      "secondary": "Union Church brand sans alt",
+      "display": "Union Sound releases / series drops"
+    },
+    "colors": {
+      "primary": "Union Church primary palette",
+      "secondary": "Union Church secondary palette",
+      "accent": "Union Sound accent (worship lane only)",
+      "neutral": "Shared neutrals across campuses"
+    }
+  },
+  "sub_brands": [
+    {
+      "id": "union-sound",
+      "name": "Union Sound",
+      "url": "https://theunionchurch.com/unionsound/",
+      "tagline": "Every movement has a sound. Songs of today are altars of yesterday.",
+      "template_family": "worship/union-sound",
+      "social_handles": {
+        "instagram": "unionsound",
+        "youtube": "unionsound",
+        "spotify": "unionsound"
+      }
+    },
+    {
+      "id": "bldrs-network",
+      "name": "The Builders Network",
+      "url": "https://www.thebuildersnetwork.org/",
+      "tagline": "Equipping purpose-driven ministry leaders.",
+      "template_family": "network/bldrs",
+      "social_handles": {
+        "instagram": "thebuildersnetwork"
+      }
+    }
+  ],
+  "voice": {
+    "attributes": ["bold", "encouraging", "life-giving", "accessible", "Spirit-filled", "excellent"],
+    "do": [
+      "Write for people not yet in relationship with God on outreach surfaces",
+      "Balance pastor teaching with congregation and worship artist faces",
+      "Celebrate Union Sound releases on worship lane templates",
+      "Use campus-specific details only with approved campus variant skill",
+      "Cast vision for destiny and purpose in Chandler voice on teaching content"
+    ],
+    "dont": [
+      "Make every post lead-pastor-centric",
+      "Mix Union Sound branding into sermon series templates without intent",
+      "Use church-insider language on seeker-facing ads",
+      "Publish campus times/locations without multi-campus variant check"
+    ],
+    "seeker_first": true
+  },
+  "story": {
+    "model": "community-mix",
+    "pastor_face_ratio_max_30d": 0.4,
+    "story_submission_url": "https://theunionchurch.com/connect",
+    "community_surfaces": [
+      "/about",
+      "/connect",
+      "Groups",
+      "Next steps",
+      "Union Sound newsletter",
+      "Testimony and baptism moments"
+    ],
+    "values": [
+      "Accessible church for seekers",
+      "Discover God-given destiny",
+      "United to purpose",
+      "Multi-campus one movement",
+      "Excellence in worship and production",
+      "Systems that scale ministry"
+    ]
+  },
+  "content_pillars": [
+    {
+      "id": "teaching",
+      "name": "Teaching & Series",
+      "description": "Chandler messages, series kits, clips, application.",
+      "template_skills": [
+        "church.social.template_sermon_quote",
+        "church.social.template_teaching_carousel",
+        "church.social.template_reel_cover",
+        "church.motion.burn_in_captions_sermon_clip"
+      ]
+    },
+    {
+      "id": "worship-sound",
+      "name": "Union Sound",
+      "description": "Music videos, releases, Spotify, worship highlights — separate brand lane.",
+      "template_skills": [
+        "church.worship.union_sound_release_kit",
+        "church.social.template_worship_highlight",
+        "church.motion.create_vertical_crop_for_reels"
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Community & Faces",
+      "description": "Stories, baptism, groups, serve — congregation forward.",
+      "template_skills": [
+        "church.social.template_community_story",
+        "church.social.template_baptism_celebration",
+        "church.story.balance_pastor_vs_community_faces",
+        "church.story.feature_member_story_on_web"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": "Next Steps & Multi-Campus",
+      "description": "Plan a visit, campus promos, events — not event-only flyers.",
+      "template_skills": [
+        "church.social.template_new_here",
+        "church.ops.multi_campus_variant_switcher",
+        "church.social.template_event_promo",
+        "church.web.design_plan_your_visit_section"
+      ]
+    },
+    {
+      "id": "bldrs",
+      "name": "Builders Network",
+      "description": "Leader coaching, conference, masterclass — meta-ministry lane.",
+      "template_skills": [
+        "church.social.template_pastoral_message",
+        "church.social.template_event_promo"
+      ]
+    }
+  ],
+  "social": {
+    "handles": {
+      "instagram": "theunionchurch",
+      "youtube": "theunionchurch",
+      "facebook": "theunionchurch"
+    },
+    "platforms": ["instagram", "youtube", "facebook", "tiktok"],
+    "weekly_post_target": 7,
+    "scheduling_skill": "church.ops.schedule_content_planner"
+  },
+  "approval": {
+    "chain": [
+      {
+        "asset_type": "sermon_quote",
+        "reviewer": "Creative Video / Comms",
+        "final_approver": "Teaching Pastor"
+      },
+      {
+        "asset_type": "union_sound_release",
+        "reviewer": "Worship Director",
+        "final_approver": "Creative Lead"
+      },
+      {
+        "asset_type": "community_story",
+        "reviewer": "Comms Lead",
+        "final_approver": "Participant consent"
+      },
+      {
+        "asset_type": "campus_specific",
+        "reviewer": "Campus Pastor",
+        "final_approver": "Central Comms"
+      },
+      {
+        "asset_type": "bldrs_network",
+        "reviewer": "BLDRS Comms",
+        "final_approver": "Stephen Chandler (or designated)"
+      },
+      {
+        "asset_type": "general_social",
+        "reviewer": "Creative Team",
+        "final_approver": "Senior Creative Director"
+      }
+    ]
+  },
+  "visual": {
+    "web_bar": "institutional-premium",
+    "motion_bar": "standard",
+    "social_style": "Contemporary bold; high production; pastor + community mix; Union Sound lane distinct."
+  },
+  "workflows": {
+    "series_launch": "workflows/series-launch.md",
+    "weekly_service": "workflows/weekly-service-kit.md",
+    "sermon_to_social": "workflows/sermon-to-social.md",
+    "worship_visuals": "workflows/worship-visuals.md",
+    "approval": "workflows/approval-governance.md"
+  },
+  "skill_priorities": [
+    "church.story.balance_pastor_vs_community_faces",
+    "church.story.plan_story_content_calendar",
+    "church.worship.union_sound_release_kit",
+    "church.ops.multi_campus_variant_switcher",
+    "church.worship.select_ambient_vs_dynamic_loop",
+    "church.motion.export_projection_1080",
+    "church.content.build_weekly_content_calendar"
+  ],
+  "integrations": [
+    "youtube",
+    "planning_center",
+    "spotify",
+    "monday_com",
+    "stream_platform"
+  ],
+  "dam": {
+    "folder_root": "Union Church/",
+    "template_paths": {
+      "social_sermon_quote": "Templates/Social/Sermon Quote",
+      "social_union_sound": "Templates/Social/Union Sound",
+      "social_community": "Templates/Social/Community Story",
+      "social_campus_variant": "Templates/Social/Campus Variant",
+      "slides_sermon": "Templates/Slides/Sermon Deck",
+      "motion_worship": "Templates/Motion/Worship Loops",
+      "series_kit": "Series/{series_name}/",
+      "bldrs": "Network/BLDRS/"
+    }
+  },
+  "network": {
+    "name": "The Builders Network",
+    "url": "https://www.thebuildersnetwork.org/",
+    "role": "Pastor Stephen Chandler founder; coaching and conference content may cross-promote with church lane"
+  }
+}

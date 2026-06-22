@@ -1,0 +1,2319 @@
+{
+  "version": "1.2.0",
+  "vertical": "church",
+  "generated_at": "2026-06-22T13:48:49.362Z",
+  "skill_count": 276,
+  "workflows": [
+    "workflows/sermon-to-social.md",
+    "workflows/weekly-service-kit.md",
+    "workflows/series-launch.md",
+    "workflows/worship-visuals.md",
+    "workflows/volunteer-template-ops.md",
+    "workflows/approval-governance.md"
+  ],
+  "playbooks": [
+    "playbooks/faith-chapel.md",
+    "playbooks/union-bldrs.md",
+    "playbooks/transformation-church.md",
+    "playbooks/highlands-resources.md",
+    "playbooks/elevation-church.md",
+    "playbooks/hillsong-social-strategy.md"
+  ],
+  "profiles": [
+    {
+      "id": "church.faith-chapel",
+      "slug": "faith-chapel",
+      "name": "Faith Chapel",
+      "file": "faith-chapel.json",
+      "playbook": "playbooks/faith-chapel.md",
+      "story_model": "movement-institution",
+      "pastor_face_ratio_max_30d": 0.5,
+      "visual_bar": "institutional-premium"
+    },
+    {
+      "id": "church.union-church",
+      "slug": "union-church",
+      "name": "Union Church",
+      "file": "union-church.json",
+      "playbook": "playbooks/union-bldrs.md",
+      "story_model": "community-mix",
+      "pastor_face_ratio_max_30d": 0.4,
+      "sub_brands": [
+        "union-sound",
+        "bldrs-network"
+      ],
+      "visual_bar": "institutional-premium"
+    },
+    {
+      "id": "church.transformation-church",
+      "slug": "transformation-church",
+      "name": "Transformation Church",
+      "file": "transformation-church.json",
+      "playbook": "playbooks/transformation-church.md",
+      "story_model": "cinematic-pastor-human",
+      "pastor_face_ratio_max_30d": 0.55,
+      "sub_brands": [
+        "mike-todd-personal",
+        "transformation-youtube"
+      ],
+      "visual_bar": "siteinspire-forward"
+    },
+    {
+      "id": "church.church-of-the-highlands",
+      "slug": "church-of-the-highlands",
+      "name": "Church of the Highlands",
+      "file": "church-of-the-highlands.json",
+      "playbook": "playbooks/highlands-resources.md",
+      "story_model": "systems-multi-campus",
+      "pastor_face_ratio_max_30d": 0.45,
+      "sub_brands": [
+        "highlands-resources",
+        "highlands-college",
+        "grow",
+        "arc"
+      ],
+      "visual_bar": "institutional-premium",
+      "campus_count": 26
+    },
+    {
+      "id": "church.elevation-church",
+      "slug": "elevation-church",
+      "name": "Elevation Church",
+      "file": "elevation-church.json",
+      "playbook": "playbooks/elevation-church.md",
+      "story_model": "distributed-clips-community",
+      "pastor_face_ratio_max_30d": 0.5,
+      "sub_brands": [
+        "elevation-worship",
+        "efam",
+        "steven-furtick-ministries"
+      ],
+      "visual_bar": "institutional-premium"
+    }
+  ],
+  "domains": {
+    "brand": 19,
+    "content": 23,
+    "env": 13,
+    "motion": 21,
+    "ops": 21,
+    "print": 14,
+    "qa": 16,
+    "series": 28,
+    "slides": 24,
+    "social": 38,
+    "story": 24,
+    "web": 16,
+    "worship": 19
+  },
+  "skills": [
+    {
+      "id": "church.brand.align_brand_to_denominational_guidelines",
+      "domain": "brand",
+      "slug": "align_brand_to_denominational_guidelines",
+      "title": "Align brand to denominational guidelines",
+      "tier": "foundation",
+      "path": "brand/align_brand_to_denominational_guidelines.md"
+    },
+    {
+      "id": "church.brand.avoid_cliche_religious_symbols",
+      "domain": "brand",
+      "slug": "avoid_cliche_religious_symbols",
+      "title": "Avoid cliché religious symbol overload",
+      "tier": "foundation",
+      "path": "brand/avoid_cliche_religious_symbols.md"
+    },
+    {
+      "id": "church.brand.create_brand_hub_url",
+      "domain": "brand",
+      "slug": "create_brand_hub_url",
+      "title": "Create digital brand hub URL",
+      "tier": "foundation",
+      "path": "brand/create_brand_hub_url.md"
+    },
+    {
+      "id": "church.brand.create_one_page_quick_guide",
+      "domain": "brand",
+      "slug": "create_one_page_quick_guide",
+      "title": "Create one-page quick brand guide",
+      "tier": "foundation",
+      "path": "brand/create_one_page_quick_guide.md"
+    },
+    {
+      "id": "church.brand.define_color_semantic_meanings",
+      "domain": "brand",
+      "slug": "define_color_semantic_meanings",
+      "title": "Define semantic color meanings",
+      "tier": "foundation",
+      "path": "brand/define_color_semantic_meanings.md"
+    },
+    {
+      "id": "church.brand.define_photography_style",
+      "domain": "brand",
+      "slug": "define_photography_style",
+      "title": "Define photography style for church",
+      "tier": "foundation",
+      "path": "brand/define_photography_style.md"
+    },
+    {
+      "id": "church.brand.define_subbrand_ministries",
+      "domain": "brand",
+      "slug": "define_subbrand_ministries",
+      "title": "Define sub-brand rules for ministries",
+      "tier": "foundation",
+      "path": "brand/define_subbrand_ministries.md"
+    },
+    {
+      "id": "church.brand.define_template_folder_structure",
+      "domain": "brand",
+      "slug": "define_template_folder_structure",
+      "title": "Define template folder structure",
+      "tier": "foundation",
+      "path": "brand/define_template_folder_structure.md"
+    },
+    {
+      "id": "church.brand.define_voice_attributes",
+      "domain": "brand",
+      "slug": "define_voice_attributes",
+      "title": "Define brand voice attributes",
+      "tier": "foundation",
+      "path": "brand/define_voice_attributes.md"
+    },
+    {
+      "id": "church.brand.define_welcoming_vs_bold_tone",
+      "domain": "brand",
+      "slug": "define_welcoming_vs_bold_tone",
+      "title": "Define welcoming vs bold tone for outreach",
+      "tier": "foundation",
+      "path": "brand/define_welcoming_vs_bold_tone.md"
+    },
+    {
+      "id": "church.brand.design_submark_for_social_avatar",
+      "domain": "brand",
+      "slug": "design_submark_for_social_avatar",
+      "title": "Design submark for social avatar",
+      "tier": "foundation",
+      "path": "brand/design_submark_for_social_avatar.md"
+    },
+    {
+      "id": "church.brand.document_logo_clear_space",
+      "domain": "brand",
+      "slug": "document_logo_clear_space",
+      "title": "Document logo clear space and minimum size",
+      "tier": "foundation",
+      "path": "brand/document_logo_clear_space.md"
+    },
+    {
+      "id": "church.brand.handoff_brand_to_series_team",
+      "domain": "brand",
+      "slug": "handoff_brand_to_series_team",
+      "title": "Hand off brand to series creative team",
+      "tier": "foundation",
+      "path": "brand/handoff_brand_to_series_team.md"
+    },
+    {
+      "id": "church.brand.license_fonts_for_team",
+      "domain": "brand",
+      "slug": "license_fonts_for_team",
+      "title": "License fonts for team and streaming",
+      "tier": "foundation",
+      "path": "brand/license_fonts_for_team.md"
+    },
+    {
+      "id": "church.brand.run_brand_education_session",
+      "domain": "brand",
+      "slug": "run_brand_education_session",
+      "title": "Run brand education session for staff and volunteers",
+      "tier": "foundation",
+      "path": "brand/run_brand_education_session.md"
+    },
+    {
+      "id": "church.brand.select_typeface_for_projection",
+      "domain": "brand",
+      "slug": "select_typeface_for_projection",
+      "title": "Select typeface for projection legibility",
+      "tier": "foundation",
+      "path": "brand/select_typeface_for_projection.md"
+    },
+    {
+      "id": "church.brand.setup_canva_brand_kit",
+      "domain": "brand",
+      "slug": "setup_canva_brand_kit",
+      "title": "Set up Canva brand kit",
+      "tier": "foundation",
+      "path": "brand/setup_canva_brand_kit.md"
+    },
+    {
+      "id": "church.brand.write_messaging_do_dont",
+      "domain": "brand",
+      "slug": "write_messaging_do_dont",
+      "title": "Write messaging do and don't examples",
+      "tier": "foundation",
+      "path": "brand/write_messaging_do_dont.md"
+    },
+    {
+      "id": "church.brand.write_mission_in_guide",
+      "domain": "brand",
+      "slug": "write_mission_in_guide",
+      "title": "Write mission and vision in brand guide",
+      "tier": "foundation",
+      "path": "brand/write_mission_in_guide.md"
+    },
+    {
+      "id": "church.content.avoid_out_of_context_quotes",
+      "domain": "content",
+      "slug": "avoid_out_of_context_quotes",
+      "title": "Avoid Out Of Context Quotes",
+      "tier": "production",
+      "path": "content/avoid_out_of_context_quotes.md"
+    },
+    {
+      "id": "church.content.batch_export_clips_for_scheduler",
+      "domain": "content",
+      "slug": "batch_export_clips_for_scheduler",
+      "title": "Batch Export Clips For Scheduler",
+      "tier": "production",
+      "path": "content/batch_export_clips_for_scheduler.md"
+    },
+    {
+      "id": "church.content.build_weekly_content_calendar",
+      "domain": "content",
+      "slug": "build_weekly_content_calendar",
+      "title": "Build Weekly Content Calendar",
+      "tier": "production",
+      "path": "content/build_weekly_content_calendar.md"
+    },
+    {
+      "id": "church.content.create_podcast_cover_from_series",
+      "domain": "content",
+      "slug": "create_podcast_cover_from_series",
+      "title": "Create Podcast Cover From Series",
+      "tier": "production",
+      "path": "content/create_podcast_cover_from_series.md"
+    },
+    {
+      "id": "church.content.create_quote_attribution_line",
+      "domain": "content",
+      "slug": "create_quote_attribution_line",
+      "title": "Create Quote Attribution Line",
+      "tier": "production",
+      "path": "content/create_quote_attribution_line.md"
+    },
+    {
+      "id": "church.content.create_study_guide_pdf_cover",
+      "domain": "content",
+      "slug": "create_study_guide_pdf_cover",
+      "title": "Create Study Guide Pdf Cover",
+      "tier": "production",
+      "path": "content/create_study_guide_pdf_cover.md"
+    },
+    {
+      "id": "church.content.design_sermon_for_clip_extraction",
+      "domain": "content",
+      "slug": "design_sermon_for_clip_extraction",
+      "title": "Design sermon for clip extraction",
+      "tier": "production",
+      "path": "content/design_sermon_for_clip_extraction.md"
+    },
+    {
+      "id": "church.content.extract_quotable_lines",
+      "domain": "content",
+      "slug": "extract_quotable_lines",
+      "title": "Extract quotable lines from sermon transcript",
+      "tier": "production",
+      "path": "content/extract_quotable_lines.md"
+    },
+    {
+      "id": "church.content.extract_sermon_clips",
+      "domain": "content",
+      "slug": "extract_sermon_clips",
+      "title": "Extract Sermon Clips",
+      "tier": "production",
+      "path": "content/extract_sermon_clips.md"
+    },
+    {
+      "id": "church.content.identify_teaching_points",
+      "domain": "content",
+      "slug": "identify_teaching_points",
+      "title": "Identify Teaching Points",
+      "tier": "production",
+      "path": "content/identify_teaching_points.md"
+    },
+    {
+      "id": "church.content.map_points_to_content_pillars",
+      "domain": "content",
+      "slug": "map_points_to_content_pillars",
+      "title": "Map Points To Content Pillars",
+      "tier": "production",
+      "path": "content/map_points_to_content_pillars.md"
+    },
+    {
+      "id": "church.content.normalize_caption_file",
+      "domain": "content",
+      "slug": "normalize_caption_file",
+      "title": "Normalize Caption File",
+      "tier": "production",
+      "path": "content/normalize_caption_file.md"
+    },
+    {
+      "id": "church.content.plan_advent_content_calendar",
+      "domain": "content",
+      "slug": "plan_advent_content_calendar",
+      "title": "Plan Advent Content Calendar",
+      "tier": "production",
+      "path": "content/plan_advent_content_calendar.md"
+    },
+    {
+      "id": "church.content.plan_easter_content_calendar",
+      "domain": "content",
+      "slug": "plan_easter_content_calendar",
+      "title": "Plan Easter Content Calendar",
+      "tier": "production",
+      "path": "content/plan_easter_content_calendar.md"
+    },
+    {
+      "id": "church.content.receive_sermon_transcript",
+      "domain": "content",
+      "slug": "receive_sermon_transcript",
+      "title": "Receive Sermon Transcript",
+      "tier": "production",
+      "path": "content/receive_sermon_transcript.md"
+    },
+    {
+      "id": "church.content.repurpose_archive_sermon",
+      "domain": "content",
+      "slug": "repurpose_archive_sermon",
+      "title": "Repurpose Archive Sermon",
+      "tier": "production",
+      "path": "content/repurpose_archive_sermon.md"
+    },
+    {
+      "id": "church.content.select_clips_under_ninety_seconds",
+      "domain": "content",
+      "slug": "select_clips_under_ninety_seconds",
+      "title": "Select Clips Under Ninety Seconds",
+      "tier": "production",
+      "path": "content/select_clips_under_ninety_seconds.md"
+    },
+    {
+      "id": "church.content.select_clips_under_sixty_seconds",
+      "domain": "content",
+      "slug": "select_clips_under_sixty_seconds",
+      "title": "Select Clips Under Sixty Seconds",
+      "tier": "production",
+      "path": "content/select_clips_under_sixty_seconds.md"
+    },
+    {
+      "id": "church.content.sync_content_to_sermon_notes_app",
+      "domain": "content",
+      "slug": "sync_content_to_sermon_notes_app",
+      "title": "Sync Content To Sermon Notes App",
+      "tier": "production",
+      "path": "content/sync_content_to_sermon_notes_app.md"
+    },
+    {
+      "id": "church.content.tag_sermon_topic_taxonomy",
+      "domain": "content",
+      "slug": "tag_sermon_topic_taxonomy",
+      "title": "Tag Sermon Topic Taxonomy",
+      "tier": "production",
+      "path": "content/tag_sermon_topic_taxonomy.md"
+    },
+    {
+      "id": "church.content.timestamp_key_moments",
+      "domain": "content",
+      "slug": "timestamp_key_moments",
+      "title": "Timestamp Key Moments",
+      "tier": "production",
+      "path": "content/timestamp_key_moments.md"
+    },
+    {
+      "id": "church.content.write_carousel_slide_copy",
+      "domain": "content",
+      "slug": "write_carousel_slide_copy",
+      "title": "Write Carousel Slide Copy",
+      "tier": "production",
+      "path": "content/write_carousel_slide_copy.md"
+    },
+    {
+      "id": "church.content.write_youtube_description",
+      "domain": "content",
+      "slug": "write_youtube_description",
+      "title": "Write Youtube Description",
+      "tier": "production",
+      "path": "content/write_youtube_description.md"
+    },
+    {
+      "id": "church.env.design_child_ministry_visual_system",
+      "domain": "env",
+      "slug": "design_child_ministry_visual_system",
+      "title": "Design Child Ministry Visual System",
+      "tier": "production",
+      "path": "env/design_child_ministry_visual_system.md"
+    },
+    {
+      "id": "church.env.design_conference_stage_graphics",
+      "domain": "env",
+      "slug": "design_conference_stage_graphics",
+      "title": "Design Conference Stage Graphics",
+      "tier": "production",
+      "path": "env/design_conference_stage_graphics.md"
+    },
+    {
+      "id": "church.env.design_gazebo_tent_graphic",
+      "domain": "env",
+      "slug": "design_gazebo_tent_graphic",
+      "title": "Design Gazebo Tent Graphic",
+      "tier": "production",
+      "path": "env/design_gazebo_tent_graphic.md"
+    },
+    {
+      "id": "church.env.design_greeting_team_badge",
+      "domain": "env",
+      "slug": "design_greeting_team_badge",
+      "title": "Design Greeting Team Badge",
+      "tier": "production",
+      "path": "env/design_greeting_team_badge.md"
+    },
+    {
+      "id": "church.env.design_outdoor_banner",
+      "domain": "env",
+      "slug": "design_outdoor_banner",
+      "title": "Design Outdoor Banner",
+      "tier": "production",
+      "path": "env/design_outdoor_banner.md"
+    },
+    {
+      "id": "church.env.design_parking_sign",
+      "domain": "env",
+      "slug": "design_parking_sign",
+      "title": "Design Parking Sign",
+      "tier": "production",
+      "path": "env/design_parking_sign.md"
+    },
+    {
+      "id": "church.env.design_photo_op_frame",
+      "domain": "env",
+      "slug": "design_photo_op_frame",
+      "title": "Design Photo Op Frame",
+      "tier": "production",
+      "path": "env/design_photo_op_frame.md"
+    },
+    {
+      "id": "church.env.design_seating_card",
+      "domain": "env",
+      "slug": "design_seating_card",
+      "title": "Design Seating Card",
+      "tier": "production",
+      "path": "env/design_seating_card.md"
+    },
+    {
+      "id": "church.env.design_stage_backdrop",
+      "domain": "env",
+      "slug": "design_stage_backdrop",
+      "title": "Design Stage Backdrop",
+      "tier": "production",
+      "path": "env/design_stage_backdrop.md"
+    },
+    {
+      "id": "church.env.design_stage_side_panels",
+      "domain": "env",
+      "slug": "design_stage_side_panels",
+      "title": "Design Stage Side Panels",
+      "tier": "production",
+      "path": "env/design_stage_side_panels.md"
+    },
+    {
+      "id": "church.env.design_wayfinding_signage",
+      "domain": "env",
+      "slug": "design_wayfinding_signage",
+      "title": "Design Wayfinding Signage",
+      "tier": "production",
+      "path": "env/design_wayfinding_signage.md"
+    },
+    {
+      "id": "church.env.design_youth_group_subbrand",
+      "domain": "env",
+      "slug": "design_youth_group_subbrand",
+      "title": "Design Youth Group Subbrand",
+      "tier": "production",
+      "path": "env/design_youth_group_subbrand.md"
+    },
+    {
+      "id": "church.env.promote_bridge_community_events",
+      "domain": "env",
+      "slug": "promote_bridge_community_events",
+      "title": "Promote The Bridge community events",
+      "tier": "production",
+      "path": "env/promote_bridge_community_events.md"
+    },
+    {
+      "id": "church.motion.add_film_grain_brand",
+      "domain": "motion",
+      "slug": "add_film_grain_brand",
+      "title": "Add brand-approved film grain",
+      "tier": "production",
+      "path": "motion/add_film_grain_brand.md"
+    },
+    {
+      "id": "church.motion.archive_motion_to_dam",
+      "domain": "motion",
+      "slug": "archive_motion_to_dam",
+      "title": "Archive motion files to DAM",
+      "tier": "production",
+      "path": "motion/archive_motion_to_dam.md"
+    },
+    {
+      "id": "church.motion.avoid_moire_on_patterns",
+      "domain": "motion",
+      "slug": "avoid_moire_on_patterns",
+      "title": "Avoid moiré on fine patterns for IMAG",
+      "tier": "production",
+      "path": "motion/avoid_moire_on_patterns.md"
+    },
+    {
+      "id": "church.motion.build_mogrt_template",
+      "domain": "motion",
+      "slug": "build_mogrt_template",
+      "title": "Build After Effects MOGRT template",
+      "tier": "production",
+      "path": "motion/build_mogrt_template.md"
+    },
+    {
+      "id": "church.motion.burn_in_captions_sermon_clip",
+      "domain": "motion",
+      "slug": "burn_in_captions_sermon_clip",
+      "title": "Burn in captions on sermon clip",
+      "tier": "production",
+      "path": "motion/burn_in_captions_sermon_clip.md"
+    },
+    {
+      "id": "church.motion.cinematic_excellence_standard",
+      "domain": "motion",
+      "slug": "cinematic_excellence_standard",
+      "title": "Cinematic excellence standard for motion and stage",
+      "tier": "qa",
+      "path": "motion/cinematic_excellence_standard.md"
+    },
+    {
+      "id": "church.motion.create_alpha_channel_lower_third",
+      "domain": "motion",
+      "slug": "create_alpha_channel_lower_third",
+      "title": "Create alpha channel lower third PNG sequence",
+      "tier": "production",
+      "path": "motion/create_alpha_channel_lower_third.md"
+    },
+    {
+      "id": "church.motion.create_vertical_crop_for_reels",
+      "domain": "motion",
+      "slug": "create_vertical_crop_for_reels",
+      "title": "Create vertical crop for reels from 16:9",
+      "tier": "production",
+      "path": "motion/create_vertical_crop_for_reels.md"
+    },
+    {
+      "id": "church.motion.design_baptism_video_overlay",
+      "domain": "motion",
+      "slug": "design_baptism_video_overlay",
+      "title": "Design baptism video overlay",
+      "tier": "production",
+      "path": "motion/design_baptism_video_overlay.md"
+    },
+    {
+      "id": "church.motion.design_countdown_timer",
+      "domain": "motion",
+      "slug": "design_countdown_timer",
+      "title": "Design countdown timer motion",
+      "tier": "production",
+      "path": "motion/design_countdown_timer.md"
+    },
+    {
+      "id": "church.motion.design_lower_third",
+      "domain": "motion",
+      "slug": "design_lower_third",
+      "title": "Design lower third name strap",
+      "tier": "production",
+      "path": "motion/design_lower_third.md"
+    },
+    {
+      "id": "church.motion.design_offering_motion",
+      "domain": "motion",
+      "slug": "design_offering_motion",
+      "title": "Design offering motion background",
+      "tier": "production",
+      "path": "motion/design_offering_motion.md"
+    },
+    {
+      "id": "church.motion.design_series_opener",
+      "domain": "motion",
+      "slug": "design_series_opener",
+      "title": "Design series video opener",
+      "tier": "production",
+      "path": "motion/design_series_opener.md"
+    },
+    {
+      "id": "church.motion.design_stinger_transition",
+      "domain": "motion",
+      "slug": "design_stinger_transition",
+      "title": "Design stinger transition bumper",
+      "tier": "production",
+      "path": "motion/design_stinger_transition.md"
+    },
+    {
+      "id": "church.motion.document_motion_codec_standards",
+      "domain": "motion",
+      "slug": "document_motion_codec_standards",
+      "title": "Document motion codec standards for church",
+      "tier": "production",
+      "path": "motion/document_motion_codec_standards.md"
+    },
+    {
+      "id": "church.motion.export_loop_seamless",
+      "domain": "motion",
+      "slug": "export_loop_seamless",
+      "title": "Export seamless motion loop",
+      "tier": "production",
+      "path": "motion/export_loop_seamless.md"
+    },
+    {
+      "id": "church.motion.export_projection_1080",
+      "domain": "motion",
+      "slug": "export_projection_1080",
+      "title": "Export projection 1080p H.264",
+      "tier": "production",
+      "path": "motion/export_projection_1080.md"
+    },
+    {
+      "id": "church.motion.optimize_bitrate_for_venue_wifi",
+      "domain": "motion",
+      "slug": "optimize_bitrate_for_venue_wifi",
+      "title": "Optimize bitrate for venue streaming",
+      "tier": "production",
+      "path": "motion/optimize_bitrate_for_venue_wifi.md"
+    },
+    {
+      "id": "church.motion.render_prores_master_archive",
+      "domain": "motion",
+      "slug": "render_prores_master_archive",
+      "title": "Render ProRes master for archive",
+      "tier": "production",
+      "path": "motion/render_prores_master_archive.md"
+    },
+    {
+      "id": "church.motion.sync_motion_to_click_track",
+      "domain": "motion",
+      "slug": "sync_motion_to_click_track",
+      "title": "Sync motion to worship click track",
+      "tier": "production",
+      "path": "motion/sync_motion_to_click_track.md"
+    },
+    {
+      "id": "church.motion.test_export_on_propresenter",
+      "domain": "motion",
+      "slug": "test_export_on_propresenter",
+      "title": "Test motion export in ProPresenter",
+      "tier": "production",
+      "path": "motion/test_export_on_propresenter.md"
+    },
+    {
+      "id": "church.ops.archive_week_assets",
+      "domain": "ops",
+      "slug": "archive_week_assets",
+      "title": "Archive Week Assets",
+      "tier": "ops",
+      "path": "ops/archive_week_assets.md"
+    },
+    {
+      "id": "church.ops.assign_approval_owner",
+      "domain": "ops",
+      "slug": "assign_approval_owner",
+      "title": "Assign Approval Owner",
+      "tier": "ops",
+      "path": "ops/assign_approval_owner.md"
+    },
+    {
+      "id": "church.ops.backup_canva_team_assets",
+      "domain": "ops",
+      "slug": "backup_canva_team_assets",
+      "title": "Backup Canva Team Assets",
+      "tier": "ops",
+      "path": "ops/backup_canva_team_assets.md"
+    },
+    {
+      "id": "church.ops.create_asset_request_form",
+      "domain": "ops",
+      "slug": "create_asset_request_form",
+      "title": "Create Asset Request Form",
+      "tier": "ops",
+      "path": "ops/create_asset_request_form.md"
+    },
+    {
+      "id": "church.ops.define_approval_chain",
+      "domain": "ops",
+      "slug": "define_approval_chain",
+      "title": "Define Approval Chain",
+      "tier": "ops",
+      "path": "ops/define_approval_chain.md"
+    },
+    {
+      "id": "church.ops.document_software_stack",
+      "domain": "ops",
+      "slug": "document_software_stack",
+      "title": "Document Software Stack",
+      "tier": "ops",
+      "path": "ops/document_software_stack.md"
+    },
+    {
+      "id": "church.ops.duplicate_template_not_redesign",
+      "domain": "ops",
+      "slug": "duplicate_template_not_redesign",
+      "title": "Duplicate Template Not Redesign",
+      "tier": "ops",
+      "path": "ops/duplicate_template_not_redesign.md"
+    },
+    {
+      "id": "church.ops.efam_watch_party_promo",
+      "domain": "ops",
+      "slug": "efam_watch_party_promo",
+      "title": "eFam Watch Party promo",
+      "tier": "production",
+      "path": "ops/efam_watch_party_promo.md"
+    },
+    {
+      "id": "church.ops.intake_creative_brief_form",
+      "domain": "ops",
+      "slug": "intake_creative_brief_form",
+      "title": "Intake Creative Brief Form",
+      "tier": "ops",
+      "path": "ops/intake_creative_brief_form.md"
+    },
+    {
+      "id": "church.ops.multi_campus_variant_switcher",
+      "domain": "ops",
+      "slug": "multi_campus_variant_switcher",
+      "title": "Multi-campus variant switcher",
+      "tier": "ops",
+      "path": "ops/multi_campus_variant_switcher.md"
+    },
+    {
+      "id": "church.ops.onboard_new_volunteer",
+      "domain": "ops",
+      "slug": "onboard_new_volunteer",
+      "title": "Onboard New Volunteer",
+      "tier": "ops",
+      "path": "ops/onboard_new_volunteer.md"
+    },
+    {
+      "id": "church.ops.pop_up_city_creative",
+      "domain": "ops",
+      "slug": "pop_up_city_creative",
+      "title": "Pop-Up city creative",
+      "tier": "production",
+      "path": "ops/pop_up_city_creative.md"
+    },
+    {
+      "id": "church.ops.publish_series_kit_to_dam",
+      "domain": "ops",
+      "slug": "publish_series_kit_to_dam",
+      "title": "Publish Series Kit To Dam",
+      "tier": "ops",
+      "path": "ops/publish_series_kit_to_dam.md"
+    },
+    {
+      "id": "church.ops.run_monthly_brand_audit",
+      "domain": "ops",
+      "slug": "run_monthly_brand_audit",
+      "title": "Run Monthly Brand Audit",
+      "tier": "ops",
+      "path": "ops/run_monthly_brand_audit.md"
+    },
+    {
+      "id": "church.ops.schedule_content_planner",
+      "domain": "ops",
+      "slug": "schedule_content_planner",
+      "title": "Schedule Content Planner",
+      "tier": "ops",
+      "path": "ops/schedule_content_planner.md"
+    },
+    {
+      "id": "church.ops.set_slack_notification_channel",
+      "domain": "ops",
+      "slug": "set_slack_notification_channel",
+      "title": "Set Slack Notification Channel",
+      "tier": "ops",
+      "path": "ops/set_slack_notification_channel.md"
+    },
+    {
+      "id": "church.ops.submit_for_pastoral_review",
+      "domain": "ops",
+      "slug": "submit_for_pastoral_review",
+      "title": "Submit For Pastoral Review",
+      "tier": "ops",
+      "path": "ops/submit_for_pastoral_review.md"
+    },
+    {
+      "id": "church.ops.sunday_morning_checklist",
+      "domain": "ops",
+      "slug": "sunday_morning_checklist",
+      "title": "Sunday Morning Checklist",
+      "tier": "ops",
+      "path": "ops/sunday_morning_checklist.md"
+    },
+    {
+      "id": "church.ops.track_ccli_license_on_graphics",
+      "domain": "ops",
+      "slug": "track_ccli_license_on_graphics",
+      "title": "Track Ccli License On Graphics",
+      "tier": "ops",
+      "path": "ops/track_ccli_license_on_graphics.md"
+    },
+    {
+      "id": "church.ops.train_volunteers_duplicate_templates",
+      "domain": "ops",
+      "slug": "train_volunteers_duplicate_templates",
+      "title": "Train Volunteers Duplicate Templates",
+      "tier": "ops",
+      "path": "ops/train_volunteers_duplicate_templates.md"
+    },
+    {
+      "id": "church.ops.version_brand_assets",
+      "domain": "ops",
+      "slug": "version_brand_assets",
+      "title": "Version Brand Assets",
+      "tier": "ops",
+      "path": "ops/version_brand_assets.md"
+    },
+    {
+      "id": "church.print.design_banner_standee",
+      "domain": "print",
+      "slug": "design_banner_standee",
+      "title": "Design Banner Standee",
+      "tier": "production",
+      "path": "print/design_banner_standee.md"
+    },
+    {
+      "id": "church.print.design_bulletin_cover",
+      "domain": "print",
+      "slug": "design_bulletin_cover",
+      "title": "Design Bulletin Cover",
+      "tier": "production",
+      "path": "print/design_bulletin_cover.md"
+    },
+    {
+      "id": "church.print.design_connection_card",
+      "domain": "print",
+      "slug": "design_connection_card",
+      "title": "Design Connection Card",
+      "tier": "production",
+      "path": "print/design_connection_card.md"
+    },
+    {
+      "id": "church.print.design_envelope_mailout",
+      "domain": "print",
+      "slug": "design_envelope_mailout",
+      "title": "Design Envelope Mailout",
+      "tier": "production",
+      "path": "print/design_envelope_mailout.md"
+    },
+    {
+      "id": "church.print.design_event_poster",
+      "domain": "print",
+      "slug": "design_event_poster",
+      "title": "Design Event Poster",
+      "tier": "production",
+      "path": "print/design_event_poster.md"
+    },
+    {
+      "id": "church.print.design_giving_envelope",
+      "domain": "print",
+      "slug": "design_giving_envelope",
+      "title": "Design Giving Envelope",
+      "tier": "production",
+      "path": "print/design_giving_envelope.md"
+    },
+    {
+      "id": "church.print.design_invite_card",
+      "domain": "print",
+      "slug": "design_invite_card",
+      "title": "Design Invite Card",
+      "tier": "production",
+      "path": "print/design_invite_card.md"
+    },
+    {
+      "id": "church.print.design_sermon_notes_insert",
+      "domain": "print",
+      "slug": "design_sermon_notes_insert",
+      "title": "Design Sermon Notes Insert",
+      "tier": "production",
+      "path": "print/design_sermon_notes_insert.md"
+    },
+    {
+      "id": "church.print.design_wayfinding_poster",
+      "domain": "print",
+      "slug": "design_wayfinding_poster",
+      "title": "Design Wayfinding Poster",
+      "tier": "production",
+      "path": "print/design_wayfinding_poster.md"
+    },
+    {
+      "id": "church.print.design_weekly_bulletin",
+      "domain": "print",
+      "slug": "design_weekly_bulletin",
+      "title": "Design Weekly Bulletin",
+      "tier": "production",
+      "path": "print/design_weekly_bulletin.md"
+    },
+    {
+      "id": "church.print.embed_fonts_in_pdf",
+      "domain": "print",
+      "slug": "embed_fonts_in_pdf",
+      "title": "Embed Fonts In Pdf",
+      "tier": "production",
+      "path": "print/embed_fonts_in_pdf.md"
+    },
+    {
+      "id": "church.print.export_300dpi_cmyk",
+      "domain": "print",
+      "slug": "export_300dpi_cmyk",
+      "title": "Export 300dpi Cmyk",
+      "tier": "production",
+      "path": "print/export_300dpi_cmyk.md"
+    },
+    {
+      "id": "church.print.preflight_bulletin_pdf",
+      "domain": "print",
+      "slug": "preflight_bulletin_pdf",
+      "title": "Preflight Bulletin Pdf",
+      "tier": "production",
+      "path": "print/preflight_bulletin_pdf.md"
+    },
+    {
+      "id": "church.print.set_bleed_0125in",
+      "domain": "print",
+      "slug": "set_bleed_0125in",
+      "title": "Set Bleed 0125in",
+      "tier": "production",
+      "path": "print/set_bleed_0125in.md"
+    },
+    {
+      "id": "church.qa.announcement_count_limit",
+      "domain": "qa",
+      "slug": "announcement_count_limit",
+      "title": "Enforce announcement count limit",
+      "tier": "qa",
+      "path": "qa/announcement_count_limit.md"
+    },
+    {
+      "id": "church.qa.approval_status_recorded",
+      "domain": "qa",
+      "slug": "approval_status_recorded",
+      "title": "Record approval status",
+      "tier": "qa",
+      "path": "qa/approval_status_recorded.md"
+    },
+    {
+      "id": "church.qa.archive_metadata_complete",
+      "domain": "qa",
+      "slug": "archive_metadata_complete",
+      "title": "Verify archive metadata complete",
+      "tier": "qa",
+      "path": "qa/archive_metadata_complete.md"
+    },
+    {
+      "id": "church.qa.ccli_song_display",
+      "domain": "qa",
+      "slug": "ccli_song_display",
+      "title": "Verify CCLI song display compliance",
+      "tier": "qa",
+      "path": "qa/ccli_song_display.md"
+    },
+    {
+      "id": "church.qa.contrast_wcag_aa_social",
+      "domain": "qa",
+      "slug": "contrast_wcag_aa_social",
+      "title": "Check WCAG AA contrast on social",
+      "tier": "qa",
+      "path": "qa/contrast_wcag_aa_social.md"
+    },
+    {
+      "id": "church.qa.copyright_image_license",
+      "domain": "qa",
+      "slug": "copyright_image_license",
+      "title": "Verify image copyright license",
+      "tier": "qa",
+      "path": "qa/copyright_image_license.md"
+    },
+    {
+      "id": "church.qa.export_dimensions_correct",
+      "domain": "qa",
+      "slug": "export_dimensions_correct",
+      "title": "Verify export dimensions correct",
+      "tier": "qa",
+      "path": "qa/export_dimensions_correct.md"
+    },
+    {
+      "id": "church.qa.file_size_under_platform_limit",
+      "domain": "qa",
+      "slug": "file_size_under_platform_limit",
+      "title": "Verify file size under platform limit",
+      "tier": "qa",
+      "path": "qa/file_size_under_platform_limit.md"
+    },
+    {
+      "id": "church.qa.logo_and_color_compliance",
+      "domain": "qa",
+      "slug": "logo_and_color_compliance",
+      "title": "Verify logo and color compliance",
+      "tier": "qa",
+      "path": "qa/logo_and_color_compliance.md"
+    },
+    {
+      "id": "church.qa.motion_not_distracting_behind_speaker",
+      "domain": "qa",
+      "slug": "motion_not_distracting_behind_speaker",
+      "title": "Check motion not distracting behind speaker",
+      "tier": "qa",
+      "path": "qa/motion_not_distracting_behind_speaker.md"
+    },
+    {
+      "id": "church.qa.projection_legibility",
+      "domain": "qa",
+      "slug": "projection_legibility",
+      "title": "Verify projection legibility",
+      "tier": "qa",
+      "path": "qa/projection_legibility.md"
+    },
+    {
+      "id": "church.qa.qr_code_scans",
+      "domain": "qa",
+      "slug": "qr_code_scans",
+      "title": "Test QR code scans on final graphic",
+      "tier": "qa",
+      "path": "qa/qr_code_scans.md"
+    },
+    {
+      "id": "church.qa.safe_zones_platform_ui",
+      "domain": "qa",
+      "slug": "safe_zones_platform_ui",
+      "title": "Verify platform UI safe zones",
+      "tier": "qa",
+      "path": "qa/safe_zones_platform_ui.md"
+    },
+    {
+      "id": "church.qa.spellcheck_and_names",
+      "domain": "qa",
+      "slug": "spellcheck_and_names",
+      "title": "Spellcheck and verify names",
+      "tier": "qa",
+      "path": "qa/spellcheck_and_names.md"
+    },
+    {
+      "id": "church.qa.text_legibility_mobile",
+      "domain": "qa",
+      "slug": "text_legibility_mobile",
+      "title": "Verify text legibility on mobile",
+      "tier": "qa",
+      "path": "qa/text_legibility_mobile.md"
+    },
+    {
+      "id": "church.qa.theology_sensitive_language",
+      "domain": "qa",
+      "slug": "theology_sensitive_language",
+      "title": "Review theology-sensitive language",
+      "tier": "qa",
+      "path": "qa/theology_sensitive_language.md"
+    },
+    {
+      "id": "church.series.archive_series_assets",
+      "domain": "series",
+      "slug": "archive_series_assets",
+      "title": "Archive series assets after end",
+      "tier": "ops",
+      "path": "series/archive_series_assets.md"
+    },
+    {
+      "id": "church.series.create_countdown_to_series",
+      "domain": "series",
+      "slug": "create_countdown_to_series",
+      "title": "Create countdown graphics to series start",
+      "tier": "production",
+      "path": "series/create_countdown_to_series.md"
+    },
+    {
+      "id": "church.series.create_motion_background_set",
+      "domain": "series",
+      "slug": "create_motion_background_set",
+      "title": "Create motion background set for series",
+      "tier": "production",
+      "path": "series/create_motion_background_set.md"
+    },
+    {
+      "id": "church.series.create_series_pattern_library",
+      "domain": "series",
+      "slug": "create_series_pattern_library",
+      "title": "Create series pattern library",
+      "tier": "production",
+      "path": "series/create_series_pattern_library.md"
+    },
+    {
+      "id": "church.series.create_series_qr_code_graphic",
+      "domain": "series",
+      "slug": "create_series_qr_code_graphic",
+      "title": "Create QR code graphic for series resources",
+      "tier": "production",
+      "path": "series/create_series_qr_code_graphic.md"
+    },
+    {
+      "id": "church.series.define_series_color_palette",
+      "domain": "series",
+      "slug": "define_series_color_palette",
+      "title": "Define series color palette override",
+      "tier": "production",
+      "path": "series/define_series_color_palette.md"
+    },
+    {
+      "id": "church.series.define_series_creative_brief",
+      "domain": "series",
+      "slug": "define_series_creative_brief",
+      "title": "Define series creative brief",
+      "tier": "foundation",
+      "path": "series/define_series_creative_brief.md"
+    },
+    {
+      "id": "church.series.design_baptism_weekend_variant",
+      "domain": "series",
+      "slug": "design_baptism_weekend_variant",
+      "title": "Design baptism weekend series variant",
+      "tier": "production",
+      "path": "series/design_baptism_weekend_variant.md"
+    },
+    {
+      "id": "church.series.design_key_art",
+      "domain": "series",
+      "slug": "design_key_art",
+      "title": "Design series key art",
+      "tier": "production",
+      "path": "series/design_key_art.md"
+    },
+    {
+      "id": "church.series.design_offering_series_slide",
+      "domain": "series",
+      "slug": "design_offering_series_slide",
+      "title": "Design offering slide in series style",
+      "tier": "production",
+      "path": "series/design_offering_series_slide.md"
+    },
+    {
+      "id": "church.series.design_parking_signage_series",
+      "domain": "series",
+      "slug": "design_parking_signage_series",
+      "title": "Design parking signage for series event",
+      "tier": "env",
+      "path": "series/design_parking_signage_series.md"
+    },
+    {
+      "id": "church.series.design_series_logo_lockup",
+      "domain": "series",
+      "slug": "design_series_logo_lockup",
+      "title": "Design series logo lockup with church mark",
+      "tier": "production",
+      "path": "series/design_series_logo_lockup.md"
+    },
+    {
+      "id": "church.series.design_stage_slide_master",
+      "domain": "series",
+      "slug": "design_stage_slide_master",
+      "title": "Design stage slide master for series",
+      "tier": "production",
+      "path": "series/design_stage_slide_master.md"
+    },
+    {
+      "id": "church.series.design_title_treatment",
+      "domain": "series",
+      "slug": "design_title_treatment",
+      "title": "Design series title treatment",
+      "tier": "production",
+      "path": "series/design_title_treatment.md"
+    },
+    {
+      "id": "church.series.design_week_specific_variant",
+      "domain": "series",
+      "slug": "design_week_specific_variant",
+      "title": "Design week-specific art variant",
+      "tier": "production",
+      "path": "series/design_week_specific_variant.md"
+    },
+    {
+      "id": "church.series.document_series_typography",
+      "domain": "series",
+      "slug": "document_series_typography",
+      "title": "Document series typography rules",
+      "tier": "production",
+      "path": "series/document_series_typography.md"
+    },
+    {
+      "id": "church.series.export_key_art_sizes",
+      "domain": "series",
+      "slug": "export_key_art_sizes",
+      "title": "Export key art size variants",
+      "tier": "production",
+      "path": "series/export_key_art_sizes.md"
+    },
+    {
+      "id": "church.series.extend_series_art_for_one_week",
+      "domain": "series",
+      "slug": "extend_series_art_for_one_week",
+      "title": "Extend series art for bonus week",
+      "tier": "production",
+      "path": "series/extend_series_art_for_one_week.md"
+    },
+    {
+      "id": "church.series.include_master_painting_layer",
+      "domain": "series",
+      "slug": "include_master_painting_layer",
+      "title": "Include master painting layer in series kit",
+      "tier": "production",
+      "path": "series/include_master_painting_layer.md"
+    },
+    {
+      "id": "church.series.launch_asset_kit_checklist",
+      "domain": "series",
+      "slug": "launch_asset_kit_checklist",
+      "title": "Run series launch asset kit checklist",
+      "tier": "production",
+      "path": "series/launch_asset_kit_checklist.md"
+    },
+    {
+      "id": "church.series.merge_two_series_brands_transition",
+      "domain": "series",
+      "slug": "merge_two_series_brands_transition",
+      "title": "Merge two series brands for transition week",
+      "tier": "production",
+      "path": "series/merge_two_series_brands_transition.md"
+    },
+    {
+      "id": "church.series.package_cinematic_series_kit",
+      "domain": "series",
+      "slug": "package_cinematic_series_kit",
+      "title": "Package cinematic series kit",
+      "tier": "production",
+      "path": "series/package_cinematic_series_kit.md"
+    },
+    {
+      "id": "church.series.package_open_network_style_kit",
+      "domain": "series",
+      "slug": "package_open_network_style_kit",
+      "title": "Package Open Network style series kit",
+      "tier": "production",
+      "path": "series/package_open_network_style_kit.md"
+    },
+    {
+      "id": "church.series.review_series_with_teaching_pastor",
+      "domain": "series",
+      "slug": "review_series_with_teaching_pastor",
+      "title": "Review series art with teaching pastor",
+      "tier": "ops",
+      "path": "series/review_series_with_teaching_pastor.md"
+    },
+    {
+      "id": "church.series.rollback_series_kit_version",
+      "domain": "series",
+      "slug": "rollback_series_kit_version",
+      "title": "Rollback series kit to prior version",
+      "tier": "ops",
+      "path": "series/rollback_series_kit_version.md"
+    },
+    {
+      "id": "church.series.ship_open_network_elevation_kit",
+      "domain": "series",
+      "slug": "ship_open_network_elevation_kit",
+      "title": "Ship Open Network Elevation kit",
+      "tier": "production",
+      "path": "series/ship_open_network_elevation_kit.md"
+    },
+    {
+      "id": "church.series.sync_series_to_planning_center",
+      "domain": "series",
+      "slug": "sync_series_to_planning_center",
+      "title": "Sync series metadata to Planning Center",
+      "tier": "ops",
+      "path": "series/sync_series_to_planning_center.md"
+    },
+    {
+      "id": "church.series.test_key_art_on_stage_photo",
+      "domain": "series",
+      "slug": "test_key_art_on_stage_photo",
+      "title": "Test key art on stage photo mockup",
+      "tier": "qa",
+      "path": "series/test_key_art_on_stage_photo.md"
+    },
+    {
+      "id": "church.slides.announcement_seven_second_rule",
+      "domain": "slides",
+      "slug": "announcement_seven_second_rule",
+      "title": "Announcement Seven Second Rule",
+      "tier": "production",
+      "path": "slides/announcement_seven_second_rule.md"
+    },
+    {
+      "id": "church.slides.apply_series_master_to_deck",
+      "domain": "slides",
+      "slug": "apply_series_master_to_deck",
+      "title": "Apply Series Master To Deck",
+      "tier": "production",
+      "path": "slides/apply_series_master_to_deck.md"
+    },
+    {
+      "id": "church.slides.baptism_slide_template",
+      "domain": "slides",
+      "slug": "baptism_slide_template",
+      "title": "Baptism Slide Template",
+      "tier": "production",
+      "path": "slides/baptism_slide_template.md"
+    },
+    {
+      "id": "church.slides.bilingual_lyric_slide_layout",
+      "domain": "slides",
+      "slug": "bilingual_lyric_slide_layout",
+      "title": "Bilingual Lyric Slide Layout",
+      "tier": "production",
+      "path": "slides/bilingual_lyric_slide_layout.md"
+    },
+    {
+      "id": "church.slides.build_announcement_slides",
+      "domain": "slides",
+      "slug": "build_announcement_slides",
+      "title": "Build Announcement Slides",
+      "tier": "production",
+      "path": "slides/build_announcement_slides.md"
+    },
+    {
+      "id": "church.slides.build_propresenter_theme",
+      "domain": "slides",
+      "slug": "build_propresenter_theme",
+      "title": "Build Propresenter Theme",
+      "tier": "production",
+      "path": "slides/build_propresenter_theme.md"
+    },
+    {
+      "id": "church.slides.build_sermon_slide_deck",
+      "domain": "slides",
+      "slug": "build_sermon_slide_deck",
+      "title": "Build Sermon Slide Deck",
+      "tier": "production",
+      "path": "slides/build_sermon_slide_deck.md"
+    },
+    {
+      "id": "church.slides.campus_specific_announcement_variant",
+      "domain": "slides",
+      "slug": "campus_specific_announcement_variant",
+      "title": "Campus Specific Announcement Variant",
+      "tier": "production",
+      "path": "slides/campus_specific_announcement_variant.md"
+    },
+    {
+      "id": "church.slides.communion_slide_minimal",
+      "domain": "slides",
+      "slug": "communion_slide_minimal",
+      "title": "Communion Slide Minimal",
+      "tier": "production",
+      "path": "slides/communion_slide_minimal.md"
+    },
+    {
+      "id": "church.slides.design_blank_transition_slide",
+      "domain": "slides",
+      "slug": "design_blank_transition_slide",
+      "title": "Design Blank Transition Slide",
+      "tier": "production",
+      "path": "slides/design_blank_transition_slide.md"
+    },
+    {
+      "id": "church.slides.design_illustration_slide",
+      "domain": "slides",
+      "slug": "design_illustration_slide",
+      "title": "Design Illustration Slide",
+      "tier": "production",
+      "path": "slides/design_illustration_slide.md"
+    },
+    {
+      "id": "church.slides.design_point_slide_max_seven_words",
+      "domain": "slides",
+      "slug": "design_point_slide_max_seven_words",
+      "title": "Design Point Slide Max Seven Words",
+      "tier": "production",
+      "path": "slides/design_point_slide_max_seven_words.md"
+    },
+    {
+      "id": "church.slides.design_scripture_slide",
+      "domain": "slides",
+      "slug": "design_scripture_slide",
+      "title": "Design Scripture Slide",
+      "tier": "production",
+      "path": "slides/design_scripture_slide.md"
+    },
+    {
+      "id": "church.slides.design_sermon_title_slide",
+      "domain": "slides",
+      "slug": "design_sermon_title_slide",
+      "title": "Design Sermon Title Slide",
+      "tier": "production",
+      "path": "slides/design_sermon_title_slide.md"
+    },
+    {
+      "id": "church.slides.export_powerpoint_backup",
+      "domain": "slides",
+      "slug": "export_powerpoint_backup",
+      "title": "Export Powerpoint Backup",
+      "tier": "production",
+      "path": "slides/export_powerpoint_backup.md"
+    },
+    {
+      "id": "church.slides.export_propresenter",
+      "domain": "slides",
+      "slug": "export_propresenter",
+      "title": "Export Propresenter",
+      "tier": "production",
+      "path": "slides/export_propresenter.md"
+    },
+    {
+      "id": "church.slides.guest_speaker_slide_template",
+      "domain": "slides",
+      "slug": "guest_speaker_slide_template",
+      "title": "Guest Speaker Slide Template",
+      "tier": "production",
+      "path": "slides/guest_speaker_slide_template.md"
+    },
+    {
+      "id": "church.slides.import_slides_from_google_docs",
+      "domain": "slides",
+      "slug": "import_slides_from_google_docs",
+      "title": "Import Slides From Google Docs",
+      "tier": "production",
+      "path": "slides/import_slides_from_google_docs.md"
+    },
+    {
+      "id": "church.slides.limit_announcements_to_five",
+      "domain": "slides",
+      "slug": "limit_announcements_to_five",
+      "title": "Limit Announcements To Five",
+      "tier": "production",
+      "path": "slides/limit_announcements_to_five.md"
+    },
+    {
+      "id": "church.slides.lyric_capitalization_style",
+      "domain": "slides",
+      "slug": "lyric_capitalization_style",
+      "title": "Lyric Capitalization Style",
+      "tier": "production",
+      "path": "slides/lyric_capitalization_style.md"
+    },
+    {
+      "id": "church.slides.lyric_line_break_rules",
+      "domain": "slides",
+      "slug": "lyric_line_break_rules",
+      "title": "Lyric Line Break Rules",
+      "tier": "production",
+      "path": "slides/lyric_line_break_rules.md"
+    },
+    {
+      "id": "church.slides.prepare_worship_lyric_slides",
+      "domain": "slides",
+      "slug": "prepare_worship_lyric_slides",
+      "title": "Prepare Worship Lyric Slides",
+      "tier": "production",
+      "path": "slides/prepare_worship_lyric_slides.md"
+    },
+    {
+      "id": "church.slides.song_title_slide_style",
+      "domain": "slides",
+      "slug": "song_title_slide_style",
+      "title": "Song Title Slide Style",
+      "tier": "production",
+      "path": "slides/song_title_slide_style.md"
+    },
+    {
+      "id": "church.slides.sync_slides_with_speaker_notes",
+      "domain": "slides",
+      "slug": "sync_slides_with_speaker_notes",
+      "title": "Sync Slides With Speaker Notes",
+      "tier": "production",
+      "path": "slides/sync_slides_with_speaker_notes.md"
+    },
+    {
+      "id": "church.social.add_hashtags_local_and_church",
+      "domain": "social",
+      "slug": "add_hashtags_local_and_church",
+      "title": "Add local and church hashtags",
+      "tier": "production",
+      "path": "social/add_hashtags_local_and_church.md"
+    },
+    {
+      "id": "church.social.apply_hillsong_strategy_framework",
+      "domain": "social",
+      "slug": "apply_hillsong_strategy_framework",
+      "title": "Apply Hillsong social strategy framework",
+      "tier": "foundation",
+      "path": "social/apply_hillsong_strategy_framework.md"
+    },
+    {
+      "id": "church.social.apply_scrim_for_text_on_photo",
+      "domain": "social",
+      "slug": "apply_scrim_for_text_on_photo",
+      "title": "Apply scrim for text on photo",
+      "tier": "production",
+      "path": "social/apply_scrim_for_text_on_photo.md"
+    },
+    {
+      "id": "church.social.batch_weekly_content",
+      "domain": "social",
+      "slug": "batch_weekly_content",
+      "title": "Batch weekly social content in one sitting",
+      "tier": "production",
+      "path": "social/batch_weekly_content.md"
+    },
+    {
+      "id": "church.social.crosspost_adapt_not_identical",
+      "domain": "social",
+      "slug": "crosspost_adapt_not_identical",
+      "title": "Cross-post with platform adaptation",
+      "tier": "production",
+      "path": "social/crosspost_adapt_not_identical.md"
+    },
+    {
+      "id": "church.social.duplicate_template_not_redesign",
+      "domain": "social",
+      "slug": "duplicate_template_not_redesign",
+      "title": "Duplicate social template without redesign",
+      "tier": "production",
+      "path": "social/duplicate_template_not_redesign.md"
+    },
+    {
+      "id": "church.social.enforce_two_font_weights_max",
+      "domain": "social",
+      "slug": "enforce_two_font_weights_max",
+      "title": "Enforce max two font weights per graphic",
+      "tier": "production",
+      "path": "social/enforce_two_font_weights_max.md"
+    },
+    {
+      "id": "church.social.export_email_inline",
+      "domain": "social",
+      "slug": "export_email_inline",
+      "title": "Export email-inline graphic",
+      "tier": "production",
+      "path": "social/export_email_inline.md"
+    },
+    {
+      "id": "church.social.export_facebook_link_preview",
+      "domain": "social",
+      "slug": "export_facebook_link_preview",
+      "title": "Export Facebook link preview",
+      "tier": "production",
+      "path": "social/export_facebook_link_preview.md"
+    },
+    {
+      "id": "church.social.export_instagram_portrait",
+      "domain": "social",
+      "slug": "export_instagram_portrait",
+      "title": "Export Instagram portrait",
+      "tier": "production",
+      "path": "social/export_instagram_portrait.md"
+    },
+    {
+      "id": "church.social.export_instagram_square",
+      "domain": "social",
+      "slug": "export_instagram_square",
+      "title": "Export Instagram square",
+      "tier": "production",
+      "path": "social/export_instagram_square.md"
+    },
+    {
+      "id": "church.social.export_story_reel",
+      "domain": "social",
+      "slug": "export_story_reel",
+      "title": "Export story and reel vertical",
+      "tier": "production",
+      "path": "social/export_story_reel.md"
+    },
+    {
+      "id": "church.social.export_youtube_thumbnail",
+      "domain": "social",
+      "slug": "export_youtube_thumbnail",
+      "title": "Export YouTube thumbnail",
+      "tier": "production",
+      "path": "social/export_youtube_thumbnail.md"
+    },
+    {
+      "id": "church.social.maintain_feed_grid_rhythm",
+      "domain": "social",
+      "slug": "maintain_feed_grid_rhythm",
+      "title": "Maintain Instagram feed grid rhythm",
+      "tier": "production",
+      "path": "social/maintain_feed_grid_rhythm.md"
+    },
+    {
+      "id": "church.social.phone_native_for_pastor_bts",
+      "domain": "social",
+      "slug": "phone_native_for_pastor_bts",
+      "title": "Phone-native capture for pastor BTS social",
+      "tier": "production",
+      "path": "social/phone_native_for_pastor_bts.md"
+    },
+    {
+      "id": "church.social.schedule_via_meta_planner",
+      "domain": "social",
+      "slug": "schedule_via_meta_planner",
+      "title": "Schedule via Meta content planner",
+      "tier": "production",
+      "path": "social/schedule_via_meta_planner.md"
+    },
+    {
+      "id": "church.social.steven_furtick_clip_strategy",
+      "domain": "social",
+      "slug": "steven_furtick_clip_strategy",
+      "title": "Steven Furtick clip strategy",
+      "tier": "production",
+      "path": "social/steven_furtick_clip_strategy.md"
+    },
+    {
+      "id": "church.social.swap_photo_keep_layout",
+      "domain": "social",
+      "slug": "swap_photo_keep_layout",
+      "title": "Swap photo while keeping layout locked",
+      "tier": "production",
+      "path": "social/swap_photo_keep_layout.md"
+    },
+    {
+      "id": "church.social.template_baptism_celebration",
+      "domain": "social",
+      "slug": "template_baptism_celebration",
+      "title": "Baptism celebration template",
+      "tier": "template",
+      "path": "social/template_baptism_celebration.md"
+    },
+    {
+      "id": "church.social.template_community_story",
+      "domain": "social",
+      "slug": "template_community_story",
+      "title": "Community story / testimony template",
+      "tier": "template",
+      "path": "social/template_community_story.md"
+    },
+    {
+      "id": "church.social.template_event_promo",
+      "domain": "social",
+      "slug": "template_event_promo",
+      "title": "Event promo template",
+      "tier": "template",
+      "path": "social/template_event_promo.md"
+    },
+    {
+      "id": "church.social.template_giving_campaign",
+      "domain": "social",
+      "slug": "template_giving_campaign",
+      "title": "Giving campaign template",
+      "tier": "template",
+      "path": "social/template_giving_campaign.md"
+    },
+    {
+      "id": "church.social.template_new_here",
+      "domain": "social",
+      "slug": "template_new_here",
+      "title": "New here / first-time guest template",
+      "tier": "template",
+      "path": "social/template_new_here.md"
+    },
+    {
+      "id": "church.social.template_pastoral_message",
+      "domain": "social",
+      "slug": "template_pastoral_message",
+      "title": "Pastoral message template",
+      "tier": "template",
+      "path": "social/template_pastoral_message.md"
+    },
+    {
+      "id": "church.social.template_prayer_request",
+      "domain": "social",
+      "slug": "template_prayer_request",
+      "title": "Prayer request graphic template",
+      "tier": "template",
+      "path": "social/template_prayer_request.md"
+    },
+    {
+      "id": "church.social.template_reel_cover",
+      "domain": "social",
+      "slug": "template_reel_cover",
+      "title": "Reel / short cover template",
+      "tier": "template",
+      "path": "social/template_reel_cover.md"
+    },
+    {
+      "id": "church.social.template_scripture_verse",
+      "domain": "social",
+      "slug": "template_scripture_verse",
+      "title": "Scripture verse template",
+      "tier": "template",
+      "path": "social/template_scripture_verse.md"
+    },
+    {
+      "id": "church.social.template_series_launch",
+      "domain": "social",
+      "slug": "template_series_launch",
+      "title": "Series launch announcement template",
+      "tier": "template",
+      "path": "social/template_series_launch.md"
+    },
+    {
+      "id": "church.social.template_series_week_promo",
+      "domain": "social",
+      "slug": "template_series_week_promo",
+      "title": "Series week N promo template",
+      "tier": "template",
+      "path": "social/template_series_week_promo.md"
+    },
+    {
+      "id": "church.social.template_sermon_quote",
+      "domain": "social",
+      "slug": "template_sermon_quote",
+      "title": "Sermon quote card template",
+      "tier": "template",
+      "path": "social/template_sermon_quote.md"
+    },
+    {
+      "id": "church.social.template_service_times_reminder",
+      "domain": "social",
+      "slug": "template_service_times_reminder",
+      "title": "Service times reminder template",
+      "tier": "template",
+      "path": "social/template_service_times_reminder.md"
+    },
+    {
+      "id": "church.social.template_story_announcement",
+      "domain": "social",
+      "slug": "template_story_announcement",
+      "title": "Stories announcement frame template",
+      "tier": "template",
+      "path": "social/template_story_announcement.md"
+    },
+    {
+      "id": "church.social.template_teaching_carousel",
+      "domain": "social",
+      "slug": "template_teaching_carousel",
+      "title": "Teaching points carousel template",
+      "tier": "template",
+      "path": "social/template_teaching_carousel.md"
+    },
+    {
+      "id": "church.social.template_volunteer_recruitment",
+      "domain": "social",
+      "slug": "template_volunteer_recruitment",
+      "title": "Volunteer recruitment template",
+      "tier": "template",
+      "path": "social/template_volunteer_recruitment.md"
+    },
+    {
+      "id": "church.social.template_worship_highlight",
+      "domain": "social",
+      "slug": "template_worship_highlight",
+      "title": "Worship highlight template",
+      "tier": "template",
+      "path": "social/template_worship_highlight.md"
+    },
+    {
+      "id": "church.social.template_youtube_thumbnail",
+      "domain": "social",
+      "slug": "template_youtube_thumbnail",
+      "title": "YouTube sermon thumbnail template",
+      "tier": "template",
+      "path": "social/template_youtube_thumbnail.md"
+    },
+    {
+      "id": "church.social.use_highlands_scheduling_grid",
+      "domain": "social",
+      "slug": "use_highlands_scheduling_grid",
+      "title": "Use Highlands social scheduling grid",
+      "tier": "ops",
+      "path": "social/use_highlands_scheduling_grid.md"
+    },
+    {
+      "id": "church.social.write_caption_from_template",
+      "domain": "social",
+      "slug": "write_caption_from_template",
+      "title": "Write caption from template formula",
+      "tier": "production",
+      "path": "social/write_caption_from_template.md"
+    },
+    {
+      "id": "church.story.apply_represent_language_filter",
+      "domain": "story",
+      "slug": "apply_represent_language_filter",
+      "title": "Apply RE-present vision language filter",
+      "tier": "production",
+      "path": "story/apply_represent_language_filter.md"
+    },
+    {
+      "id": "church.story.archive_published_stories",
+      "domain": "story",
+      "slug": "archive_published_stories",
+      "title": "Archive published stories",
+      "tier": "ops",
+      "path": "story/archive_published_stories.md"
+    },
+    {
+      "id": "church.story.avoid_out_of_context_narrative",
+      "domain": "story",
+      "slug": "avoid_out_of_context_narrative",
+      "title": "Avoid out of context narrative",
+      "tier": "qa",
+      "path": "story/avoid_out_of_context_narrative.md"
+    },
+    {
+      "id": "church.story.balance_four_mission_pillars",
+      "domain": "story",
+      "slug": "balance_four_mission_pillars",
+      "title": "Balance four mission pillars in content calendar",
+      "tier": "production",
+      "path": "story/balance_four_mission_pillars.md"
+    },
+    {
+      "id": "church.story.balance_pastor_vs_community_faces",
+      "domain": "story",
+      "slug": "balance_pastor_vs_community_faces",
+      "title": "Balance pastor vs community faces in content calendar",
+      "tier": "production",
+      "path": "story/balance_pastor_vs_community_faces.md"
+    },
+    {
+      "id": "church.story.baptism_story_workflow",
+      "domain": "story",
+      "slug": "baptism_story_workflow",
+      "title": "Baptism story workflow",
+      "tier": "production",
+      "path": "story/baptism_story_workflow.md"
+    },
+    {
+      "id": "church.story.build_community_campaign_not_event",
+      "domain": "story",
+      "slug": "build_community_campaign_not_event",
+      "title": "Build community campaign not event flyer",
+      "tier": "production",
+      "path": "story/build_community_campaign_not_event.md"
+    },
+    {
+      "id": "church.story.collect_member_testimony",
+      "domain": "story",
+      "slug": "collect_member_testimony",
+      "title": "Collect member testimony",
+      "tier": "production",
+      "path": "story/collect_member_testimony.md"
+    },
+    {
+      "id": "church.story.consent_and_privacy_check",
+      "domain": "story",
+      "slug": "consent_and_privacy_check",
+      "title": "Consent and privacy check for stories",
+      "tier": "qa",
+      "path": "story/consent_and_privacy_check.md"
+    },
+    {
+      "id": "church.story.diversity_representation_check",
+      "domain": "story",
+      "slug": "diversity_representation_check",
+      "title": "Diversity representation check",
+      "tier": "qa",
+      "path": "story/diversity_representation_check.md"
+    },
+    {
+      "id": "church.story.edit_testimony_for_publication",
+      "domain": "story",
+      "slug": "edit_testimony_for_publication",
+      "title": "Edit testimony for publication",
+      "tier": "production",
+      "path": "story/edit_testimony_for_publication.md"
+    },
+    {
+      "id": "church.story.efam_community_story",
+      "domain": "story",
+      "slug": "efam_community_story",
+      "title": "eFam community story",
+      "tier": "production",
+      "path": "story/efam_community_story.md"
+    },
+    {
+      "id": "church.story.feature_member_story_on_web",
+      "domain": "story",
+      "slug": "feature_member_story_on_web",
+      "title": "Feature member story on web",
+      "tier": "production",
+      "path": "story/feature_member_story_on_web.md"
+    },
+    {
+      "id": "church.story.groups_highlight",
+      "domain": "story",
+      "slug": "groups_highlight",
+      "title": "Groups highlight",
+      "tier": "production",
+      "path": "story/groups_highlight.md"
+    },
+    {
+      "id": "church.story.localize_story_for_campus",
+      "domain": "story",
+      "slug": "localize_story_for_campus",
+      "title": "Localize story for campus",
+      "tier": "production",
+      "path": "story/localize_story_for_campus.md"
+    },
+    {
+      "id": "church.story.maintain_vision_phrase_glossary",
+      "domain": "story",
+      "slug": "maintain_vision_phrase_glossary",
+      "title": "Maintain vision phrase glossary",
+      "tier": "foundation",
+      "path": "story/maintain_vision_phrase_glossary.md"
+    },
+    {
+      "id": "church.story.map_values_to_content_pillars",
+      "domain": "story",
+      "slug": "map_values_to_content_pillars",
+      "title": "Map values to content pillars",
+      "tier": "production",
+      "path": "story/map_values_to_content_pillars.md"
+    },
+    {
+      "id": "church.story.outreach_impact_feature",
+      "domain": "story",
+      "slug": "outreach_impact_feature",
+      "title": "Outreach impact feature",
+      "tier": "production",
+      "path": "story/outreach_impact_feature.md"
+    },
+    {
+      "id": "church.story.plan_story_content_calendar",
+      "domain": "story",
+      "slug": "plan_story_content_calendar",
+      "title": "Plan story content calendar",
+      "tier": "production",
+      "path": "story/plan_story_content_calendar.md"
+    },
+    {
+      "id": "church.story.promote_worship_subbrand",
+      "domain": "story",
+      "slug": "promote_worship_subbrand",
+      "title": "Promote worship sub-brand without overshadowing church",
+      "tier": "production",
+      "path": "story/promote_worship_subbrand.md"
+    },
+    {
+      "id": "church.story.route_by_profile",
+      "domain": "story",
+      "slug": "route_by_profile",
+      "title": "Route story task by church profile",
+      "tier": "foundation",
+      "path": "story/route_by_profile.md"
+    },
+    {
+      "id": "church.story.run_share_your_story_campaign",
+      "domain": "story",
+      "slug": "run_share_your_story_campaign",
+      "title": "Run Share Your Story campaign",
+      "tier": "production",
+      "path": "story/run_share_your_story_campaign.md"
+    },
+    {
+      "id": "church.story.serve_team_spotlight",
+      "domain": "story",
+      "slug": "serve_team_spotlight",
+      "title": "Serve team spotlight",
+      "tier": "production",
+      "path": "story/serve_team_spotlight.md"
+    },
+    {
+      "id": "church.story.share_your_story_intake_form",
+      "domain": "story",
+      "slug": "share_your_story_intake_form",
+      "title": "Share Your Story intake form and consent",
+      "tier": "production",
+      "path": "story/share_your_story_intake_form.md"
+    },
+    {
+      "id": "church.web.add_open_graph_meta_companion",
+      "domain": "web",
+      "slug": "add_open_graph_meta_companion",
+      "title": "Add Open Graph Meta Companion",
+      "tier": "production",
+      "path": "web/add_open_graph_meta_companion.md"
+    },
+    {
+      "id": "church.web.compress_web_images_srgb",
+      "domain": "web",
+      "slug": "compress_web_images_srgb",
+      "title": "Compress Web Images Srgb",
+      "tier": "production",
+      "path": "web/compress_web_images_srgb.md"
+    },
+    {
+      "id": "church.web.design_email_header",
+      "domain": "web",
+      "slug": "design_email_header",
+      "title": "Design Email Header",
+      "tier": "production",
+      "path": "web/design_email_header.md"
+    },
+    {
+      "id": "church.web.design_event_landing_hero",
+      "domain": "web",
+      "slug": "design_event_landing_hero",
+      "title": "Design Event Landing Hero",
+      "tier": "production",
+      "path": "web/design_event_landing_hero.md"
+    },
+    {
+      "id": "church.web.design_giving_page_banner",
+      "domain": "web",
+      "slug": "design_giving_page_banner",
+      "title": "Design Giving Page Banner",
+      "tier": "production",
+      "path": "web/design_giving_page_banner.md"
+    },
+    {
+      "id": "church.web.design_ministry_landing_template",
+      "domain": "web",
+      "slug": "design_ministry_landing_template",
+      "title": "Design Ministry Landing Template",
+      "tier": "production",
+      "path": "web/design_ministry_landing_template.md"
+    },
+    {
+      "id": "church.web.design_plan_your_visit_section",
+      "domain": "web",
+      "slug": "design_plan_your_visit_section",
+      "title": "Design Plan Your Visit Section",
+      "tier": "production",
+      "path": "web/design_plan_your_visit_section.md"
+    },
+    {
+      "id": "church.web.design_series_hero",
+      "domain": "web",
+      "slug": "design_series_hero",
+      "title": "Design Series Hero",
+      "tier": "production",
+      "path": "web/design_series_hero.md"
+    },
+    {
+      "id": "church.web.design_sermon_archive_thumbnail",
+      "domain": "web",
+      "slug": "design_sermon_archive_thumbnail",
+      "title": "Design Sermon Archive Thumbnail",
+      "tier": "production",
+      "path": "web/design_sermon_archive_thumbnail.md"
+    },
+    {
+      "id": "church.web.design_staff_page_headshots_grid",
+      "domain": "web",
+      "slug": "design_staff_page_headshots_grid",
+      "title": "Design Staff Page Headshots Grid",
+      "tier": "production",
+      "path": "web/design_staff_page_headshots_grid.md"
+    },
+    {
+      "id": "church.web.design_watch_live_banner",
+      "domain": "web",
+      "slug": "design_watch_live_banner",
+      "title": "Design Watch Live Banner",
+      "tier": "production",
+      "path": "web/design_watch_live_banner.md"
+    },
+    {
+      "id": "church.web.export_email_header",
+      "domain": "web",
+      "slug": "export_email_header",
+      "title": "Export Email Header",
+      "tier": "production",
+      "path": "web/export_email_header.md"
+    },
+    {
+      "id": "church.web.export_hero_web",
+      "domain": "web",
+      "slug": "export_hero_web",
+      "title": "Export Hero Web",
+      "tier": "production",
+      "path": "web/export_hero_web.md"
+    },
+    {
+      "id": "church.web.optimize_hero_for_mobile_crop",
+      "domain": "web",
+      "slug": "optimize_hero_for_mobile_crop",
+      "title": "Optimize Hero For Mobile Crop",
+      "tier": "production",
+      "path": "web/optimize_hero_for_mobile_crop.md"
+    },
+    {
+      "id": "church.web.sync_hero_to_cms",
+      "domain": "web",
+      "slug": "sync_hero_to_cms",
+      "title": "Sync Hero To Cms",
+      "tier": "production",
+      "path": "web/sync_hero_to_cms.md"
+    },
+    {
+      "id": "church.web.update_home_hero_for_series",
+      "domain": "web",
+      "slug": "update_home_hero_for_series",
+      "title": "Update Home Hero For Series",
+      "tier": "production",
+      "path": "web/update_home_hero_for_series.md"
+    },
+    {
+      "id": "church.worship.avoid_motion_behind_speaker",
+      "domain": "worship",
+      "slug": "avoid_motion_behind_speaker",
+      "title": "Avoid Motion Behind Speaker",
+      "tier": "production",
+      "path": "worship/avoid_motion_behind_speaker.md"
+    },
+    {
+      "id": "church.worship.caption_lyrics_for_stream",
+      "domain": "worship",
+      "slug": "caption_lyrics_for_stream",
+      "title": "Caption Lyrics For Stream",
+      "tier": "production",
+      "path": "worship/caption_lyrics_for_stream.md"
+    },
+    {
+      "id": "church.worship.ccli_reporting_reminder",
+      "domain": "worship",
+      "slug": "ccli_reporting_reminder",
+      "title": "Ccli Reporting Reminder",
+      "tier": "production",
+      "path": "worship/ccli_reporting_reminder.md"
+    },
+    {
+      "id": "church.worship.congregational_reading_slide",
+      "domain": "worship",
+      "slug": "congregational_reading_slide",
+      "title": "Congregational Reading Slide",
+      "tier": "production",
+      "path": "worship/congregational_reading_slide.md"
+    },
+    {
+      "id": "church.worship.coordinate_with_lighting_team",
+      "domain": "worship",
+      "slug": "coordinate_with_lighting_team",
+      "title": "Coordinate With Lighting Team",
+      "tier": "production",
+      "path": "worship/coordinate_with_lighting_team.md"
+    },
+    {
+      "id": "church.worship.design_baptism_motion",
+      "domain": "worship",
+      "slug": "design_baptism_motion",
+      "title": "Design Baptism Motion",
+      "tier": "production",
+      "path": "worship/design_baptism_motion.md"
+    },
+    {
+      "id": "church.worship.design_communion_ambient",
+      "domain": "worship",
+      "slug": "design_communion_ambient",
+      "title": "Design Communion Ambient",
+      "tier": "production",
+      "path": "worship/design_communion_ambient.md"
+    },
+    {
+      "id": "church.worship.emergency_static_slide_kit",
+      "domain": "worship",
+      "slug": "emergency_static_slide_kit",
+      "title": "Emergency Static Slide Kit",
+      "tier": "production",
+      "path": "worship/emergency_static_slide_kit.md"
+    },
+    {
+      "id": "church.worship.ihop_style_prayer_visuals",
+      "domain": "worship",
+      "slug": "ihop_style_prayer_visuals",
+      "title": "Ihop Style Prayer Visuals",
+      "tier": "production",
+      "path": "worship/ihop_style_prayer_visuals.md"
+    },
+    {
+      "id": "church.worship.lyric_line_break_rules",
+      "domain": "worship",
+      "slug": "lyric_line_break_rules",
+      "title": "Lyric Line Break Rules",
+      "tier": "production",
+      "path": "worship/lyric_line_break_rules.md"
+    },
+    {
+      "id": "church.worship.match_loop_tempo_to_song_bpm",
+      "domain": "worship",
+      "slug": "match_loop_tempo_to_song_bpm",
+      "title": "Match Loop Tempo To Song Bpm",
+      "tier": "production",
+      "path": "worship/match_loop_tempo_to_song_bpm.md"
+    },
+    {
+      "id": "church.worship.optimize_for_led_vs_projector",
+      "domain": "worship",
+      "slug": "optimize_for_led_vs_projector",
+      "title": "Optimize For Led Vs Projector",
+      "tier": "production",
+      "path": "worship/optimize_for_led_vs_projector.md"
+    },
+    {
+      "id": "church.worship.provide_static_fallback",
+      "domain": "worship",
+      "slug": "provide_static_fallback",
+      "title": "Provide Static Fallback",
+      "tier": "production",
+      "path": "worship/provide_static_fallback.md"
+    },
+    {
+      "id": "church.worship.rehearsal_walkthrough_checklist",
+      "domain": "worship",
+      "slug": "rehearsal_walkthrough_checklist",
+      "title": "Rehearsal Walkthrough Checklist",
+      "tier": "production",
+      "path": "worship/rehearsal_walkthrough_checklist.md"
+    },
+    {
+      "id": "church.worship.select_ambient_vs_dynamic_loop",
+      "domain": "worship",
+      "slug": "select_ambient_vs_dynamic_loop",
+      "title": "Select Ambient Vs Dynamic Loop",
+      "tier": "production",
+      "path": "worship/select_ambient_vs_dynamic_loop.md"
+    },
+    {
+      "id": "church.worship.select_loop_for_song",
+      "domain": "worship",
+      "slug": "select_loop_for_song",
+      "title": "Select Loop For Song",
+      "tier": "production",
+      "path": "worship/select_loop_for_song.md"
+    },
+    {
+      "id": "church.worship.select_still_vs_motion_for_hymns",
+      "domain": "worship",
+      "slug": "select_still_vs_motion_for_hymns",
+      "title": "Select Still Vs Motion For Hymns",
+      "tier": "production",
+      "path": "worship/select_still_vs_motion_for_hymns.md"
+    },
+    {
+      "id": "church.worship.test_loop_on_camera_imag",
+      "domain": "worship",
+      "slug": "test_loop_on_camera_imag",
+      "title": "Test Loop On Camera Imag",
+      "tier": "production",
+      "path": "worship/test_loop_on_camera_imag.md"
+    },
+    {
+      "id": "church.worship.union_sound_release_kit",
+      "domain": "worship",
+      "slug": "union_sound_release_kit",
+      "title": "Union Sound release kit",
+      "tier": "production",
+      "path": "worship/union_sound_release_kit.md"
+    }
+  ]
+}

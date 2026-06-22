@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "skills:church": "node skills/church/scripts/generate-skills.mjs",
+    "skills:update-registry": "node skills/church/scripts/update-registry.mjs",
+    "skills:validate-profiles": "node skills/church/scripts/validate-profiles.mjs"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.85",
@@ -30,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "postcss": "^8.5.15",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

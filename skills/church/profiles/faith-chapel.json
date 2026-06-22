@@ -1,0 +1,227 @@
+{
+  "id": "church.faith-chapel",
+  "name": "Faith Chapel",
+  "slug": "faith-chapel",
+  "website": "https://www.faithchapel.net",
+  "playbook": "playbooks/faith-chapel.md",
+  "leadership": {
+    "lead_pastor": "Michael K. Moore",
+    "executive_pastor": "Michael K. Moore",
+    "creative_lead": "Communications / Brand Team",
+    "worship_lead": "Worship Ministry"
+  },
+  "campuses": [
+    {
+      "id": "birmingham-word-dome",
+      "name": "Word Dome Campus",
+      "city": "Birmingham",
+      "state": "AL",
+      "timezone": "America/Chicago",
+      "service_times": ["Sunday 10:00 AM CT"],
+      "is_primary": true
+    }
+  ],
+  "brand": {
+    "hub_url": "https://www.faithchapel.net/brand",
+    "tagline": "We're more than a church — we're a movement.",
+    "tier": "institutional-premium",
+    "logo_variants": ["primary", "reversed", "submark", "social_avatar"],
+    "forbidden": [
+      "clipart",
+      "low_resolution_photos",
+      "off_palette_colors",
+      "unapproved_fonts",
+      "logo_distortion"
+    ],
+    "photography": "High-quality stock or original only; no clipart; family-friendly; diverse congregation representation.",
+    "fonts": {
+      "primary": "Brand book primary (see hub)",
+      "secondary": "Brand book secondary (see hub)",
+      "display": "Series title treatment only"
+    },
+    "colors": {
+      "primary": "See Brand Quick Reference Guide",
+      "secondary": "See Brand Quick Reference Guide",
+      "accent": "Series override only with comms approval",
+      "neutral": "Brand neutrals per quick reference"
+    }
+  },
+  "sub_brands": [
+    {
+      "id": "the-bridge",
+      "name": "The Bridge",
+      "url": "https://faithchapel.community/about/",
+      "tagline": "Community hub — life together all week.",
+      "template_family": "env/community-events",
+      "social_handles": {}
+    },
+    {
+      "id": "mike-moore-store",
+      "name": "Mike Moore Store",
+      "url": "https://shop.mikemoore.com",
+      "tagline": "Teaching resources and merch",
+      "template_family": "social/product-promo",
+      "social_handles": {}
+    }
+  ],
+  "voice": {
+    "attributes": ["teaching-forward", "family-friendly", "hopeful", "clear", "Word-centered"],
+    "do": [
+      "Lead with scripture and practical application",
+      "Use accessible language for Birmingham community",
+      "Highlight movement and campus life (The Bridge)",
+      "Invite story submission and volunteer paths",
+      "Reference 'The Word of God is the Answer' legacy appropriately"
+    ],
+    "dont": [
+      "Use clipart or low-res imagery",
+      "Insider jargon without explanation",
+      "Political endorsements",
+      "Low-effort duplicate designs outside brand kit"
+    ],
+    "seeker_first": true
+  },
+  "story": {
+    "model": "movement-institution",
+    "pastor_face_ratio_max_30d": 0.5,
+    "story_submission_url": "https://www.faithchapel.net/stories",
+    "community_surfaces": [
+      "/stories",
+      "/groups",
+      "/volunteer",
+      "/waystohelp",
+      "/family",
+      "The Bridge community events"
+    ],
+    "values": [
+      "Grow through God's Word",
+      "Reflect Jesus in every area of life",
+      "Movement beyond Sunday",
+      "Community at The Bridge",
+      "Generational faithfulness"
+    ]
+  },
+  "content_pillars": [
+    {
+      "id": "teaching",
+      "name": "Teaching & Series",
+      "description": "Sunday message, series promos, scripture, sermon quotes.",
+      "template_skills": [
+        "church.social.template_sermon_quote",
+        "church.social.template_scripture_verse",
+        "church.social.template_series_week_promo",
+        "church.social.template_youtube_thumbnail"
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Community & Stories",
+      "description": "Member stories, testimony, groups, serve, The Bridge.",
+      "template_skills": [
+        "church.social.template_community_story",
+        "church.story.run_share_your_story_campaign",
+        "church.social.template_volunteer_recruitment",
+        "church.env.promote_bridge_community_events"
+      ]
+    },
+    {
+      "id": "worship",
+      "name": "Worship & Gather",
+      "description": "Service times, live stream, on-demand library.",
+      "template_skills": [
+        "church.social.template_service_times_reminder",
+        "church.social.template_worship_highlight",
+        "church.web.design_watch_live_banner"
+      ]
+    },
+    {
+      "id": "next-steps",
+      "name": "Connect & Next Steps",
+      "description": "New here, groups, volunteer, give.",
+      "template_skills": [
+        "church.social.template_new_here",
+        "church.social.template_event_promo",
+        "church.web.design_plan_your_visit_section"
+      ]
+    }
+  ],
+  "social": {
+    "handles": {
+      "instagram": "faithchapelbham",
+      "facebook": "faithchapelbham",
+      "x": "faithchapelbham",
+      "threads": "faithchapelbham"
+    },
+    "platforms": ["instagram", "facebook", "x", "threads", "youtube"],
+    "weekly_post_target": 5,
+    "scheduling_skill": "church.ops.schedule_content_planner"
+  },
+  "approval": {
+    "chain": [
+      {
+        "asset_type": "sermon_quote",
+        "reviewer": "Communications Lead",
+        "final_approver": "Teaching Pastor (if doctrinal)"
+      },
+      {
+        "asset_type": "community_story",
+        "reviewer": "Communications Lead",
+        "final_approver": "Story owner consent"
+      },
+      {
+        "asset_type": "series_launch",
+        "reviewer": "Creative Lead",
+        "final_approver": "Executive Pastor"
+      },
+      {
+        "asset_type": "general_social",
+        "reviewer": "Communications Lead",
+        "final_approver": "Communications Director"
+      },
+      {
+        "asset_type": "brand_change",
+        "reviewer": "Creative Lead",
+        "final_approver": "Leadership Team"
+      }
+    ]
+  },
+  "visual": {
+    "web_bar": "institutional-premium",
+    "motion_bar": "standard",
+    "social_style": "Clean grid, brand kit templates, high-quality photography, series color bands."
+  },
+  "workflows": {
+    "series_launch": "workflows/series-launch.md",
+    "weekly_service": "workflows/weekly-service-kit.md",
+    "sermon_to_social": "workflows/sermon-to-social.md",
+    "volunteer_ops": "workflows/volunteer-template-ops.md",
+    "approval": "workflows/approval-governance.md"
+  },
+  "skill_priorities": [
+    "church.brand.setup_canva_brand_kit",
+    "church.brand.run_brand_education_session",
+    "church.story.run_share_your_story_campaign",
+    "church.story.balance_pastor_vs_community_faces",
+    "church.story.plan_story_content_calendar",
+    "church.qa.logo_and_color_compliance",
+    "church.ops.duplicate_template_not_redesign"
+  ],
+  "integrations": [
+    "youtube",
+    "facebook",
+    "instagram",
+    "faith_chapel_app",
+    "on_demand_vod"
+  ],
+  "dam": {
+    "folder_root": "Faith Chapel/",
+    "template_paths": {
+      "social_sermon_quote": "Templates/Social/Sermon Quote",
+      "social_community_story": "Templates/Social/Community Story",
+      "social_series_promo": "Templates/Social/Series Week Promo",
+      "slides_sermon": "Templates/Slides/Sermon Deck",
+      "print_bulletin": "Templates/Print/Weekly Bulletin",
+      "series_kit": "Series/{series_name}/"
+    }
+  }
+}

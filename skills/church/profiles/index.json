@@ -1,0 +1,70 @@
+{
+  "version": "1.2.0",
+  "description": "Registered church client profiles for skills routing and brand lint.",
+  "profiles": [
+    {
+      "id": "church.faith-chapel",
+      "slug": "faith-chapel",
+      "name": "Faith Chapel",
+      "file": "faith-chapel.json",
+      "playbook": "playbooks/faith-chapel.md",
+      "story_model": "movement-institution",
+      "pastor_face_ratio_max_30d": 0.5,
+      "visual_bar": "institutional-premium"
+    },
+    {
+      "id": "church.union-church",
+      "slug": "union-church",
+      "name": "Union Church",
+      "file": "union-church.json",
+      "playbook": "playbooks/union-bldrs.md",
+      "story_model": "community-mix",
+      "pastor_face_ratio_max_30d": 0.4,
+      "sub_brands": ["union-sound", "bldrs-network"],
+      "visual_bar": "institutional-premium"
+    },
+    {
+      "id": "church.transformation-church",
+      "slug": "transformation-church",
+      "name": "Transformation Church",
+      "file": "transformation-church.json",
+      "playbook": "playbooks/transformation-church.md",
+      "story_model": "cinematic-pastor-human",
+      "pastor_face_ratio_max_30d": 0.55,
+      "sub_brands": ["mike-todd-personal", "transformation-youtube"],
+      "visual_bar": "siteinspire-forward"
+    },
+    {
+      "id": "church.church-of-the-highlands",
+      "slug": "church-of-the-highlands",
+      "name": "Church of the Highlands",
+      "file": "church-of-the-highlands.json",
+      "playbook": "playbooks/highlands-resources.md",
+      "story_model": "systems-multi-campus",
+      "pastor_face_ratio_max_30d": 0.45,
+      "sub_brands": ["highlands-resources", "highlands-college", "grow", "arc"],
+      "visual_bar": "institutional-premium",
+      "campus_count": 26
+    },
+    {
+      "id": "church.elevation-church",
+      "slug": "elevation-church",
+      "name": "Elevation Church",
+      "file": "elevation-church.json",
+      "playbook": "playbooks/elevation-church.md",
+      "story_model": "distributed-clips-community",
+      "pastor_face_ratio_max_30d": 0.5,
+      "sub_brands": ["elevation-worship", "efam", "steven-furtick-ministries"],
+      "visual_bar": "institutional-premium"
+    }
+  ],
+  "default_profile": null,
+  "load_order": [
+    "faith-chapel",
+    "union-church",
+    "transformation-church",
+    "church-of-the-highlands",
+    "elevation-church"
+  ],
+  "next_profiles": []
+}

@@ -1,0 +1,270 @@
+{
+  "id": "church.church-of-the-highlands",
+  "name": "Church of the Highlands",
+  "slug": "church-of-the-highlands",
+  "website": "https://www.churchofthehighlands.com",
+  "playbook": "playbooks/highlands-resources.md",
+  "leadership": {
+    "lead_pastor": "Mark Pettus",
+    "executive_pastor": "Executive Team",
+    "creative_lead": "Creative / Production Team",
+    "worship_lead": "Worship Ministry",
+    "founding_pastor": "Chris Hodges"
+  },
+  "campuses": [
+    {
+      "id": "campus-template",
+      "name": "Highlands Campus (template)",
+      "city": "Alabama / Georgia",
+      "state": "AL",
+      "timezone": "America/Chicago",
+      "service_times": ["Campus-specific — see connect site"],
+      "is_primary": false,
+      "notes": "26 campuses across AL and GA — use multi_campus_variant_switcher for each"
+    },
+    {
+      "id": "grandview-birmingham",
+      "name": "Grandview Campus",
+      "city": "Birmingham",
+      "state": "AL",
+      "timezone": "America/Chicago",
+      "service_times": ["See website"],
+      "is_primary": true
+    }
+  ],
+  "brand": {
+    "hub_url": "https://www.churchofthehighlands.com/resources",
+    "tagline": "A life-giving church — Know God, Find Freedom, Discover Purpose, Make a Difference.",
+    "tier": "multi-campus-systems",
+    "logo_variants": ["primary", "reversed", "campus", "series"],
+    "forbidden": [
+      "incomplete_series_kit_drop",
+      "social_without_scheduling_grid",
+      "campus_wrong_times_or_address",
+      "off_mission_pillar_balance",
+      "clipart_or_low_res"
+    ],
+    "photography": "Warm, authentic, life-giving; real congregation; diverse; on-brand color grade.",
+    "fonts": {
+      "primary": "Highlands brand sans",
+      "secondary": "Highlands brand sans alt",
+      "display": "Series title treatments per kit"
+    },
+    "colors": {
+      "primary": "Highlands brand palette",
+      "secondary": "Series palette per Open Network kit",
+      "accent": "CTA and serve highlights",
+      "neutral": "Web and print neutrals"
+    }
+  },
+  "sub_brands": [
+    {
+      "id": "highlands-resources",
+      "name": "Highlands Resources",
+      "url": "https://www.churchofthehighlands.com/resources",
+      "tagline": "Freely share what we've learned.",
+      "template_family": "resources/export-kit",
+      "social_handles": {}
+    },
+    {
+      "id": "highlands-college",
+      "name": "Highlands College",
+      "url": "https://www.highlands.edu",
+      "tagline": "Ministry training and leadership development.",
+      "template_family": "network/college",
+      "social_handles": {}
+    },
+    {
+      "id": "grow",
+      "name": "GROW",
+      "url": "https://growleader.com",
+      "tagline": "Coaching network for pastors.",
+      "template_family": "network/grow",
+      "social_handles": {}
+    },
+    {
+      "id": "arc",
+      "name": "ARC (Association of Related Churches)",
+      "url": "https://arcchurches.com",
+      "tagline": "Church planting network.",
+      "template_family": "network/arc",
+      "social_handles": {}
+    }
+  ],
+  "voice": {
+    "attributes": ["life-giving", "warm", "authentic", "clear", "community-focused", "generous"],
+    "do": [
+      "Tie content to four mission parts: Know God, Freedom, Purpose, Difference",
+      "Use scheduling grid for social planning",
+      "Ship complete series kits when publishing resources",
+      "Campus-correct details on all local promos",
+      "Credit Grow partner when using Grow-sourced series assets"
+    ],
+    "dont": [
+      "Post without scheduling doc alignment",
+      "Release series with only one asset type",
+      "Ignore Hodges/Pettus voice era on legacy vs new content",
+      "Insider language on outreach campaigns"
+    ],
+    "seeker_first": true
+  },
+  "story": {
+    "model": "systems-multi-campus",
+    "pastor_face_ratio_max_30d": 0.45,
+    "story_submission_url": "https://www.churchofthehighlands.com/connect",
+    "community_surfaces": [
+      "Growth Track",
+      "Groups",
+      "Serve / Outreach",
+      "Freedom curriculum",
+      "Campus events",
+      "Highlands Resources stories"
+    ],
+    "values": [
+      "Know God",
+      "Find Freedom",
+      "Discover Purpose",
+      "Make a Difference",
+      "Life-giving culture",
+      "Generosity of resources"
+    ],
+    "mission_pillars": [
+      "know_god",
+      "find_freedom",
+      "discover_purpose",
+      "make_a_difference"
+    ]
+  },
+  "content_pillars": [
+    {
+      "id": "know-god",
+      "name": "Know God",
+      "description": "Teaching series, message notes, weekend worship.",
+      "template_skills": [
+        "church.series.package_open_network_style_kit",
+        "church.social.template_series_week_promo",
+        "church.slides.build_sermon_slide_deck"
+      ]
+    },
+    {
+      "id": "find-freedom",
+      "name": "Find Freedom",
+      "description": "Freedom curriculum, groups, recovery themes.",
+      "template_skills": [
+        "church.social.template_community_story",
+        "church.print.design_weekly_bulletin"
+      ]
+    },
+    {
+      "id": "discover-purpose",
+      "name": "Discover Purpose",
+      "description": "Growth Track, leadership, Highlands College.",
+      "template_skills": [
+        "church.social.template_new_here",
+        "church.web.design_plan_your_visit_section"
+      ]
+    },
+    {
+      "id": "make-a-difference",
+      "name": "Make a Difference",
+      "description": "Serve, outreach, kindness campaigns.",
+      "template_skills": [
+        "church.social.template_volunteer_recruitment",
+        "church.social.template_event_promo"
+      ]
+    },
+    {
+      "id": "resources-export",
+      "name": "Resources Export",
+      "description": "Kits for other churches via Highlands Resources / Open Network.",
+      "template_skills": [
+        "church.series.package_open_network_style_kit",
+        "church.series.include_master_painting_layer",
+        "church.ops.publish_series_kit_to_dam"
+      ]
+    }
+  ],
+  "social": {
+    "handles": {
+      "instagram": "churchofthehighlands",
+      "facebook": "churchofthehighlands",
+      "youtube": "churchofthehighlands"
+    },
+    "platforms": ["instagram", "facebook", "youtube"],
+    "weekly_post_target": 7,
+    "scheduling_skill": "church.social.use_highlands_scheduling_grid"
+  },
+  "approval": {
+    "chain": [
+      {
+        "asset_type": "series_kit_export",
+        "reviewer": "Creative Lead",
+        "final_approver": "Lead Pastor or Founding Pastor (major series)"
+      },
+      {
+        "asset_type": "campus_specific",
+        "reviewer": "Campus Pastor",
+        "final_approver": "Central Creative"
+      },
+      {
+        "asset_type": "social_scheduled",
+        "reviewer": "Social Manager",
+        "final_approver": "Comms Director"
+      },
+      {
+        "asset_type": "resources_portal_upload",
+        "reviewer": "Highlands Resources Team",
+        "final_approver": "Creative Lead"
+      }
+    ]
+  },
+  "visual": {
+    "web_bar": "institutional-premium",
+    "motion_bar": "standard",
+    "social_style": "Warm life-giving grid; scheduling-driven; series kits with master painting layers."
+  },
+  "workflows": {
+    "series_launch": "workflows/series-launch.md",
+    "weekly_service": "workflows/weekly-service-kit.md",
+    "sermon_to_social": "workflows/sermon-to-social.md",
+    "volunteer_ops": "workflows/volunteer-template-ops.md",
+    "approval": "workflows/approval-governance.md"
+  },
+  "skill_priorities": [
+    "church.series.package_open_network_style_kit",
+    "church.story.balance_four_mission_pillars",
+    "church.story.plan_story_content_calendar",
+    "church.social.use_highlands_scheduling_grid",
+    "church.ops.multi_campus_variant_switcher",
+    "church.content.map_points_to_content_pillars",
+    "church.series.include_master_painting_layer",
+    "church.ops.publish_series_kit_to_dam"
+  ],
+  "integrations": [
+    "highlands_resources_portal",
+    "open_network_life_church",
+    "youtube",
+    "planning_center",
+    "growleader"
+  ],
+  "dam": {
+    "folder_root": "Church of the Highlands/",
+    "template_paths": {
+      "series_open_network_kit": "Series/{series_name}/Kit/",
+      "master_painting": "Series/{series_name}/Kit/MasterPainting/",
+      "led_exports": "Series/{series_name}/Kit/LED/",
+      "web_1920": "Series/{series_name}/Kit/Web1920/",
+      "message_notes": "Series/{series_name}/Kit/MessageNotes/",
+      "social_scheduling": "Ops/SocialSchedulingGrid.xlsx",
+      "campus_variant": "Templates/Social/Campus Variant"
+    }
+  },
+  "network": {
+    "name": "Highlands Resources / GROW / ARC",
+    "url": "https://www.churchofthehighlands.com/resources",
+    "role": "Export playbooks and kits to global church leaders; resources@churchofthehighlands.com"
+  },
+  "contacts": {
+    "resources_email": "resources@churchofthehighlands.com"
+  }
+}
